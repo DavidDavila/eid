@@ -1,0 +1,12 @@
+<div class="swiper-clients">
+  <div class="legend">
+    <a><img class="left-arrow  custom-cursor"(click)="swiper.slidePrev()" src="/assets/img/flecha_dcha.png" alt=""></a>
+    <a><img class="right-arrow custom-cursor" (click)="swiper.slideNext()" src="/assets/img/flecha_dcha.png" alt=""></a>
+    <p>Trusted by</p>
+  </div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let client of clients">
+      <img [src]="'/assets/img/' + client" alt="">
+    </div>
+  </div>
+</div>

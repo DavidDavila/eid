@@ -1,0 +1,9 @@
+<div class="cursor" #cursor></div>
+<main #main>
+  <header>
+    <img id="logo" src="/assets/img/logo.png">
+    <div app-menu></div>
+  </header>
+	<router-outlet></router-outlet>
+<particles *ngIf="showCanvas" [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+</main>

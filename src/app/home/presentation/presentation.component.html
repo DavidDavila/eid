@@ -1,0 +1,8 @@
+<div id="presentation" #presentation [ngClass]="{'intro' : this.slide === 0}" (pan)="mouseFinish($event, true)"  mouseWheelTiming (mouseFinish)="mouseFinish($event)">
+  <h2 [ngClass]="{'hide':this.slide !== 0}">
+    <img  src="/assets/img/videoID.png" alt="">
+    <span>Face to machine user identification</span>
+  </h2>
+  <div id="slider" app-slider [slide]="slide"></div>
+</div>
+<div id="videoContainer" [ngClass]="{'not-intro' : this.slide !== 0 }"  app-video></div>

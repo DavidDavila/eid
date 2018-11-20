@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'reset-css';
+@import 'vars';
+@keyframes ripple {
+    0% {transform: scale(0);opacity: 1;}
+    50% {opacity: 1;}
+    100% {transform: scale(1);opacity: 0;}
+}
+@keyframes rippled {
+    0% {transform: scale(0);opacity: 1;}
+    50% {opacity: 1;}
+    100% {transform: scale(1.1);opacity: 0;}
+}
+*{
+	font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  outline: none;
+  line-height: 1.2;
+  cursor: none;
+  user-select: none;
+
+}
+html{
+  cursor: none;
+  scroll-behavior: smooth;
+}
+html body{
+  background-color: $black;
+  color:$white;
+  overflow:hidden;
+}
+h2{
+  position:relative;
+  font-size: 55px;
+  font-weight: 500;
+  >span{
+    color: $green;
+    margin-top: 0.3vh;
+
+    font-size: 42px;
+    display: block;
+    font-weight: 300;
+    text-align: center;
+    background: -webkit-linear-gradient(left, #26CAC2 32%, $green 58%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 2.5vw);
+    border-radius: 50%;
+    border: 1px solid #b5bf03;
+    width: 9vw;
+    height: 9vw;
+    z-index: -1;
+    transform: scale(0);
+    animation-name: ripple;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+    animation-fill-mode: forwards;
+    //box-shadow: 0 0 50px 0px $green;
+  }
+  &:before{
+    content: '';
+     position: absolute;
+     top: 0;
+     left: calc(50% - 2.5vw);
+     border-radius: 50%;
+     border: 1px solid #b5bf03;
+     width: 9vw;
+     height: 9vw;
+     z-index: -1;
+     transform: scale(0);
+     animation-name: rippled;
+     animation-duration: 4s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+     animation-fill-mode: forwards;
+     animation-delay: 750ms;
+     //box-shadow: 0 0 20px 5px $green;
+  }
+}
+ button{
+  color:$green;
+
+  text-shadow: 0 0 11px rgba(0, 0, 0, 0.28);
+    padding: 1vw 7.7vh;
+  text-transform: uppercase;
+  font-family: Raleway;
+  font-size: 1.1vw;
+  font-weight: 500;
+  border-width: 1px;
+  border-style: solid;
+  -moz-border-image: -moz-linear-gradient(left bottom, #26CAC2  0%, $green 100%);
+  -webkit-border-image: -webkit-linear-gradient(left bottom, #26CAC2  0%, $green 100%);
+  border-image: linear-gradient(to right top, #26CAC2  0%, $green 100%);
+  border-image-slice: 1;
+  transition: all 300ms;
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+  span{
+    position: relative;
+    z-index: 1;
+  }
+  &:after{
+    transition: opacity 300ms;
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: calc(100% + 1px);
+    height: 100%;
+    background: linear-gradient(45deg, #26CAC2 0%, $green 100%);
+    opacity: 0;
+
+
+  }
+  &:hover{
+    &:after{
+      opacity: 1;
+    }
+
+  }
+}

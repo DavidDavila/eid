@@ -1,0 +1,117 @@
+@import 'vars';
+.swiper-testimonies {
+    display: flex;
+
+    flex-direction: column;
+    >div.slider{
+      height: 35vh;
+      overflow:hidden;
+    }
+    .legend{
+      text-align: left;
+      padding: 0 1.6vw;
+      .left-arrow{
+        transform: scale(-1);
+        margin-right: 30px;
+      }
+    }
+    ul{
+      width: 100%;
+      padding: 0 1vw;
+      overflow-x:auto;
+      display: flex;
+      height: 35vh;
+      white-space: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      bottom: -17px;
+      &::-webkit-scrollbar {
+          //display: none;
+      }
+      >li{
+
+        display: inline-block;
+        flex: 0 0 22%;
+        overflow:hidden;
+
+        padding: 0 .5vw;
+        transition: flex 300ms;
+        vertical-align: middle;
+        >div{
+          position: relative;
+          overflow: hidden;
+          height: 100%;
+          border-width: 1px;
+          border-style: solid;
+          -moz-border-image: -moz-linear-gradient(left bottom, #c3ce00  0%, #fcffbd 100%);
+          -webkit-border-image: -webkit-linear-gradient(left bottom, #c3ce00  0%, #fcffbd 100%);
+          border-image: linear-gradient(to right top, #c3ce00  0%, #fcffbd 100%);
+          border-image-slice: 1;
+          background-size: 95%;
+          background-position: center;
+          background-repeat: no-repeat;
+          padding: 5px;
+          img{
+            width: 100%;
+            object-position: center;
+            object-fit: cover;
+          }
+          div{
+            max-width: 22vw;
+            padding:0 4vh;
+            white-space: normal;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center;
+            background-color: rgba(0,0,0,0.74);
+            position: absolute;
+            font-size: 0.9vw;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            transition: transform 300ms;
+            p{
+              font-weight: 100;
+              color:$white;
+              margin-bottom: 1vh;
+            }
+            span{
+
+              display: block;
+              font-weight: 500;
+              margin-bottom: .5vh;
+            }
+            b{
+
+              color:$green;
+              font-weight: 300;
+            }
+
+          }
+        }
+        &:last-child{
+          padding-right: 3vw;
+              flex: 0 0 24.6%;
+        }
+        &:hover{
+          flex: 0 0 25%;
+          div{
+            div{
+              transform:scale(1.2) translateX(4%);
+            }
+          }
+          &:last-child{
+            padding-right: 3vw;
+            flex: 0 0  27.6%;
+          }
+
+
+        }
+      }
+    }
+}

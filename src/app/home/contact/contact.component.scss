@@ -1,0 +1,234 @@
+@import 'vars';
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  outline: none;
+  border: 1px solid transparent;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px $darkGrey inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@include placeholder {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+}
+#contact{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+  position: relative;
+  >div{
+    width:100%;
+    text-align: center;
+    >button{
+      color:#fff;
+      margin-bottom: 14.5vh;;
+    }
+    >span{
+     font-size: 13px;
+     position: absolute;
+     font-weight: 100;
+     bottom: 30px;
+     width: 100%;
+     left: 0;
+    }
+  }
+  h2{
+    margin-bottom: 28px;
+    margin-bottom: 3vh;
+    font-size: 5.2vw;
+    span{
+      font-size: 1.2vw;  font-weight: 300;text-align: center;
+      background: -webkit-linear-gradient(left,#c3ce00 , #fcffbd  );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      margin:0;
+    }
+  }
+  form{
+    width: 50%;
+    margin:0 auto;
+    input{
+      border: 1px solid transparent;
+      transition: all 300ms;
+      color: #fff;
+      padding: 1.6vh;
+      background-color: $darkGrey;
+      display: inline-block;
+      width: calc(50% - 1.6vh);
+      margin-bottom: 2.5vh;
+      font-size: 0.9vw;
+      font-weight: 100;
+      @include placeholder {
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          text-align: center;
+      }
+      &:nth-child(even){
+        margin-left: 2.5vh;
+      }
+      &:focus{
+        border-color:rgba(255, 255, 255, 0.43);
+        @include placeholder {
+           color: transparent;
+        }
+      }
+    }
+    textarea{
+      border:1px solid transparent;
+
+      transition: all 300ms;
+      resize: none;
+      color:#fff;
+      padding: 1.6vh;
+      background-color: $darkGrey;
+
+      height: 12.5vh;
+      width: 100%;
+      font-size: 0.9vw;  font-weight: 100;
+      margin-bottom: 5.1vh;
+      @include placeholder {
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          text-align: center;
+          padding: 3.5vh;
+      }
+      &:focus{
+        border-color:rgba(255, 255, 255, 0.43);
+        @include placeholder {
+           color: transparent;
+        }
+      }
+    }
+
+  }
+
+  ul{
+    margin: 0 auto;
+    width: 50%;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom:4.9vh;
+    li{
+      position: relative;
+      flex: 1;
+      font-size: 0.9vw;
+      a{
+        text-align: right;
+        display: block;
+        img{
+          height: 2.5vh;
+        }
+      }
+      .line{
+        &:before{
+          content: '';
+          display: inline-block;
+          height: 1px;
+          background-color: $green;
+          width: 43px;
+          margin-right: 27px;
+          position: relative;
+          top: -4px;
+        }
+
+      }
+      p{
+        text-align: left;
+        margin-bottom: 2vh;
+        font-size: 19px;
+        font-weight: 100;
+      }
+      div{
+        position: absolute;
+        top: 42px;
+        width: 100%;
+        input{
+
+          border:1px solid transparent;
+
+          transition: all 300ms;
+          color:#fff;
+          padding: 13px;
+          background-color: $darkGrey;
+
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 1.3vh;
+          font-size: 12px;  font-weight: 100;
+          @include placeholder {
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items:center;
+              text-align: center;
+          }
+          &:nth-child(even){
+            margin-left: 2.5vh;
+          }
+          &:focus{
+            border-color:rgba(255, 255, 255, 0.43);
+            @include placeholder {
+               color: transparent;
+            }
+          }
+        }
+        button{
+          color: $white;
+          font-size: 12px;
+          padding: 12px 23px;
+          position: absolute;
+          right: -130px;
+          top: 0;
+        }
+        span{
+          font-size: 11px;  font-weight: 100;
+          text-align: left;
+          display: block;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+}

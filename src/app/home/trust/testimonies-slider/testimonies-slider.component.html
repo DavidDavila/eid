@@ -1,0 +1,20 @@
+<div class="swiper-testimonies">
+  <div class="legend">
+    <a (click)="scrollNumber<=0? '':scroll(-scrollNumber)"><img class="left-arrow custom-cursor"  src="/assets/img/flecha_dcha.png" alt=""></a>
+    <a (click)="scroll(scrollNumber)"><img class="right-arrow custom-cursor"  src="/assets/img/flecha_dcha.png" alt=""></a>
+  </div>
+  <div class="slider">
+    <ul #list>
+      <li *ngFor="let testimony of testimonies" >
+        <div>
+          <img [src]="'/assets/img/' + testimony.background" alt="">
+          <div>
+              <p>{{testimony.text}}</p>
+              <span>{{testimony.name}}</span>
+              <b>{{testimony.jobTitle}}</b>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

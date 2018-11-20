@@ -1,0 +1,92 @@
+<div id="awards" [ngClass]="{'is-in-view': isInView}">
+    <h2>
+        <span>Awards &</span>
+        recognitions
+    </h2>
+    <div>
+        <div class="arrows">
+          <a class="up" (click)="modifyScroll(-200)">  </a>
+          <a class="down" (click)="modifyScroll(200)">  </a>
+        </div>
+        <article  >
+        <ul id="awards-list" #list (scroll)="onScroll($event)"  mouseWheelTiming (mouseFinish)="continueScroll($event)">
+            <li>
+              <div class="image"> <img src="/assets/img/gartner.png" alt=""></div>
+              <div>
+                <span>Top 10 Strategic Technology Trends Worldwide</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/eit_digital.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/OWI.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/regtech.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/finovate.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="image"> <img src="/assets/img/gartner.png" alt=""></div>
+              <div>
+                <span>Top 10 Strategic Technology Trends Worldwide</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/eit_digital.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/OWI.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/regtech.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="image"> <img src="/assets/img/finovate.png" alt=""></div>
+              <div>
+                <span>EU most innovative Scaleup</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nibh magna. Nulla eleifend, massa sed interdum condimentum, leo.</p>
+              </div>
+            </li>
+        </ul>
+        </article>
+        <div class="read-line">
+          <span #scrollBar >  </span>
+        </div>
+    </div>
+</div>
