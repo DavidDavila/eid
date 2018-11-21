@@ -46,9 +46,6 @@ export class ClientComponent implements OnInit {
       (() => {
         setTimeout(()=> {
             this.counter < 90 && this.counter++;
-            console.log(this.counter)
-
-            //self.turnPages(s);
           }, time);
       })();
 

@@ -26,7 +26,6 @@ export class AwardsComponent implements OnInit {
   }
   onScroll($event) {
     let totalHeight = $event.target.scrollHeight - $event.target.offsetHeight;
-    console.log(totalHeight, $event.target.scrollTop )
     let progress = $event.target.scrollTop * 100 / totalHeight;
     this.scrollBar.nativeElement.style.width = progress + '%';/*
     progress === 100? clearTimeout(this.scrolldelay) : this.automaticScroll();*/

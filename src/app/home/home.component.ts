@@ -36,9 +36,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
   mouseFinish(event, reverse){
-    console.log('slide', this.slide)
-    console.log('section', this.section)
-
+    console.log(event.direction)
     if(this.section === 4 && event.target.offsetParent.id === 'awards-list') return false;
 
     if(this.slide < numberOfStepsOnPresentation + 1) {
@@ -46,8 +44,12 @@ export class HomeComponent implements OnInit {
     } else if(this.stopScroll) {
         this.stopScroll = false;
       }else{
-        if(reverse) {
-          event.deltaY  = event.deltaY * -1
+        if(reverse ) {
+          if(event.direction === 8 || event.direction === 16) {
+            event.deltaY  = event.deltaY * -1;          
+          } else{
+            return false;
+          }
         }
         if(event.deltaY > 0) {
           this.home.nativeElement.children.length - 1 > this.section ? this.section++ :'';
@@ -57,6 +59,9 @@ export class HomeComponent implements OnInit {
         let currentElement = this.home.nativeElement.children[this.section];
         this.home.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
         this._homeService.setsection(this.section)
+
+        console.log('slide', this.slide)
+        console.log('section', this.section)
     }
   }
 }

@@ -11,16 +11,16 @@
     </form>
     <button><span>Send message</span></button>
     <ul>
-      <li>
-        <a href=""><img src="/assets/img/linkedIn_logo.png" alt=""></a>
+      <li >
+        <a class="custom-cursor"><img src="/assets/img/linkedIn_logo.png" alt=""></a>
       </li>
-      <li><span class="line">TRY VIDEO ID </span></li>
+      <li ><span class="line custom-cursor">TRY VIDEO ID </span></li>
       <li>
-        <p class="custom-cursor">Sign up newsletter!</p>
-        <div *ngIf="false">
+        <p class="custom-cursor" (click)="showNewsletter = true">Sign up newsletter!</p>
+        <div *ngIf="showNewsletter">
           <input type="text"  placeholder="E-MAIL">
           <button class="small"><span>Subscribe</span></button>
-          <span>¿Quién tiene el control de mis datos?</span>
+          <a>¿Quién tiene el control de mis datos?</a>
         </div>
       </li>
     </ul>

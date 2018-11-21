@@ -40,9 +40,13 @@ export class PresentationComponent implements OnInit {
 
   }
   mouseFinish(event, reverse) {
-    if(reverse) {
-        event.deltaY  = event.deltaY * -1
+    if(reverse ) {
+      if(event.direction === 8 || event.direction === 16) {
+        event.deltaY  = event.deltaY * -1;          
+      } else{
+        return false;
       }
+    }
     if(event.deltaY > 0 && this.slide < numberOfStepsOnPresentation + 1){
       this.slide++;
     } else if(event.deltaY < 0){

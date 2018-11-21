@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from './../../shared/services/home.service';
 
 @Component({
   selector: '[app-features]',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
-
-  constructor() { }
+	public section:number;
+  constructor(
+		private _homeService: HomeService ) {
+		this._homeService.section$.subscribe( val=>{
+			this.section = val
+		});
+  }
 
   ngOnInit() {
   }

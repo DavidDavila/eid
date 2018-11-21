@@ -39,9 +39,10 @@
         right: -10px;
         top: -10px;
         background: linear-gradient(180deg, transparent 5%, #121311 100%);
-
+        z-index: 0;
       }
       >div{
+        z-index: 1;
         height: 60%;
         position: absolute;
         bottom: -2px;
@@ -56,6 +57,9 @@
           bottom: 43px;
           h3{
             font-size: 30px;  font-weight: 600; text-align: center;margin-bottom: 19px;
+            opacity:0;
+            transition: transform 200ms cubic-bezier(1,.4,.4,1) 50ms, opacity 200ms linear 50ms;
+            transform:translateY(4vh);
           }
           p{
             font-size: 21px;
@@ -63,13 +67,31 @@
             width:320px;
             margin:0 auto;
             margin-bottom: 38px;
+            opacity: 0;
+            transition: transform 200ms cubic-bezier(1,.4,.4,1) 25ms, opacity 200ms linear 25ms;
+            transform:translateY(4vh);
+          }
+          button{
+            opacity:0;
+            transition: transform 200ms cubic-bezier(1,.4,.4,1) 0ms, opacity 200ms linear 0ms;
+            transform:translateY(4vh);            
+            padding: 1vh 3vw;
+            min-width: 8vw;
+            span{
+              color: #fff;
+            }
           }
           &.no-hover{
             bottom: auto;
             top: 66%;
+            img{
+              opacity: 1;
+              transition: transform 300ms cubic-bezier(1,.4,.4,1) 100ms, opacity 300ms linear 100ms;
+              transform:translateY(0vh);
+            }
           }
-          &.hover{
-            opacity: 0;
+          &.hover{          
+           
           }
         }
       }
@@ -81,11 +103,31 @@
         >div{
           div{
             &.no-hover{
-            opacity: 0;
+            img{
+              opacity: 0;
+              transition: transform 300ms cubic-bezier(1,.4,.4,1) 0ms, opacity 300ms linear 0ms;
+              transform:translateY(-4vh);
+            }
 
             }
             &.hover{
+             h3{
+            
+              opacity:1;
+              transition: transform 300ms cubic-bezier(1,.4,.4,1) 300ms, opacity 300ms linear 400ms;
+              transform:translateY(0vh);
+            }
+            p{
+              
               opacity: 1;
+              transition: transform 350ms cubic-bezier(1,.4,.4,1) 350ms, opacity 350ms linear 450ms;
+              transform:translateY(0vh);
+            }
+            button{
+              opacity:1;
+              transition: transform 400ms cubic-bezier(1,.4,.4,1) 400ms, opacity 400ms linear 500ms;
+              transform:translateY(0vh);
+            }
             }
           }
         }
