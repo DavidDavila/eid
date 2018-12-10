@@ -1,0 +1,107 @@
+@import 'vars';
+
+#post{
+  overflow-y: auto;
+  max-height: 100vh;
+  min-height: 100vh;
+  padding-top: 107px;
+  text-align: center;
+  h1{
+    height: 100vh;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 8.2vh;
+    >div{
+
+      width: 70%;
+      font-weight: 600;
+      font-size: 3.7vw;
+      margin-bottom: 2.2vh;
+    }
+    span{
+          display: block;
+          margin: 0 auto;
+          width: 9px;
+          height: 9px;
+          background: $green;
+          border-radius: 50%;
+          margin-bottom: 2.6vh;
+          position: relative;
+          &:after{
+            position: absolute;
+            content: '';
+            left:-18px;
+            width: 9px;
+            height: 9px;
+            background: $green;
+            border-radius: 50%;
+          }
+          &:before{
+            position: absolute;
+            content: '';
+            right:-18px;
+            width: 9px;
+            height: 9px;
+            background: $green;
+            border-radius: 50%;
+          }
+
+        }
+    p{
+      font-size: 1.2vw;
+    }
+  }
+  section{
+    background-color: #fff;
+    padding: 7.9vh 15vw;
+    display: flex;
+    margin: 0 auto;
+    >aside{
+      flex:3;
+
+    }
+    >article{
+
+      text-align: left;
+      flex:6;
+      color: $black;
+      ::ng-deep *{
+        line-height: 1.8;
+      }
+      ::ng-deep p{
+        font-size:0.95vw;
+        padding-bottom: 1vw;
+      }
+      ::ng-deep strong,::ng-deep b{
+        font-weight: bold;
+      }
+      ::ng-deep a{
+        color: $green;
+      }
+      ::ng-deep h1{
+
+        font-size: 1.3vw;
+        &:after,&:before{
+          display: none;
+        }
+      }
+      ::ng-deep h2{
+        margin-top: 1vw;
+        font-size: 1.15vw;
+        &:after,&:before{
+          display: none;
+        }
+      }
+    }
+    >div{
+      flex:3;
+
+    }
+
+  }
+}

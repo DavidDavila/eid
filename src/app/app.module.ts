@@ -6,10 +6,7 @@ import { ParticlesModule } from 'angular-particle';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
-import * as Hammer from 'hammerjs';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -29,11 +26,7 @@ import { PresentationService } from './shared/services/presentation.service';
 import { MouseWheelTimingDirective } from './shared/directives/mouse-wheel-timing.directive';
 import { HomeService } from './shared/services/home.service';
 
-export class HammerConfig extends HammerGestureConfig {
- overrides = <any>{
-   'swipe': { direction: Hammer.DIRECTION_ALL }
- };
-}
+
 
 @NgModule({
   declarations: [
@@ -55,6 +48,7 @@ export class HammerConfig extends HammerGestureConfig {
 
   ],
   imports: [
+    HttpModule,
     BrowserAnimationsModule,
     ParticlesModule,
     HttpClientModule,
@@ -63,10 +57,6 @@ export class HammerConfig extends HammerGestureConfig {
     AppRoutingModule
   ],
   providers: [
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: HammerConfig
-    },
     PresentationService,
     HomeService
   ],

@@ -33,7 +33,7 @@ html body{
 }
 h2{
   position:relative;
-  font-size: 55px;
+  font-size: 2.85vw;
   font-weight: 500;
   >span{
     color: $green;
@@ -107,6 +107,7 @@ h2{
   span{
     position: relative;
     z-index: 1;
+    color:#fff;
   }
   &:after{
     transition: opacity 300ms;

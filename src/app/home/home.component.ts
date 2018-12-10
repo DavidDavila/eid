@@ -31,12 +31,24 @@ export class HomeComponent implements OnInit {
       val === numberOfStepsOnPresentation + 1 && this.slide !== val ? this.stopScroll = true : '';
       this.slide = val;
     })
+
   }
 
   ngOnInit() {
+    if(isPlatformBrowser(this._platformId)){
+      let mc = new Hammer(this.home.nativeElement);
+      mc.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 1,
+        velocity:0.1
+      });
+      mc.on("swipeup swipedown", ((ev)=> {
+        this.mouseFinish(ev, true)
+      }).bind(this));
+    }
   }
   mouseFinish(event, reverse){
-    console.log(event.direction)
+
     if(this.section === 4 && event.target.offsetParent.id === 'awards-list') return false;
 
     if(this.slide < numberOfStepsOnPresentation + 1) {
@@ -46,7 +58,7 @@ export class HomeComponent implements OnInit {
       }else{
         if(reverse ) {
           if(event.direction === 8 || event.direction === 16) {
-            event.deltaY  = event.deltaY * -1;          
+            event.deltaY  = event.deltaY * -1;
           } else{
             return false;
           }
@@ -60,8 +72,8 @@ export class HomeComponent implements OnInit {
         this.home.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
         this._homeService.setsection(this.section)
 
-        console.log('slide', this.slide)
-        console.log('section', this.section)
+
+
     }
   }
 }

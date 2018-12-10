@@ -21,11 +21,17 @@ function setEnvironment(){
 export const numberOfStepsOnPresentation:number = 2;
 
 export const VIDEO_TIMMINGS:any =  {
-   start: 1.9,
-   frontStart:4,
-   frontEnd: 10.5,
-   backStart:10.5,
-   backEnd: 17.5,
+   all: [1,1275],
+   standBy:[1276,1636],
+   frontLoop:[1638,1736],
+   backLoop:[1738,1908],
+   backToFront:[2075,2509],
+   smileToBack: [1910,2074],
+   frontToStandBy:[2510,2769],
+   frontStart:453,
+   frontEnd: 453,
+   backStart:758,
+   backEnd: 758,
    smileStart:17.5,
    smileEnd: 26
 }

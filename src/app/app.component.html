@@ -1,7 +1,7 @@
 <div class="cursor" #cursor></div>
 <main #main>
   <header>
-    <img id="logo" src="/assets/img/logo.png">
+    <a [routerLink]="['/']"><img class="custom-cursor" id="logo" src="/assets/img/logo.png"></a>
     <div app-menu></div>
   </header>
 	<router-outlet></router-outlet>

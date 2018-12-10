@@ -8,6 +8,8 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
 	},
+  { path: 'blog', loadChildren: './blog/blog.module#BlogModule'},
+
   {
     path: '**',
     redirectTo: '',

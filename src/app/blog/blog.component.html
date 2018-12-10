@@ -1,0 +1,42 @@
+<section id="blog">
+  <header app-blog-categories>
+  </header>
+  <article class="postsList" *ngFor="let section of sections, let sectionIndex = index">
+    <ng-container *ngFor="let post of section, let postIndex = index" >
+      <div  *ngIf="(post?.media?.media_details?.sizes?.medium?.source_url)" >
+        <a [routerLink]="[post.id]" (click)="setPost(sectionIndex, postIndex)" [ngStyle]="{'backgroundImage': 'url(' + (post?.media?.media_details?.sizes?.medium?.source_url) + ')'}">
+          <div  class="custom-cursor">
+            <h3 class="custom-cursor">{{post?.title?.rendered}}</h3>
+            <span class="custom-cursor"></span>
+            <p class="custom-cursor">{{post?.date_gmt | date:'d/M/yy'}}</p>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+  </article>
+  <button (click)="_blogService.nextPosts()"><span class="custom-cursor"> LOAD MORE POSTS </span></button>
+  <section id="popular">
+    <h2 class="bottom-60">Most popular</h2>
+    <ul>
+      <li *ngFor="let post of sticky">
+        <div>
+          <a class="custom-cursor">
+            <img *ngIf="post?.media?.media_details?.sizes?.medium_large?.source_url" [src]="post?.media?.media_details?.sizes?.medium_large?.source_url" alt="">
+            <h3>{{post?.title?.rendered}}</h3>
+            <span>{{post?.date_gmt | date:'d/M/yy'}}</span>
+            <p [innerHTML]="post?.excerpt?.rendered"></p>
+            <ul>
+              <li *ngFor="let tag of post?.tagNames">
+                rfg<a>{{tag?.name}}</a></li>
+            </ul>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
+
+
+
+
+

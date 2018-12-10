@@ -74,7 +74,7 @@
           button{
             opacity:0;
             transition: transform 200ms cubic-bezier(1,.4,.4,1) 0ms, opacity 200ms linear 0ms;
-            transform:translateY(4vh);            
+            transform:translateY(4vh);
             padding: 1vh 3vw;
             min-width: 8vw;
             span{
@@ -90,8 +90,8 @@
               transform:translateY(0vh);
             }
           }
-          &.hover{          
-           
+          &.hover{
+
           }
         }
       }
@@ -99,7 +99,7 @@
         width: 27%;
         height: 100%;
         background-size: auto 100%;
-
+        background-blend-mode: overlay;
         >div{
           div{
             &.no-hover{
@@ -112,13 +112,13 @@
             }
             &.hover{
              h3{
-            
+
               opacity:1;
               transition: transform 300ms cubic-bezier(1,.4,.4,1) 300ms, opacity 300ms linear 400ms;
               transform:translateY(0vh);
             }
             p{
-              
+
               opacity: 1;
               transition: transform 350ms cubic-bezier(1,.4,.4,1) 350ms, opacity 350ms linear 450ms;
               transform:translateY(0vh);

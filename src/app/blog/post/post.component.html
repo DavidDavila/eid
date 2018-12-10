@@ -1,0 +1,19 @@
+<article id="post">
+  <nav app-blog-categories></nav>
+  <h1 [ngStyle]="{'backgroundImage': 'url(' + (post?.media?.media_details?.sizes?.large ? post?.media?.media_details?.sizes?.large?.source_url : post?.media?.media_details?.sizes?.full?.source_url) + ')'}">
+    <div [innerHTML]="post?.title.rendered"></div>
+    <span></span>
+    <p>{{post?.date_gmt | date:'d/M/yy'}}</p>
+  </h1>
+  <section>
+    <aside>
+      <span>Share</span>
+    </aside>
+    <article>
+      <div [innerHTML]="post?.content?.rendered"> </div>
+    </article>
+    <div>
+
+    </div>
+  </section>
+</article>
