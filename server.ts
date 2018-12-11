@@ -16,8 +16,8 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
-const DIST_FOLDER = join(process.cwd(), 'dist');
+const PORT = process.env.PORT || 8080;
+const DIST_FOLDER = join(process.cwd(), './');
 
 // Our index.html we'll use as our template
 const template = readFileSync(join(DIST_FOLDER, 'eidWeb', 'index.html')).toString();
