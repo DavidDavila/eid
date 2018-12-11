@@ -1,0 +1,106 @@
+@import 'vars';
+#smile-id{
+
+  max-height: 100vh;
+  overflow:hidden;
+  >article{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &#presentation{
+      >div{
+        padding: 4vw;
+        width: 50%;
+        display: inline-block;
+
+        &.img{
+         text-align: right;
+        }
+        &.text{
+          img{
+            margin-bottom: 5.4vh;
+            width: 13vw;
+          }
+          h2{
+            font-size: 41px;  font-weight: 300;
+            margin-bottom: 7.6vh;
+          }
+        }
+      }
+    }
+    &#unique{
+      flex-direction: column;
+      h2{
+         transform: translateY(0vh);
+
+        font-size: 6vw;
+        transition: font-size 600ms cubic-bezier(1,.4,.4,1) 800ms, transform 700ms cubic-bezier(1,.4,.4,1) 800ms;
+        span{
+          transition: all 600ms cubic-bezier(1,.4,.4,1) 800ms;
+
+        }
+      }
+      >div{
+        transform: translateX(3vw);
+        display: flex;
+        position: absolute;
+        width: 70%;
+        height: 80vh;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        >div.video{
+
+          height: 50%;
+          position: relative;
+          >video{
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+          }
+          &:after{
+            pointer-events: none;
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: -20px;
+            height: 100%;
+            width: calc(100% - 100px);
+            border: 1px solid $green;
+          }
+
+        }
+        >div.desc{
+         p{
+          font-size: 24px;  font-weight: 300;
+          margin-bottom: 5.1vh;
+         }
+        }
+        >div{
+          padding: 0 50px;
+          flex:6;
+        }
+      }
+      &.active{
+        h2{
+          transform: translateY(-32vh);
+          font-size: 60px;
+          span{
+            font-size: 34px;
+          }
+        }
+        >div{
+          transform: translateX(0vw);
+
+          transition: opacity 600ms cubic-bezier(1,.4,.4,1) 900ms, transform 700ms cubic-bezier(1,.4,.4,1) 800ms;
+          opacity: 1;
+
+        }
+      }
+
+    }
+  }
+}

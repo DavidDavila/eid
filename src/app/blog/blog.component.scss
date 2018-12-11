@@ -76,7 +76,7 @@
       }
     }
 
-    &:nth-child(odd){
+    &:nth-child(even){
       div{
         &:nth-child(1) {
           grid-row: 1/ 2;
@@ -141,7 +141,7 @@
         }
       }
     }
-    &:nth-child(even){
+    &:nth-child(odd){
       div{
         &:nth-child(1) {
           grid-row: 1/ 3;
@@ -206,7 +206,6 @@
     margin-bottom: 11.6vh;
   }
   #popular {
-    background-color: red;
     .bottom-60{
       margin-bottom: 6.1vh;
     }
@@ -219,7 +218,9 @@
           background-color: rgba(48,48,48,.68);
           margin: 1vw;
           height: 100%;
-          div{
+          >a{
+
+            display: block;
             padding: 2.2vw 1.8vw;
             img{
               width: 100%;
@@ -263,6 +264,7 @@
         }
       }
     }
+
   }
 
 }

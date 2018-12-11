@@ -61,8 +61,38 @@
     padding: 7.9vh 15vw;
     display: flex;
     margin: 0 auto;
+    flex-wrap: wrap;
+    >nav{
+      flex:0 100%;
+      button{
+       font-size: 18px;
+         font-weight: 600;
+        >span{
+          color:$black;
+        }
+         border: 1px solid #b5bf03;
+         padding: 19px 13px;
+         text-shadow: none;
+         background: transparent;
+         text-transform: uppercase;
+        &.left{
+          float: left;
+        }
+        &.right{
+          float: right;
+        }
+
+      }
+
+    }
     >aside{
       flex:3;
+      span{
+        text-transform: uppercase;
+        font-size: 16px;
+        color:$green;
+        margin-bottom: 1.4vh;
+      }
 
     }
     >article{
@@ -97,10 +127,44 @@
           display: none;
         }
       }
+      ul.tag{
+        margin: 4.8vh 0;
+        text-align: left;
+        li{
+          margin: 0 0.6vw;
+          display: inline-block;
+          a{
+            color:$black;
+            border: 1px solid $black;
+            border-radius: 30px;
+            padding: 0.2vw 1vw;
+            font-size: 0.65vw;
+            text-transform: uppercase;
+          }
+        }
+      }
     }
     >div{
       flex:3;
 
+    }
+    h3{
+      font-size: 40px;  font-weight: 500;
+      color: $green;
+      margin-bottom: 2vh;
+    }
+    .related-list{
+      li{
+        width: 33%;
+        background-color: #eee;
+        border-radius: 50%;
+        width:10.8vw;
+        height:10.8vw;
+        display: inline-block;
+        &:nth-child(2){
+          margin: 0 1vw;
+        }
+      }
     }
 
   }

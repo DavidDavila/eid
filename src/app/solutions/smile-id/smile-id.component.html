@@ -1,0 +1,31 @@
+<section id="smile-id" mouseWheelTiming #smileId (mouseFinish)="mouseFinish($event)">
+  <article id="presentation">
+    <div class="img">
+      <img src="/assets/img/IMG_MV.png" alt="">
+    </div>
+    <div class="text">
+      <img src="/assets/img/smileid.png" alt="">
+      <h2>The New Standard for Face Biometrics</h2>
+      <button><span>Try it!</span></button>
+    </div>
+  </article>
+  <article id="unique" [ngClass]="{'active' : section > 0}">
+    <h2>Unique in market
+      <span>Reliable identity registration</span>
+    </h2>
+    <div>
+      <div class="video">
+        <video  controls="false" autoplay loop width="320" height="240" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="desc">
+        <p>A diferencia de otras soluciones basadas en la biometría facial como Face ID, Smile ID aporta una confianza absoluta sobre la identidad de las personas gracias a los procesos de registro previos con VideoID.</p>
+        <button>
+          <span>Try it!</span>
+        </button>
+      </div>
+    </div>
+  </article>
+</section>

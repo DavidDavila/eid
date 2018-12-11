@@ -1,6 +1,8 @@
+
 <section id="blog">
   <header app-blog-categories>
   </header>
+  <router-outlet></router-outlet>
   <article class="postsList" *ngFor="let section of sections, let sectionIndex = index">
     <ng-container *ngFor="let post of section, let postIndex = index" >
       <div  *ngIf="(post?.media?.media_details?.sizes?.medium?.source_url)" >
@@ -27,7 +29,7 @@
             <p [innerHTML]="post?.excerpt?.rendered"></p>
             <ul>
               <li *ngFor="let tag of post?.tagNames">
-                rfg<a>{{tag?.name}}</a></li>
+                <a>{{tag?.name}}</a></li>
             </ul>
           </a>
         </div>

@@ -11,9 +11,25 @@
     </aside>
     <article>
       <div [innerHTML]="post?.content?.rendered"> </div>
+      <ul class="tag">
+        <li *ngFor="let tag of post?.tagNames">
+          <a>{{tag?.name}}</a></li>
+      </ul>
+
+      <h3>Related Post</h3>
+      <ul class="related-list">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </article>
     <div>
 
     </div>
+    <nav>
+      <button class="left"><span>Previous Post</span></button>
+      <button class="right"><span>Next Post</span></button>
+    </nav>
   </section>
+
 </article>

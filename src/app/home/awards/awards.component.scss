@@ -79,6 +79,20 @@
         transform: rotate(180deg);
       }
       .down{
+        position: relative;
+        &:after{
+          content: '';
+          background-image: url('/assets/img/media_elipse.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          position: absolute;
+         width: 31px;
+         height: 45px;
+         bottom: -100%;
+         left: -100%;
+
+        }
       }
     }
     article{

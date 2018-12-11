@@ -23,9 +23,8 @@ import { TestimoniesSliderComponent } from './home/trust/testimonies-slider/test
 import { ContactComponent } from './home/contact/contact.component';
 import { AwardsComponent } from './home/awards/awards.component';
 import { PresentationService } from './shared/services/presentation.service';
-import { MouseWheelTimingDirective } from './shared/directives/mouse-wheel-timing.directive';
 import { HomeService } from './shared/services/home.service';
-
+import { SharedModule } from './shared/modules/shared.module';
 
 
 @NgModule({
@@ -44,10 +43,10 @@ import { HomeService } from './shared/services/home.service';
     TestimoniesSliderComponent,
     ContactComponent,
     AwardsComponent,
-    MouseWheelTimingDirective,
 
   ],
   imports: [
+    SharedModule,
     HttpModule,
     BrowserAnimationsModule,
     ParticlesModule,

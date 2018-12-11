@@ -9,3 +9,41 @@
     overflow:hidden ;
   }
 }
+h2{
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 2.5vw);
+    border-radius: 50%;
+    border: 1px solid #b5bf03;
+    width: 9vw;
+    height: 9vw;
+    z-index: -1;
+    transform: scale(0);
+    animation-name: ripple;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+    animation-fill-mode: forwards;
+    //box-shadow: 0 0 50px 0px $green;
+  }
+  &:before{
+    content: '';
+     position: absolute;
+     top: 0;
+     left: calc(50% - 2.5vw);
+     border-radius: 50%;
+     border: 1px solid #b5bf03;
+     width: 9vw;
+     height: 9vw;
+     z-index: -1;
+     transform: scale(0);
+     animation-name: rippled;
+     animation-duration: 4s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+     animation-fill-mode: forwards;
+     animation-delay: 750ms;
+     //box-shadow: 0 0 20px 5px $green;
+  }}
