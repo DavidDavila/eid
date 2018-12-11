@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./smile-id.component.scss']
 })
 export class SmileIdComponent implements OnInit {
-  private section:number = 0;
+  public section:number = 0;
   @ViewChild('smileId') smileId: ElementRef;
 
   constructor() { }
