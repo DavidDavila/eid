@@ -111,7 +111,6 @@ export class VideoComponent implements OnInit, AfterViewInit {
       switch (this.step) {
         case 0:
           if(frame >= VIDEO_TIMMINGS.standBy[1]){
-
             this.videoController.seekTo({ frame: VIDEO_TIMMINGS.standBy[0] })
           }
           // code...

@@ -1,8 +1,12 @@
 <div id="presentation" #presentation [ngClass]="{'intro' : this.slide === 0}" (swipe)="mouseFinish($event, true)"  mouseWheelTiming [disableScroll]="disableScroll" (mouseFinish)="mouseFinish($event, false)">
   <h2 [ngClass]="{'hide':this.slide !== 0}">
-    <img  src="/assets/img/videoID.png" alt="">
+    <img  src="/assets/img/VideoID.png" alt="">
     <span>Face to machine user identification</span>
   </h2>
   <div id="slider" app-slider [slide]="slide"></div>
+</div>
+<div id="sello">
+  <b>UNIQUE</b>
+  <span>IN THE MARKET</span>
 </div>
 <div id="videoContainer" (disableScroll)="disableScroll = $event" [ngClass]="{'not-intro' : this.slide !== 0 }"  app-video></div>

@@ -37,13 +37,15 @@ h2{
   font-weight: 500;
   >span{
     color: $green;
+    margin: 0 auto;
     margin-top: 0.3vh;
 
+    width: max-content;
     font-size: 42px;
     display: block;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
-    background: -webkit-linear-gradient(left, #26CAC2 32%, $green 58%);
+    background: -webkit-linear-gradient(left, $green 0%, #5aeaf3 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
   }
@@ -60,9 +62,9 @@ h2{
   font-weight: 500;
   border-width: 1px;
   border-style: solid;
-  -moz-border-image: -moz-linear-gradient(left bottom, #26CAC2  0%, $green 100%);
-  -webkit-border-image: -webkit-linear-gradient(left bottom, #26CAC2  0%, $green 100%);
-  border-image: linear-gradient(to right top, #26CAC2  0%, $green 100%);
+  -moz-border-image: -moz-linear-gradient(left bottom, #5aeaf3  0%, $green 100%);
+  -webkit-border-image: -webkit-linear-gradient(left bottom, #5aeaf3  0%, $green 100%);
+  border-image: linear-gradient(to right top, #5aeaf3  0%, $green 100%);
   border-image-slice: 1;
   transition: all 300ms;
   position: relative;
@@ -82,7 +84,7 @@ h2{
     left: 0;
     width: calc(100% + 1px);
     height: 100%;
-    background: linear-gradient(45deg, #26CAC2 0%, $green 100%);
+    background: linear-gradient(45deg, #5aeaf3 0%, $green 100%);
     opacity: 0;
 
 

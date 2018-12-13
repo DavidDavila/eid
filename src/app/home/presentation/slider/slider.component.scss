@@ -1,7 +1,8 @@
 @import 'vars';
-.group{
+
+.group {
   position: absolute;
-  width: 25%;
+  width: 40%;
   height: 100%;
   right: 3%;
 
@@ -10,69 +11,100 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  &:nth-child(even){
-    justify-content: flex-end;
 
-    right: auto;
-    left: 13%;
-  }
-  >div{
+  >div {
     flex: 0 100%;
-    div.slide{
 
-      margin-bottom: 10vh;
+    div.slide {
       display: block;
-      img{
+
+      img {
         width: 74px;
         margin-bottom: 25px;
         transform: translateY(14vh);
         opacity: 0;
-        transition: all  600ms cubic-bezier(1,.4,.4,1) 300ms;
+        transition: all 600ms cubic-bezier(1, .4, .4, 1) 300ms;
       }
-      h3{
-        font-size: 25px;
-        font-weight: 600;
-        color:$green;
+
+      h2 {
+        font-size: 117px;
+        font-weight: 500;
         margin-bottom: 13px;
         transform: translateY(14vh);
         opacity: 0;
-        transition: all  600ms cubic-bezier(1,.4,.4,1) 250ms;
+        transition: all 600ms cubic-bezier(1, .4, .4, 1) 250ms;
+
+        >span {
+          margin-left: 0;
+
+          &.inline-block {
+            display: inline-block;
+          }
+        }
+
+        >ul {
+          margin-top: 2.2vh;
+          line-height: 0;
+
+          li {
+
+            margin-right: 30px;
+            line-height: 1;
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 300;
+
+            img {
+              height: 18px;
+              width: auto;
+              float: left;
+              margin-right: 10px;
+            }
+          }
+        }
       }
-      p{
+
+      p {
         color: #9C9C9B;
         font-size: 17px;
         font-weight: 300;
         line-height: 22px;
         transform: translateY(14vh);
         opacity: 0;
-        transition: all  600ms cubic-bezier(1,.4,.4,1) 200ms;
-        dt{
+        transition: all 600ms cubic-bezier(1, .4, .4, 1) 200ms;
+
+        dt {
           display: table-cell;
           float: left;
           margin-right: 10px;
         }
-        dd{
-          color:$white;
+
+        dd {
+          color: $white;
           display: table-cell;
         }
       }
+
       &:nth-child(2) {
-        img{
-          transition: all  600ms cubic-bezier(1,.4,.4,1) 150ms;
+        img {
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 150ms;
         }
-        h3{
-          transition: all  600ms cubic-bezier(1,.4,.4,1) 100ms;
+
+        h3 {
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 100ms;
         }
-        p{
-          transition: all  600ms cubic-bezier(1,.4,.4,1) 50ms;
+
+        p {
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 50ms;
         }
       }
     }
-    #try-it{
-      button{
-        color:$white;
+
+    #try-it {
+      button {
+        color: $white;
         background-color: transparent;
-        padding:11px 71px;
+        padding: 11px 71px;
         text-transform: uppercase;
         font-size: 30px;
         font-weight: 600;
@@ -80,66 +112,75 @@
         cursor: pointer;
         border: 1px solid #FFFFFF;
         transform: translateY(14vh);
-                opacity: 0;
-                transition: all  600ms cubic-bezier(1,.4,.4,1) 450ms;
+        opacity: 0;
+        transition: all 600ms cubic-bezier(1, .4, .4, 1) 450ms;
       }
-      p{
-        color:$white;
+
+      p {
+        color: $white;
         font-size: 20px;
         font-weight: 500;
         transform: translateY(14vh);
-                opacity: 0;
-                transition: all  600ms cubic-bezier(1,.4,.4,1) 550ms;
+        opacity: 0;
+        transition: all 600ms cubic-bezier(1, .4, .4, 1) 550ms;
       }
     }
 
   }
-  &.active{
-    >div{
-      div.slide{
-        img{
+
+  &.active {
+    >div {
+      div.slide {
+        img {
           transform: translateY(0vh);
-          transition: all  500ms cubic-bezier(1,.4,.4,1) 1000ms;
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 400ms;
           opacity: 1;
         }
-        h3{
+
+        h2 {
           transform: translateY(0vh);
-          transition: all  500ms cubic-bezier(1,.4,.4,1) 1050ms;
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 450ms;
           opacity: 1;
         }
-        p{
+
+        p {
 
           transform: translateY(0vh);
-          transition: all  500ms cubic-bezier(1,.4,.4,1) 1100ms;
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 500ms;
           opacity: 1;
         }
+
         &:nth-child(2) {
-          img{
-            transition: all  600ms cubic-bezier(1,.4,.4,1) 1850ms;
+          img {
+            transition: all 600ms cubic-bezier(1, .4, .4, 1) 1250ms;
           }
-          h3{
-            transition: all  600ms cubic-bezier(1,.4,.4,1) 1900ms;
+
+          h3 {
+            transition: all 600ms cubic-bezier(1, .4, .4, 1) 1300ms;
           }
-          p{
-            transition: all  600ms cubic-bezier(1,.4,.4,1) 1950ms;
+
+          p {
+            transition: all 600ms cubic-bezier(1, .4, .4, 1) 1350ms;
           }
         }
       }
-      #try-it{
-        button{
+
+      #try-it {
+        button {
 
           transform: translateY(0vh);
-          transition: all  600ms cubic-bezier(1,.4,.4,1) 1450ms;
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 1450ms;
           opacity: 1;
 
         }
-        p{
-          color:$white;
+
+        p {
+          color: $white;
 
           font-size: 20px;
           font-weight: 500;
           transform: translateY(0vh);
-          transition: all  600ms cubic-bezier(1,.4,.4,1) 1550ms;
+          transition: all 600ms cubic-bezier(1, .4, .4, 1) 1550ms;
           opacity: 1;
         }
       }
@@ -147,4 +188,3 @@
 
   }
 }
-

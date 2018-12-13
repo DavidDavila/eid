@@ -21,8 +21,8 @@ function setEnvironment(){
 export const numberOfStepsOnPresentation:number = 2;
 
 export const VIDEO_TIMMINGS:any =  {
-   all: [1,1275],
-   standBy:[1276,1636],
+   all: [110,1275],
+   standBy:[1276,1637],
    frontLoop:[1638,1736],
    backLoop:[1738,1908],
    backToFront:[2075,2509],
