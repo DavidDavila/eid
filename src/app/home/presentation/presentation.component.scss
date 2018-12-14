@@ -9,8 +9,9 @@
   width:100%;
   overflow: hidden;
   h2{
+
     position: absolute;
-    width: 50%;
+    width: 60%;
     text-align: center;
     img{
       transform: translateY(0vh);
@@ -63,12 +64,12 @@
 }
 #sello{
 
-  transform: rotate(-13deg);
+
   position: absolute;
   z-index: 2;
   width: max-content;
-  top: 27vh;
-  left: 7vw;
+  bottom: 185px;
+  right: 49px;
   text-align: center;
   b{
     display: block;
@@ -104,5 +105,42 @@
       background: linear-gradient(135deg, $green 0%, #5aeaf3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#61b5bf03',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+  }
+}
+footer{
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  padding:15px 40px;
+  padding-right: 0;
+  bottom: 4.4vh;
+  background-color: rgba(48,48,48,.68);
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li{
+      padding-right:48px;
+      a{
+        font-size: 15px;  font-weight: 500;
+        text-transform: uppercase;
+        color:#fff;
+        span{
+          line-height: 15px;
+          height: 1px;
+          width: 37px;
+          background: $green;
+          margin-right: 20px;
+          vertical-align: middle;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .avion{
+    width: 35px;
+  }
+  .linkedIn{
+    width:18px;
   }
 }
