@@ -1,4 +1,13 @@
-<video #video muted="muted" autoplay webkit-playsinline="true" id="videoPlayer"
+<svg class="defs-only">
+            <filter id="chromakey" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+                <feColorMatrix type="matrix"
+                    values="1   0   0   0   0
+                            0   1   0   0   0
+                            0   0   1   0   0
+                            1.5 -2  1.5 0   1" />
+            </filter>
+        </svg>
+<video #video muted="muted" class="footage" autoplay webkit-playsinline="true" id="videoPlayer"
   playsinline="true">
     <source src='/assets/video/home8.mp4' type="video/mp4">
   </video>

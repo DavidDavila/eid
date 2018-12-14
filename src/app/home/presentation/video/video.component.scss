@@ -7,4 +7,16 @@ video {
   top: 5%;
   left: 8%;
 }
+.footage {
+width: 100vw;
+height: 100vh;
+filter:  url(#chromakey);
+}
 
+.defs-only {
+position: absolute;
+height: 0;
+width: 0;
+overflow: none;
+left: -100%;
+}
