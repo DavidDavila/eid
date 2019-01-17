@@ -23,6 +23,5 @@
     VideoFrame.prototype.__seek=function(a,b){this.video.paused||this.video.pause();var c=Number(this.get());this.video.currentTime=("backward"===a?c-b:c+b)/this.frameRate+1E-5};VideoFrame.prototype.seekForward=function(a,b){a||(a=1);this.__seek("forward",Number(a));return b?b():!0};VideoFrame.prototype.seekBackward=function(a,b){a||(a=1);this.__seek("backward",Number(a));return b?b():!0};
     VideoFrame.prototype.seekTo=function(a){a=a||{};var b,c=Object.keys(a)[0];if("SMPTE"==c||"time"==c)b=a[c],b=this.toMilliseconds(b)/1E3+0.0010,this.video.currentTime=b;else{switch(c){case "frame":b=this.toSMPTE(a[c]);b=this.toMilliseconds(b)/1E3+0.0010;break;case "seconds":b=Number(a[c]);break;case "milliseconds":b=Number(a[c])/1E3+0.0010}isNaN(b)||(this.video.currentTime=b)}};
   </script>
-
 </body>
 </html>

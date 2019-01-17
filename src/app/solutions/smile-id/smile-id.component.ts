@@ -9,10 +9,16 @@ export class SmileIdComponent implements OnInit {
   public section:number = 0;
   @ViewChild('smileId') smileId: ElementRef;
 
-  constructor() { }
+
+
+  constructor() {
+
+  }
 
   ngOnInit() {
+
   }
+
   mouseFinish(event, reverse){
     if(event.deltaY > 0) {
       this.section++;

@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MouseWheelTimingDirective } from './../directives/mouse-wheel-timing.directive';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    LottieAnimationViewModule.forRoot(),
+
   ],
-  exports: [MouseWheelTimingDirective],
+  exports: [
+    MouseWheelTimingDirective,
+    LottieAnimationViewModule
+  ],
   declarations: [MouseWheelTimingDirective]
 })
 export class SharedModule { }

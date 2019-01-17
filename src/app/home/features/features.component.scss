@@ -30,7 +30,8 @@
       }
       &:nth-child(even){
         margin:10%;
-      }     
+      }
     }
   }
+  ::ng-deep lottie-animation-view div{width: 200px !important;height: 200px !important;}
 }

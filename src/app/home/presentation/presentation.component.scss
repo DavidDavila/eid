@@ -61,6 +61,13 @@
   z-index: -1;
   height: 100%;
   overflow: hidden;
+  ::ng-deep canvas{
+    //background: red;
+    position: absolute;
+    z-index: 5434;
+
+  }
+
   &.not-intro{
   }
 }

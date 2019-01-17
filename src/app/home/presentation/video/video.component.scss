@@ -1,15 +1,20 @@
 video {
-  min-width: 54%;
+      min-width: 54%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 4%;
+    left: -26%;
+  /* min-width: 54%;
   min-height: 100%;
   width: auto;
   height: auto;
   position: absolute;
   top: 5%;
-  left: 8%;
+  left: 8%; */
 }
 .footage {
-width: 100vw;
-height: 100vh;
 filter:  url(#chromakey);
 }
 

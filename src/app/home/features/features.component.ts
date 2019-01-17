@@ -8,14 +8,39 @@ import { HomeService } from './../../shared/services/home.service';
 })
 export class FeaturesComponent implements OnInit {
 	public section:number;
+    public lottieConfig: Object = {};
   constructor(
 		private _homeService: HomeService ) {
 		this._homeService.section$.subscribe( val=>{
-			this.section = val
+			this.section = val;
+      console.log(val)
+      if(val === 3) {
+      /*  this.lottieConfig = {
+            path: '/assets/json/2.json',
+            renderer: 'svg',
+            autoplay: false,
+            loop: false,
+        };*/
+      }
 		});
+
+
+
   }
 
   ngOnInit() {
   }
+  createLottie(name:string) {
+    return this.lottieConfig = {
+        path: '/assets/json/' + name + '.json',
+        renderer: 'svg',
+        autoplay: false,
+        loop: false,
+    };
+  }
+  handleAnimation(anim: any, delay: number) {
+    console.log(anim)
 
+    setTimeout(()=>{anim.play()}, delay);
+  }
 }
