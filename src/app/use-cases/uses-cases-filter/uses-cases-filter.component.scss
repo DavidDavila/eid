@@ -1,0 +1,36 @@
+@import 'mixins';
+h2{
+  font-size: getVh(20px);
+
+  text-align: left;
+  margin-bottom: getVh(15px);
+
+
+  span{
+    padding:0;
+    margin:0;
+    font-size: getVw(30px);
+  }
+}
+ul{
+  padding-bottom:  getVh(20px);
+}
+li{
+
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  font-size: getVw(15px);
+  height: getVh(45px);
+  border: 1px solid rgba(255, 255, 255, .15);
+  a{
+    padding: 0 getVw(25px);
+    display: block;
+    line-height: getVh(45px);
+    width: 100%;
+    &:hover, &.selected{
+      background-color: rgba(48, 48, 48, 0.69);
+    }
+  }
+
+}
