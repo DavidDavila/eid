@@ -1,0 +1,24 @@
+@import 'vars';
+@mixin backgroundWhiteToGray() {
+  background-image: -webkit-linear-gradient(194deg, $whiteSmoke 0%, $white 100%, $white 100%);
+  background-image: -moz-linear-gradient(194deg, $whiteSmoke 0%, $white 100%, $white 100%);
+  background-image: -o-linear-gradient(194deg, $whiteSmoke 0%, $white 100%, $white 100%);
+  background-image: linear-gradient(194deg, $whiteSmoke 0%, $white 100%, $white 100%);
+}
+@mixin backgroundGreenToBlueVertical() {
+  background-image: -webkit-linear-gradient(-20deg, $pearlAqua 0%, $civitanaLight 100%);
+  background-image: -moz-linear-gradient(-20deg, $pearlAqua 0%, $civitanaLight 100%);
+  background-image: -o-linear-gradient(-20deg, $pearlAqua 0%, $civitanaLight 100%);
+  background-image: linear-gradient(-20deg, $pearlAqua 0%, $civitanaLight 100%);
+}
+@function getVw($target) {
+  $vw-context: ($viewportWidth * 0.01);
+  @return ($target / $vw-context) * 1vw;
+}
+@function getVh($target) {
+  $vw-context: ($viewportHeight * 0.01);
+  @return ($target / $vw-context) * 1vh;
+}
+
+$menuWidth: getVw(206px) ;
+$mainWidth: calc(100vw - #{$menuWidth});

@@ -22,13 +22,13 @@ export const numberOfStepsOnPresentation:number = 2;
 
 export const VIDEO_TIMMINGS:any =  {
    all: [110,1275],
-   standBy:[1276,1637],
-   frontLoop:[1638,1736],
+   standBy:[36,108],
+   frontLoop:[504,544],
    backLoop:[1738,1908],
    backToFront:[2075,2509],
    smileToBack: [1910,2074],
    frontToStandBy:[2510,2769],
-   frontStart:453,
+   frontStart:108,
    frontEnd: 453,
    backStart:758,
    backEnd: 758,

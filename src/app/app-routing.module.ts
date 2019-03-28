@@ -10,6 +10,7 @@ const routes: Routes = [
 	},
   { path: 'solutions', loadChildren: './solutions/solutions.module#SolutionsModule'},
   { path: 'blog', loadChildren: './blog/blog.module#BlogModule'},
+  { path: 'use-cases', loadChildren: './use-cases/use-cases.module#UseCasesModule'},
 
   {
     path: '**',

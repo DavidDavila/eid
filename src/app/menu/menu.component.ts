@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   public menuOptions: Array<any> = [
-    {name:'Solutions',goTo:'solutions'},
-    {name:'Developers',goTo:'Developers'},
-    {name:'Use cases',goTo:'Use'},
-    {name:'Resources',goTo:'Resources'},
-    {name:'About',goTo:'About'},
-  ]
+    {name: 'Solutions', goTo: 'solutions'},
+    {name: 'Developers', goTo: 'Developers'},
+    {name: 'Use cases', goTo: 'use-cases'},
+    {name: 'Resources', goTo: 'Resources'},
+    {name: 'About', goTo: 'About'},
+  ];
   constructor() { }
 
   ngOnInit() {

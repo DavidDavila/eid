@@ -40,7 +40,7 @@ export class FeaturesComponent implements OnInit {
   }
   handleAnimation(anim: any, delay: number) {
     console.log(anim)
-
+    anim.setSpeed(1.5);
     setTimeout(()=>{anim.play()}, delay);
   }
 }

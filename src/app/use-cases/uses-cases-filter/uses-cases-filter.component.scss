@@ -1,32 +1,32 @@
 @import 'mixins';
 h2{
-  font-size: getVh(20px);
+  font-size: getVh(34px);
 
   text-align: left;
-  margin-bottom: getVh(15px);
+  margin-bottom: getVh(20px);
 
 
   span{
     padding:0;
     margin:0;
-    font-size: getVw(30px);
+    font-size: getVw(34px);
   }
 }
 ul{
-  padding-bottom:  getVh(20px);
+  padding-bottom:  getVh(40px);
 }
 li{
 
   font-weight: 300;
   text-align: center;
   width: 100%;
-  font-size: getVw(15px);
-  height: getVh(45px);
+  font-size: getVw(19px);
+  height: getVh(65px);
   border: 1px solid rgba(255, 255, 255, .15);
   a{
     padding: 0 getVw(25px);
     display: block;
-    line-height: getVh(45px);
+    line-height: getVh(65px);
     width: 100%;
     &:hover, &.selected{
       background-color: rgba(48, 48, 48, 0.69);

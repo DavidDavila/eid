@@ -1,1 +1,42 @@
+@import 'mixins';
+article{
+  padding: getVh(129px) getVw(104px) getVh(69px);
+  h3{
+    text-align: center;
+    font-size:  getVw(57px);
+    font-weight: 500;
+    margin-bottom: getVh(15px);
+  }
+  p{
+    text-align: center;
+    margin-bottom: getVh(30px);
+    font-size: getVw(19px);
+    line-height: 1.4;
+    font-weight: 100;
+    width: 58%;
+    margin:0 auto getVh(60px);
+  }
+  ul{
+    width: 100%;
+    display: flex;
+    li{
+      width: 33%;
+      vertical-align: top;
+      border-width: 1px;
+      border-style: solid;
+      -o-border-image: linear-gradient(to right top, #b5bf03 0%, #35b9c2 100%);
+      border-image: linear-gradient(to right top, #b5bf03 0%, #35b9c2 100%);
+      border-image-slice: 1;
+      video{
+        position: relative;
+        left:getVw(15px);
+        top:getVw(15px);
+        width: 100%;
+      }
+      &:nth-child(even){
+        margin: 0 getVw(55px);
 
+      }
+    }
+  }
+}
