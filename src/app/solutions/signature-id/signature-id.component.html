@@ -1,0 +1,91 @@
+<section id="signature-id" mouseWheelTiming #signatureId (mouseFinish)="mouseFinish($event,false)">
+  <article id="presentation">
+    <div class="img">
+        <video  muted="muted" src="/assets/signatureid/movil_signatureid.mp4" autoplay loop>
+        </video>
+    </div>
+    <div class="text">
+      <img src="/assets/img/signatureid.png" alt="">
+      <h2>The Definitive e-Signature</h2>
+      <button><span>Try it!</span></button>
+    </div>
+  </article>
+  <article id="onmichanel">
+    <h2> Omnichannel experience
+        <span> Your costumer can sign everywhere, any device and choosing his/her preferred factor of authentication </span>
+    </h2>
+    <div>
+        <div class="list">
+          <dl class="first">
+            <dt>  Online</dt>
+            <dd>
+              <ul>
+                <li><img src="/assets/signatureid/grafo.gif" alt="">
+                <p>Grafo</p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+        </div>
+        <div class="list">
+          <dl  class="second">
+            <dt>  Offline</dt>
+            <dd>
+              <ul>
+                <li><img src="/assets/signatureid/otp.gif" alt="">
+                <p>OTP</p>
+                </li>
+                <li><img src="/assets/signatureid/SmileID.gif" alt="">
+                <p>SmileId</p>
+                </li>
+                <li><img src="/assets/signatureid/Recovered.gif" alt="">
+                <p>Personal PIN</p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+
+        </div>
+    </div>
+    <p>A Seamless Experience</p>
+  </article>
+  <article id="legal">
+    <h2> Any legal requirements
+        <span>Signature ID adapts to any legal requirements: eIDAS compliant </span>
+    </h2>
+    <ul>
+      <li>
+        <h3>Simple e-Signature</h3>
+        <p>Low identification operations risk(up to 999 Euros)</p>
+      </li>
+      <li>
+        <h3>Advanced (AES)</h3>
+        <p>Formal identifications. Any level of risk</p>
+      </li>
+      <li>
+        <h3>Qualified (QES)*</h3>
+        <p>Public Admin Level Requirements
+            <span>*Expected Q2 2019</span>
+        </p>
+      </li>
+    </ul>
+    <p>Signature ID is the only advanced e-signature in the market that binds your digital identity to your document </p>
+    <div>
+      <span>eID acts as e-Trust Service Provider regarding eIDAS regulation  </span>
+      <img src="/assets/img/regtech.png" alt="">
+      <img src="/assets/img/regtech.png" alt="">
+    </div>
+  </article>
+  <article id="integrate">
+    <h2> Easy to integrate
+        <span>SignatureID only takes a few minutes to be integrated in your web or mobile apps </span>
+    </h2>
+    <lottie-animation-view *ngIf="section===3"
+           [options]="createLottie('sublime_02')"
+           [width]="100"
+           [height]="100"
+           (animCreated)="handleAnimation($event, 600)">
+     </lottie-animation-view>
+  </article>
+</section>

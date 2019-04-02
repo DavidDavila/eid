@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'reset-css';
 @import 'vars';
+@import 'mixins';
 @keyframes ripple {
     0% {transform: scale(0);opacity: 1;}
     50% {opacity: 1;}
@@ -80,7 +81,7 @@ h2{
     margin-top: 0.3vh;
 
     width: max-content;
-    font-size: 42px;
+    font-size: getVw(42px);
     display: block;
     font-weight: 400;
     text-align: center;
