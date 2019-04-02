@@ -6,13 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  public menuOptions: Array<any> = [
-    {name: 'Solutions', goTo: 'solutions'},
-    {name: 'Developers', goTo: 'Developers'},
-    {name: 'Use cases', goTo: 'use-cases'},
-    {name: 'Resources', goTo: 'Resources'},
-    {name: 'About', goTo: 'About'},
-  ];
   constructor() { }
 
   ngOnInit() {

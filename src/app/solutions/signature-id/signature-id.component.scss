@@ -13,11 +13,13 @@
     align-items: center;
     &#presentation{
       >div{
-        padding: 4vw;
+        padding: 3vw;
         width: 50%;
         display: inline-block;
 
         &.img{
+
+         width: 37%;
          text-align: right;
          video{
             width: 35vh;

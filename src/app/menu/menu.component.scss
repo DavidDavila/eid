@@ -1,10 +1,11 @@
 @import 'vars';
+@import 'mixins';
 #menu{
   display: flex;
   width: calc(20% + 250px);
   float: right;
   color: $white;
-  font-size: 15px;
+  font-size: getVw(17px);
   font-weight: 300;
   li{
     flex: 1;
@@ -12,11 +13,103 @@
     justify-content: center;
     align-items: center;
     line-height: 49px;
-    a{
+    >a{
       color: $white;
       transition: all 300ms;
+      section{
+        padding: getVw(43px);
+        padding-top: getVw(64px);
+        z-index: -1;
+        position: fixed;
+        top:0;
+        left: 0;
+        height: getVw( 399px);
+        width: 100%;
+        background: rgba(48, 48, 48, 0.55);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: 300ms all cubic-bezier(1,.4,.4,1);
+        &:after{
+          content: '';
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          height: 200vh;
+          background: rgba(0, 0, 0, 0.55);
+          opacity: 0;
+          pointer-events: none;
+          filter: blur(10px);
+          transition: 300ms all cubic-bezier(1,.4,.4,1) 0ms;
+        }
+        ::ng-deep app-footer footer{
+
+    bottom: 1.4vh;
+          background-color: transparent;
+        }
+        ul{
+
+          display: flex;
+          width: 65%;
+          height: getVw(109px);
+
+          li{
+            height: 100%;
+
+            align-items: flex-start;
+            flex:6;
+            a{
+              text-align: center;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              img{
+                object-position: top;
+                object-fit: contain;
+                height: getVw(31px);
+                margin-bottom: getVw(40px);
+              }
+              p{
+                font-size: getVw(16px);
+
+                line-height: 1.4;
+                text-align: center;
+              }
+            }
+            &:nth-child(2){
+              margin: 0 getVw(139px);
+              a{
+
+                img{
+                    margin-bottom: getVw(20px);
+
+                  height: getVw(54px);
+                }
+              }
+            }
+          }
+        }
+      }
       &:hover{
         color: $green;
+        section{
+          transform: translateY(0%);
+          opacity: 1;
+          transition: 600ms all cubic-bezier(1,.4,.4,1);
+           &:after{
+            opacity: 1;
+            transition: 300ms all cubic-bezier(1,.4,.4,1) 100ms;
+           }
+
+        }
       }
     }
     &.icon{

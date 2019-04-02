@@ -15,13 +15,7 @@ const routes: Routes = [
   {
     path: 'signatureId',
     component: SignatureIdComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'signatureId',
-    pathMatch: 'full'
   }
-
 ]
 
 @NgModule({
