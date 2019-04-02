@@ -1,4 +1,6 @@
 @import 'vars';
+@import 'mixins';
+
 #smile-id{
 
   max-height: 100vh;
@@ -110,6 +112,109 @@
         }
       }
 
+    }
+
+
+    &#omnichanel{
+      flex-direction: column;
+      h2{
+        text-align: center;
+        transform: translateY(-14vh);
+        font-size: 60px;
+
+        span{
+          font-size: 34px;
+        }
+      }
+
+      div.flex.row{
+        display: flex;
+        flex-direction: row;
+      }
+
+    }
+
+    &#security{      
+      flex-direction: column;
+
+      h2{
+        text-align: center;
+        transform: translateY(-10vh);
+        font-size: 60px;
+
+        span{
+          font-size: 34px;
+        }
+      }
+
+      div.flex.row{   
+        width: 100vw;     
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        &:nth-of-type(1){
+          margin-bottom: getVh(30px);
+        }
+
+        div.lottie{          
+          width: 30%;
+          text-align: center;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          &.one{
+            ::ng-deep lottie-animation-view{
+              div{
+                width: getVw(188px) !important;
+              }
+            }
+          }
+          &.two{
+            ::ng-deep lottie-animation-view{
+              div{
+                width: getVw(173px) !important;
+              }
+            }
+          }
+          &.three{
+            ::ng-deep lottie-animation-view{
+              div{
+                width: getVw(200px) !important;
+              }
+            }
+          }
+          &.four{
+            ::ng-deep lottie-animation-view{
+              div{
+                width: getVw(196px) !important;
+              }
+            }
+          }
+          &.five{
+            ::ng-deep lottie-animation-view{
+              div{
+                width: getVw(156px) !important;
+              }
+            }
+          }
+          
+          ::ng-deep lottie-animation-view{
+            height: 100%;
+          }
+          
+          p{
+           font-size: getVw(24px);
+           position: absolute;
+           width: 100%;
+           text-align: center;
+           bottom: 0;
+          }
+        }
+      }
     }
   }
 }
