@@ -1,0 +1,20 @@
+
+@import 'mixins';
+
+button.getDemo{
+  display: none;
+  position: fixed;
+  bottom: getVh(113px);    
+  right: 0;
+  transform: translateX(1px);
+  display: flex;
+  flex-direction: column;
+
+  span{
+    text-align: center;
+
+    &:nth-of-type(1){
+      font-size: getVw(50px);    
+    }
+  }
+}

@@ -1,0 +1,48 @@
+
+@import 'vars';
+@import 'mixins';
+app-circle-img{
+
+}
+div.circle{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: getVw(247px);
+	height: getVw(247px);
+	background: $jungleGreen;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+
+	&.withMargin{
+    	margin-right: getVw(94.56px);
+	}
+
+	img {
+		&.one{
+			width: getVw(106px);
+		}
+		&.two{
+			width: getVw(297px);
+		}
+		&.three{
+			width: getVw(283px);
+		}
+		&.four{
+			width: getVw(166px);
+		}
+		&.five{
+			width: getVw(185px);
+		}
+	}
+
+	p{
+		font-size: getVw(24px);
+		font-weight: 300;
+		color: rgba(255, 255, 255, 1);
+		text-align: center;
+		position: absolute;
+		bottom: getVh(-65px);
+	}
+}

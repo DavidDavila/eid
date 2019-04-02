@@ -6,15 +6,26 @@ import { SmileIdComponent } from './smile-id/smile-id.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'signatureId'
-  },
-  {
-    path: 'smileId',
-    component: SmileIdComponent
-  },
-  {
-    path: 'signatureId',
-    component: SignatureIdComponent
+    component: SolutionsComponent,
+    children: [
+      {
+        path:'',
+        redirectTo:'smileId'
+      },
+      {
+        path: 'smileId',
+        component: SmileIdComponent
+      },
+      {        
+        path: 'signatureId',
+        component: SignatureIdComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'smileId',
+        pathMatch: 'full'
+      }
+    ]
   }
 ]
 

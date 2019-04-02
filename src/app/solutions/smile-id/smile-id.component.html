@@ -1,4 +1,5 @@
 <section id="smile-id" mouseWheelTiming #smileId (mouseFinish)="mouseFinish($event,false)">
+  
   <article id="presentation">
     <div class="img">
       <img class="gold" src="/assets/img/MV_GOLD.png" alt="">
@@ -10,6 +11,7 @@
       <button><span>Try it!</span></button>
     </div>
   </article>
+
   <article id="unique" [ngClass]="{'active' : section > 0}">
     <h2>Unique in market
       <span>Reliable identity registration</span>
@@ -23,11 +25,69 @@
       </div>
       <div class="desc">
         <p>A diferencia de otras soluciones basadas en la biometría facial como Face ID, Smile ID aporta una confianza absoluta sobre la identidad de las personas gracias a los procesos de registro previos con VideoID.</p>
-        <button>
-          <span>Try it!</span>
-        </button>
       </div>
-
     </div>
   </article>
+
+  <article id="omnichanel">
+    <h2>Omnichannel experience
+      <span>The only market solution that can be consumed from any device <br>
+            and in any channel, respecting the privacy of the clients</span>
+    </h2>
+
+    <div class="flex row">
+      <app-circle-img *ngFor="let circle of circles"  [data]="circle"></app-circle-img>
+    </div>
+  </article>
+
+  <article id="security">
+    <h2>Security in seconds
+      <span>Lorem ipsum dolor sit amet dolor sit amet</span>
+    </h2>
+
+    <div class="flex row" *ngIf="section == 3">   
+      <div class="lottie one" >  
+          <lottie-animation-view
+            [options]="createLottie('icone_livenessdetection_smileid_v2')"
+            (animCreated)="handleAnimation($event, 750)">
+          </lottie-animation-view>
+          <p>Liveness detection</p>
+      </div>
+
+      <div class="lottie two">  
+          <lottie-animation-view
+            [options]="createLottie('icone_videorecording_smileid')"
+            (animCreated)="handleAnimation($event, 1500)">
+          </lottie-animation-view>
+          <p>Video recording</p>
+      </div>
+
+      <div class="lottie three">  
+          <lottie-animation-view
+            [options]="createLottie('icone_antispoofing_smileid')"
+            (animCreated)="handleAnimation($event, 2250)">
+          </lottie-animation-view>
+          <p>Anti-Spoofing</p>
+      </div>
+    </div>
+
+    <div class="flex row" *ngIf="section == 3">
+      <div class="lottie four">  
+          <lottie-animation-view
+            [options]="createLottie('icone_100accurate_smileid')"
+            (animCreated)="handleAnimation($event, 3000)">
+          </lottie-animation-view>
+          <p>100% accurate</p>
+      </div>
+
+      <div class="lottie five">  
+          <lottie-animation-view
+            [options]="createLottie('icone_dynamiccapchatembeded_smileid')"
+            (animCreated)="handleAnimation($event, 3750)">
+          </lottie-animation-view>
+          <p>Dynamic captcha embedded</p>      
+      </div>
+    </div>
+  </article>
+
 </section>
