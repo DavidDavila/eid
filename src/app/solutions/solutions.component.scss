@@ -1,4 +1,8 @@
+
+@import 'mixins';
+
 button.getDemo{
+  display: none;
   position: fixed;
   bottom: getVh(113px);    
   right: 0;
