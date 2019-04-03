@@ -2,7 +2,7 @@
 @import 'mixins';
 #menu{
   display: flex;
-  width: calc(20% + 250px);
+  width: 50%;
   float: right;
   color: $white;
   font-size: getVw(17px);
@@ -12,20 +12,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 49px;
+    height: 25px;
     >a{
       color: $white;
       transition: all 300ms;
       section{
         padding: getVw(43px);
-        padding-top: getVw(64px);
+        padding-top: getVw(50px);
         z-index: -1;
         position: fixed;
         top:0;
         left: 0;
         height: getVw( 399px);
         width: 100%;
-        background: rgba(48, 48, 48, 0.55);
+        background: rgba(48, 48, 48, 0.95);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -74,8 +74,8 @@
               img{
                 object-position: top;
                 object-fit: contain;
-                height: getVw(31px);
-                margin-bottom: getVw(40px);
+                height: getVw(61px);
+                margin-bottom: getVw(20px);
               }
               p{
                 font-size: getVw(16px);
@@ -84,7 +84,7 @@
                 text-align: center;
               }
             }
-            &:nth-child(2){
+            /* &:nth-child(2){
               margin: 0 getVw(139px);
               a{
 
@@ -94,7 +94,7 @@
                   height: getVw(54px);
                 }
               }
-            }
+            } */
           }
         }
       }

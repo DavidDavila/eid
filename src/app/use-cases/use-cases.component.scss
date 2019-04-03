@@ -31,11 +31,17 @@
     }
   }
   article{
+    position: relative;
+    right: -17px;
+    overflow-y: scroll;
     height: 100%;
     background-color: rgba(48, 48, 48, .69);
-    flex:7;
+    flex: 0 calc(70% + 17px) ;
   }
   aside{
+
+    position: relative;
+    right: -17px;
     padding: getVh(54px);
     padding-top: 85px;
     height: 100%;
