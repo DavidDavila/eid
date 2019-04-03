@@ -1,0 +1,13 @@
+ <nav (mousemove)="mouseMove($event)" (mouseleave)="mouseleave()">
+  <ul>
+    <li><a (click)="active = 'EN'" [ngClass]="{'active': active === 'EN'}"class="active">EN</a></li>
+    <li><a (click)="active = 'ES'" [ngClass]="{'active': active === 'ES'}">ES</a></li>
+  </ul>
+  <div class="borders" #borders>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
