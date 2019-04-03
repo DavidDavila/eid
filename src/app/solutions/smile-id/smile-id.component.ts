@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SolutionsService } from './../../shared/services/solutions.service';
 
 import { CircleImgComponent } from './circle-img/circle-img.component';
 
@@ -45,7 +46,10 @@ export class SmileIdComponent implements OnInit {
 
   @ViewChild('smileId') smileId: ElementRef;
 
-  constructor() {
+  constructor(
+    private _solutionsService: SolutionsService
+    ) {    
+    this._solutionsService.setsection(this.section);
   }
 
   ngOnInit() {
@@ -70,8 +74,10 @@ export class SmileIdComponent implements OnInit {
     if(event.deltaY > 0) {
       this.section++;
     } else {
-    this.section-- ;
+      this.section-- ;
     }
+
+    this._solutionsService.setsection(this.section);
 
     console.log('section: ', this.section)
     let currentElement = this.smileId.nativeElement.children[this.section];
