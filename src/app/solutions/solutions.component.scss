@@ -4,8 +4,8 @@
 button.getDemo{
   display: none;
   position: fixed;
-  bottom: getVh(113px);    
-  right: 0;
+  bottom: getVh(113px);
+  right: -1px;
   transform: translateX(1px);
   display: flex;
   flex-direction: column;
@@ -17,15 +17,15 @@ button.getDemo{
     transform: translateX(0vw);
     transition: transform 600ms cubic-bezier(1,.4,.4,1);
   }
- 
+
   span{
     text-align: center;
 
     i{
-      font-size: getVw(50px);   
+      font-size: getVw(50px);
       line-height: 0;
       transform: translateY(getVw(20px));
-      display: block; 
+      display: block;
     }
   }
 }

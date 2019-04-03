@@ -2,23 +2,26 @@
 @import 'mixins';
 #menu{
   display: flex;
-  width: 50%;
   float: right;
   color: $white;
   font-size: getVw(17px);
   font-weight: 300;
+
+    justify-content: flex-end;
   li{
-    flex: 1;
+    margin-left: getVw(60px);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25px;
+    height: 35px;
     >a{
-      color: $white;
+      color: #fff;
+      flex: 1;
       transition: all 300ms;
+      height: 100%;
       section{
         padding: getVw(43px);
-        padding-top: getVw(50px);
+        padding-top: getVw(30px);
         z-index: -1;
         position: fixed;
         top:0;
@@ -50,7 +53,7 @@
         }
         ::ng-deep app-footer footer{
 
-    bottom: 1.4vh;
+           bottom: 1.4vh;
           background-color: transparent;
         }
         ul{
@@ -114,6 +117,10 @@
     }
     &.icon{
       flex: 0;
+    }
+    &.lang{
+       position: relative;
+       top: -9px;
     }
   }
 }
