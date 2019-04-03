@@ -27,7 +27,8 @@ div.circle{
 			width: getVw(297px);
 		}
 		&.three{
-			width: getVw(283px);
+			width: getVw(283px);			
+			transform: translateY(3.3vh);
 		}
 		&.four{
 			width: getVw(166px);

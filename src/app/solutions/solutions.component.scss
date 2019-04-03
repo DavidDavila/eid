@@ -9,12 +9,23 @@ button.getDemo{
   transform: translateX(1px);
   display: flex;
   flex-direction: column;
+  padding: getVw(25px) getVw(29px);
 
+  transform: translateX(30vw);
+
+  &.visible{
+    transform: translateX(0vw);
+    transition: transform 600ms cubic-bezier(1,.4,.4,1);
+  }
+ 
   span{
     text-align: center;
 
-    &:nth-of-type(1){
-      font-size: getVw(50px);    
+    i{
+      font-size: getVw(50px);   
+      line-height: 0;
+      transform: translateY(getVw(20px));
+      display: block; 
     }
   }
 }
