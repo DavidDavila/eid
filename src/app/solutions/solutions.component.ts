@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SolutionsService } from './../shared/services/solutions.service';
 
 @Component({
   selector: 'app-solutions',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solutions.component.scss']
 })
 export class SolutionsComponent implements OnInit {
+  public btnClass: any;
 
-  constructor() { }
+  constructor(
+  	private _solutionsService: SolutionsService 
+  ) { 
+  	this._solutionsService.section$.subscribe( val=>{
+  	  this.btnClass = val > 0 ? 'visible' : '';
+  	});
+  }
 
   ngOnInit() {
   }
+
+
 
 }

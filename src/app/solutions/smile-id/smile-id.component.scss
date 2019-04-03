@@ -139,7 +139,7 @@
 
       h2{
         text-align: center;
-        transform: translateY(-10vh);
+        transform: translateY(-7vh);
         font-size: 60px;
 
         span{
@@ -155,49 +155,64 @@
         justify-content: center;
 
         &:nth-of-type(1){
-          margin-bottom: getVh(30px);
+          margin-bottom: 6.3vh;
         }
 
-        div.lottie{          
-          width: 30%;
+        div.lottie{   
+
           text-align: center;
           height: 100%;
           display: flex;
           flex-direction: column;
-          position: relative;
+          position: relative; 
+
+          ::ng-deep lottie-animation-view{
+            display: flex;
+          }
 
           &.one{
             ::ng-deep lottie-animation-view{
               div{
-                width: getVw(188px) !important;
+                width: getVw(108px) !important;
               }
             }
           }
-          &.two{
+          &.two{            
+            margin: 0 15vw;
             ::ng-deep lottie-animation-view{
               div{
-                width: getVw(173px) !important;
+                width: getVw(93px) !important;
+              }
+              p{                
+                transform: translateX(-0.5vw);
               }
             }
           }
           &.three{
             ::ng-deep lottie-animation-view{
               div{
-                width: getVw(200px) !important;
+                width: getVw(120px) !important;                
+                transform: scale(1.28);
+                //transform: scale(1.28) translateY(13%);
               }
             }
           }
-          &.four{
+          &.four{            
+            transform: translateX(-3.3vw);
             ::ng-deep lottie-animation-view{
               div{
-                width: getVw(196px) !important;
+                width: getVw(116px) !important;
+              }
+              p{                
+                transform: translateX(-0.5vw);
               }
             }
           }
-          &.five{
+          &.five{            
+            transform: translateX(8.5vw);
             ::ng-deep lottie-animation-view{
               div{
-                width: getVw(156px) !important;
+                width: getVw(76px) !important;
               }
             }
           }
@@ -208,7 +223,8 @@
           
           p{
            font-size: getVw(24px);
-           position: absolute;
+           font-weight: 300;
+           margin-top: 2vh;
            width: 100%;
            text-align: center;
            bottom: 0;

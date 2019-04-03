@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SolutionsService } from './../../shared/services/solutions.service';
 
 @Component({
   selector: 'app-signature-id',
@@ -13,8 +14,10 @@ export class SignatureIdComponent implements OnInit {
 
 
 
-  constructor() {
-
+  constructor(
+    private _solutionsService: SolutionsService
+  ) {
+    this._solutionsService.setsection(this.section);
   }
 
   ngOnInit() {
@@ -40,6 +43,9 @@ export class SignatureIdComponent implements OnInit {
     } else {
     this.section-- ;
     }
+
+    this._solutionsService.setsection(this.section);
+
     let currentElement = this.signatureId.nativeElement.children[this.section];
     this.signatureId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
   }
