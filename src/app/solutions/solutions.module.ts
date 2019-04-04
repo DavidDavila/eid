@@ -8,6 +8,7 @@ import { SolutionsComponent } from './solutions.component';
 import { SharedModule } from './../shared/modules/shared.module';
 import { SignatureIdComponent } from './signature-id/signature-id.component';
 import { CircleImgComponent } from './smile-id/circle-img/circle-img.component';
+import { VideoIdComponent } from './video-id/video-id.component';
 
 
 @NgModule({ 
@@ -16,6 +17,6 @@ import { CircleImgComponent } from './smile-id/circle-img/circle-img.component';
     SharedModule,
     SolutionsRoutingModule
   ],
-  declarations: [SmileIdComponent, SolutionsComponent, CircleImgComponent, SignatureIdComponent]
+  declarations: [SmileIdComponent, SolutionsComponent, CircleImgComponent, SignatureIdComponent, VideoIdComponent]
 })
 export class SolutionsModule { }
