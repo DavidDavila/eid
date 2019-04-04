@@ -232,6 +232,45 @@ select:-webkit-autofill:focus {
         }
       }
 
+      p.sigup{
+        position: relative;
+        z-index: 2;
+      }
+      div.newsletter{
+        
+        input{
+          transform: translateY(-6vh);
+          opacity:0;
+          transition: transform 500ms ease-in 0ms, opacity 500ms ease-in 0ms;
+        }
+        a{
+          transform: translateY(-6vh);
+          opacity:0;
+          transition: transform 500ms ease-in 150ms, opacity 500ms ease-in 150ms;
+        }
+        button{
+          transform: translateY(-6vh);
+          opacity:0;
+          transition: transform 500ms ease-in 300ms,  opacity 500ms ease-in 300ms;
+        }
+        
+        &.visible{
+          input, a, button{            
+            transform: translateY(0);
+            opacity:1;
+          }
+          input{
+            transition: transform 500ms ease-in 150ms, opacity 500ms ease-in 150ms;
+          }
+          a{
+            transition: transform 500ms ease-in 0ms, opacity 500ms ease-in 0ms;
+          }
+          button{
+            transition: transform 500ms ease-in 300ms,  opacity 500ms ease-in 300ms;
+          }
+        }
+      }
+
     }
   }
 }

@@ -16,8 +16,8 @@
       </li>
       <li ><span class="line custom-cursor">TRY VIDEO ID </span></li>
       <li>
-        <p class="custom-cursor" (click)="showNewsletter = true">Sign up newsletter!</p>
-        <div *ngIf="showNewsletter">
+        <p class="custom-cursor sigup" (click)="showNewsletter = !showNewsletter">Sign up newsletter!</p>
+        <div [ngClass]="{'visible' : showNewsletter}"  class="newsletter">
           <input type="text"  placeholder="E-MAIL">
           <button class="small"><span>Subscribe</span></button>
           <a>¿Quién tiene el control de mis datos?</a>
