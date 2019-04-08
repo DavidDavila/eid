@@ -7,14 +7,48 @@
     </div>
     <div class="text">
       <img src="/assets/img/videoID.png" alt="">
-      <h2>The New Standard for Face Biometrics</h2>
+      <h2>Face to Machine Customer Identification</h2>
       <button><span>Try it!</span></button>
     </div>
   </article>
 
-  <article id="unique" [ngClass]="{'active' : section > 0}">
+  <article id="3in1" [ngClass]="{'active' : section > 0}">
     asdasdasdasd
   </article>
 
+  <article id="experience" [ngClass]="{'active' : section > 0}">
+    <h2>Best Customer Experience</h2>
+    <div class="flex row" *ngIf="section == 2">   
+          <div class="lottie one" >  
+              <lottie-animation-view
+                [options]="createLottie('icone_security_videoid')"
+                (animCreated)="handleAnimation($event, 750)">
+              </lottie-animation-view>
+              <p>Real Time Security</p>
+              <br>
+              <span>More than 21 validations<br>in real time</span>
+          </div>
+
+          <div class="lottie two">  
+              <lottie-animation-view
+                [options]="createLottie('icone_inseconds_videoid')"
+                (animCreated)="handleAnimation($event, 1500)">
+              </lottie-animation-view>
+              <p>In seconds</p>        
+              <br>     
+              <span>VideoID takes<br>only 20 seconds</span>
+          </div>
+
+          <div class="lottie three">  
+              <lottie-animation-view
+                [options]="createLottie('icone_acuracy_videoid')"
+                (animCreated)="handleAnimation($event, 2250)">
+              </lottie-animation-view>
+              <p>Accuracy</p>
+              <br>
+              <span class="big">98%</span>
+          </div>
+        </div>
+  </article>
   
 </section>

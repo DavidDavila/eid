@@ -9,6 +9,8 @@ import { SolutionsService } from './../../shared/services/solutions.service';
 export class VideoIdComponent implements OnInit {
   public section:number = 0;
 
+  public lottieConfig: Object = {};
+
   @ViewChild('videoId') videoId: ElementRef;
 
   constructor(
@@ -40,5 +42,13 @@ export class VideoIdComponent implements OnInit {
     this.videoId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
   }
 
+  createLottie(name:string) {
+    return this.lottieConfig = {
+        path: '/assets/json/' + name + '.json',
+        renderer: 'svg',
+        autoplay: false,
+        loop: false,
+    };
+  }
 
 }
