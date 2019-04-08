@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { SolutionsService } from './../../shared/services/solutions.service';
 })
 export class VideoIdComponent implements OnInit {
   public section:number = 0;
+
+  @ViewChild('videoId') videoId: ElementRef;
 
   constructor(
     private _solutionsService: SolutionsService
@@ -34,8 +36,8 @@ export class VideoIdComponent implements OnInit {
     this._solutionsService.setsection(this.section);
 
     console.log('section: ', this.section)
-    let currentElement = this.smileId.nativeElement.children[this.section];
-    this.smileId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+    let currentElement = this.videoId.nativeElement.children[this.section];
+    this.videoId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
   }
 
 
