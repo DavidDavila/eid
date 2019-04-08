@@ -19,17 +19,19 @@
         display: inline-block;
 
         &.img{
-         text-align: right;
-         .gold{
+          width: 40%;
+          text-align: right;
+          .gold{
             width: 34%;
-         }
-         .blue{ 
+          }
+          .blue{ 
             width: 29%;
             position: relative;
             top: -1.8vw;
-         }
+          }
         }
         &.text{
+          width: 60%;
           img{
             margin-bottom: 5.4vh;
             width: 13vw;
@@ -60,10 +62,6 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-
-        &:nth-of-type(1){
-          margin-bottom: 6.3vh;
-        }
 
         div.lottie{  
           text-align: center;
@@ -97,8 +95,7 @@
           &.three{
             ::ng-deep lottie-animation-view{
               div{
-                width: getVw(120px) !important;                
-                transform: scale(1.28);
+                width: getVw(120px) !important;   
               }
             }
           }
@@ -119,9 +116,12 @@
 
             font-size: getVw(34px);
 
-            background: -webkit-linear-gradient(left,#c3ce00 , #fcffbd  );
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
+            background: -webkit-linear-gradient(left, #b5bf03 0%, #5aeaf3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
           }
 
           span{
@@ -136,6 +136,20 @@
 
       }
   
+    }
+
+    &#customer{      
+      flex-direction: column;
+
+      h2{
+        text-align: center;
+        transform: translateY(-7vh);
+        font-size: 60px;
+
+        span{
+          font-size: 34px;
+        }
+      }
     }
   }
 }

@@ -3,7 +3,6 @@
   <article id="presentation">
     <div class="img">
       <img class="gold" src="/assets/img/MV_GOLD.png" alt="">
-      <img class="blue" src="/assets/img/MV_BLUE.png" alt="">
     </div>
     <div class="text">
       <img src="/assets/img/videoID.png" alt="">
@@ -51,4 +50,15 @@
         </div>
   </article>
   
+  <article id="customer" [ngClass]="{'active' : section > 0}">
+    <h2>Your Customer in the core of your strategy
+      <span>Lorem ipsum dolor sit amet dolor sit amet</span>
+    </h2>
+
+    <div class="flex row" *ngIf="section == 3">
+      ¿?
+    </div> 
+  </article>
+
+
 </section>
