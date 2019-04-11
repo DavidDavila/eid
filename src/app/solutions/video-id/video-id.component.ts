@@ -106,8 +106,15 @@ export class VideoIdComponent implements OnInit {
   }
 
   goTo(subSection){
+
+    if(subSection > this.subSection){      
+      this.items.nativeElement.classList.add('top')
+    }else{
+      this.items.nativeElement.classList.remove('top')
+    }
+
     this.subSection = subSection;
-    this.animNav(this.subSection)
+    this.animNav(this.subSection);
   }
 
   animNav(numSection){
