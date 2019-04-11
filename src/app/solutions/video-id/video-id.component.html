@@ -1,6 +1,7 @@
 <section id="video-id" mouseWheelTiming #videoId (mouseFinish)="mouseFinish($event,false)">
   
   <article id="presentation">
+
     <div class="img">
       <img class="gold" src="/assets/img/MV_GOLD.png" alt="">
     </div>
@@ -11,8 +12,90 @@
     </div>
   </article>
 
-  <article id="3in1" [ngClass]="{'active' : section > 0}">
-    asdasdasdasd
+  <article id="subSection" [ngClass]="{'active' : section > 0}" #videoIdSubSection >
+      
+
+<!--    <div class="nav {{classNav}}">   
+   <h2>Universal
+     <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
+   </h2>   
+ 
+   <div class="nav-container" >
+
+     <div class="nav-item {{item1}}" >
+       <div class="nav-item-overflow">
+         <div class="nav-item-label"><span>Any</span><br>device</div>
+       </div>
+       <div class="nav-item-line"></div>
+       <div class="nav-item-line-label"><span>We Are</span> Black Rainbow</div>
+       <div class="nav-item-hit"></div>
+     </div>
+
+     <div class="nav-item {{item2}}">
+       <div class="nav-item-overflow">
+         <div class="nav-item-label"><span>Any</span><br>country</div>
+       </div>
+       <div class="nav-item-line"></div>
+       <div class="nav-item-line-label"><span>What</span> We Do</div>
+       <div class="nav-item-hit"></div>
+     </div>
+
+     <div class="nav-item {{item3}}">
+       <div class="nav-item-overflow">
+         <div class="nav-item-label"><span>Any</span><br>channel</div>
+       </div>
+       <div class="nav-item-line"></div>
+       <div class="nav-item-line-label"><span>What</span> We Create</div>
+       <div class="nav-item-hit"></div>
+     </div>
+
+   </div>
+ </div> -->
+<div class="nav"> 
+  <h2>Universal
+    <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
+  </h2>   
+
+  <div class="nav-container"> 
+    <div class="items top" #items>
+
+      <div class="item three {{item3}}">
+        <div class="label">Any<br>channel</div>
+      </div>
+
+      <div class="item two {{item2}}">
+        <div class="label">Any<br>country</div>
+      </div>
+
+      <div class="item one {{item1}}">
+        <div class="label">Any<br>device</div>
+      </div>
+
+    </div>
+
+    <div class="lines  {{lines}}"> 
+        <div class="line {{line1}}">  </div>
+        <div class="line {{line2}}">  </div>
+        <div class="line {{line3}}">  </div>
+    </div>
+  </div>
+</div>
+
+
+    <article class="subarticle one">
+      <div class="flex row">
+        <app-circle-img-vi *ngFor="let circle of circles"  [data]="circle"></app-circle-img-vi>
+      </div>
+    </article>
+
+    <article class="subarticle two">
+      <img src="/assets/img/mapa.png" alt="">
+      <div class="ripple countries">194 <span>countries</span></div>
+      <div class="ripple documents">570 <span>documents</span></div>
+    </article>
+
+    <article class="subarticle three"><p>3333333333333</p></article>
+
   </article>
 
   <article id="experience" [ngClass]="{'active' : section > 0}">
