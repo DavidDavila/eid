@@ -82,12 +82,12 @@
 
     &#presentation{
       >div{
+        //width: 50%;
         padding: 4vw;
-        width: 50%;
         display: inline-block;
 
         &.img{
-          width: 40%;
+          width: 55%;
           text-align: right;
           .gold{
             width: 34%;
@@ -97,9 +97,13 @@
             position: relative;
             top: -1.8vw;
           }
+          video.introsignatureid{
+            width: 100%;
+            display: block;
+          }
         }
         &.text{
-          width: 60%;
+          width: 45%;
           img{
             margin-bottom: 5.4vh;
             width: 13vw;
