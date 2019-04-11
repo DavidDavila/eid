@@ -32,7 +32,7 @@ html body{
   color:$white;
   overflow:hidden;
 }
--div.ripple,
+div.ripple,
 h2.ripple{
   &:after{
     content: '';
@@ -70,7 +70,26 @@ h2.ripple{
      animation-fill-mode: forwards;
      animation-delay: 750ms;
      //box-shadow: 0 0 20px 5px $green;
-  }}
+  }
+}
+
+div.ripple{
+  &:after{
+    left: -15%;
+  }
+  &:before{
+    left: -15%;
+  }
+
+  &.documents{
+    &:after{
+      animation-delay: 900ms;
+    }
+    &:before{
+      animation-delay: 1650ms;
+    }
+  }
+}
 
 h2{
   position:relative;
