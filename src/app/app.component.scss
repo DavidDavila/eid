@@ -21,15 +21,6 @@ header{
 main{
 }
 .cursor{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f369+0,b5bf03+100 */
-  background: #f5f369; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #f5f369 0%, #b5bf03 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #f5f369 0%,#b5bf03 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #f5f369 0%,#b5bf03 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f369', endColorstr='#b5bf03',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  width: 10px;
-  height: 10px;
-  display: block;
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -45,6 +36,7 @@ main{
     height: 10px;
     border-radius: 50%;
     opacity: 0;
+    will-change: transform;
     transition: all 600ms;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f369+0,b5bf03+100&0+0,1+100 */
   background: -moz-radial-gradient(center, ellipse cover, rgba(245,243,105,0) 0%, rgba(255,255,255,.2) 100%); /* FF3.6-15 */

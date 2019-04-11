@@ -19,8 +19,10 @@
   text-decoration: none;
   outline: none;
   line-height: 1.2;
-  cursor: none;
   user-select: none;
+  cursor: url(/assets/img/cursor.png) 3 3,auto !important;
+  cursor: -webkit-image-set(url(/assets/img/cursor.png) 1x, url(/assets/img/cursorx2.png) 2x) 3 3,pointer !important;
+
 
 }
 html{

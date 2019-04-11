@@ -1,0 +1,86 @@
+@import 'mixins';
+@import 'vars';
+@keyframes example {
+  0% {    margin-left: 1vw;}
+  50% {    margin-left:7vw;}
+  100% {    margin-left: 1vw;}
+}
+
+section.slider {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  article{
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    position: absolute;
+    width: 25%;
+    padding: 0 0 0 getVw(160px);
+    h2{
+      transition: 300ms cubic-bezier(1,.4,.4,1);
+
+    }
+    div{
+      transition: 300ms cubic-bezier(1,.4,.4,1);
+      p{
+        font-size: getVw(16px);
+        font-weight: 300;
+        color: rgba(255, 255, 255, 1);
+        text-align: left;
+        line-height: getVw(21px);
+        margin-bottom: getVw(30px);
+      }
+      button{
+        font-size: getVw(16px);
+        padding: getVw(13px) getVw(30px);
+      }
+    }
+  }
+  .open{
+    h2{
+      transform: translateY(-15vh);
+    }
+    div{
+      transform: translateY(25vh);
+      p{
+
+      }
+      button{
+      }
+    }
+  }
+  ul{
+    white-space: nowrap;
+    transform: translateX(30vw);
+    transition: 300ms cubic-bezier(1,.4,.4,1) 0ms;
+
+    li{
+      position: relative;
+      display: inline-block;
+      background: red;
+      width: 24vw;
+      margin: 1vw;
+      height: 16vw;
+
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(1,.4,.4,1);
+      &:nth-child(even){
+        background-color: pink;
+      }
+      &.moving{
+        //animation-name: example;
+      }
+      $elements: 15;
+      @for $i from 0 to $elements {
+        &:nth-child(#{$i + 1}) {
+          animation-duration: $i * 300ms;
+        }
+      }
+    }
+    &.open{
+      transition: 300ms cubic-bezier(1,.4,.4,1) 100ms;
+
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
-
+import { ScrollService } from './shared/services/scroll.service';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
@@ -22,22 +22,22 @@ export class AppComponent implements OnInit {
   @ViewChild('cursor') cursor: ElementRef;
   @ViewChild('main') main: ElementRef;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(private _scrollService:ScrollService, @Inject(PLATFORM_ID) private platformId: Object) { }
   ngOnInit() {
     if (this.showCanvas = isPlatformBrowser(this.platformId)) {
       this.makeCursor()
-      this.makeParticles();
+      //this.makeParticles();
     }
 
 
   }
   makeCursor(){
     this.main.nativeElement.addEventListener('mousemove', ((event)=>{
-      let pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
-      let clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
-      this.cursor.nativeElement.style.top = event.pageY + 'px';
-      this.cursor.nativeElement.style.left = event.pageX + 'px';
       if(this.cursorHoverElements.indexOf(event.path[0].tagName) > -1 || event.path[0].classList.contains('custom-cursor')){
+        let pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
+        let clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
+        this.cursor.nativeElement.style.top = event.pageY + 'px';
+        this.cursor.nativeElement.style.left = event.pageX + 'px';
         this.cursor.nativeElement.classList.add('hover');
       }else{
         this.cursor.nativeElement.classList.remove('hover');
@@ -176,5 +176,8 @@ export class AppComponent implements OnInit {
       },
       "retina_detect": true
     }
+  }
+  onActivate($event) {
+    this._scrollService.setToZero();
   }
 }

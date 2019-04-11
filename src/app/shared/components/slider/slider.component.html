@@ -1,0 +1,26 @@
+<section class="slider" [timeToBlock]="200" mouseWheelTiming (mouseFinish)="mouseFinish($event, true)">
+  <article [ngClass]="{'open': scroll > -1}">
+      <h2>
+        Use Cases
+      </h2>
+      <div>
+        <p>Lorem ispansum dolor sit amet, consectetur adipisicing elit. Quaerat ut eaque</p>
+        <button><span>Explore all use cases</span></button>
+      </div>
+  </article>
+  <ul [ngClass]="{'open': scroll > -1}" #useCases style="transform: translateX(30vw)">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</section>

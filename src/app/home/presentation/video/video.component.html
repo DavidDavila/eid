@@ -1,13 +1,16 @@
-<svg class="defs-only">
+<!-- <svg class="defs-only">
     <filter id="chromakey" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
       <feColorMatrix type="matrix"
-          values="1   0   0   0   0
-                  0   1   0   0   0
-                  0   0   1   0   0
-                  1.5 -2  1.5 0   1" />
+          values="1   1   1   1   1
+                  1   1   1   1   1
+                  1   1   1   1   1
+                  1.5 -2  1.5 0   -1" />
     </filter>
-</svg>
-<video #video muted="muted"  loop class="footage" autoplay webkit-playsinline="true" id="videoPlayer"
+</svg> -->
+<video id="fondo" muted="muted"  loop class="footage" autoplay webkit-playsinline="true"
   playsinline="true">
-    <source src='/assets/video/home8.mp4' >
+    <source src='/assets/video/fondo.mp4'>
+</video>
+<video id="chica"  #video>
+      <source src='/assets/video/chica.mp4'>
 </video>

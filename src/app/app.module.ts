@@ -27,6 +27,7 @@ import { AwardsComponent } from './home/awards/awards.component';
 import { PresentationService } from './shared/services/presentation.service';
 import { HomeService } from './shared/services/home.service';
 import { SharedModule } from './shared/modules/shared.module';
+import { ScrollService } from './shared/services/scroll.service';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { SharedModule } from './shared/modules/shared.module';
     AppRoutingModule
   ],
   providers: [
+    ScrollService,
     PresentationService,
     HomeService
   ],

@@ -1,5 +1,4 @@
-
-<ul id="menu">
+<ul id="menu" [ngClass]="{'short': !scrollZero}">
 
   <li>
     <a>
@@ -54,3 +53,16 @@
     <app-language></app-language>
   </li>
 </ul>
+<div id="bullets" *ngIf="!scrollZero">
+  <div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>

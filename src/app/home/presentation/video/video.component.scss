@@ -1,18 +1,17 @@
-video {
-      min-width: 54%;
-    min-height: 100%;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 4%;
-    left: -26%;
-  /* min-width: 54%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+#fondo {
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+}
+#chica{
+  width: 50vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+
+  z-index: 1;
   position: absolute;
-  top: 5%;
-  left: 8%; */
 }
 .footage {
 filter:  url(#chromakey);
