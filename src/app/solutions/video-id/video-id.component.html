@@ -1,0 +1,147 @@
+<section id="video-id" mouseWheelTiming #videoId (mouseFinish)="mouseFinish($event,false)">
+  
+  <article id="presentation">
+
+    <div class="img">
+      <img class="gold" src="/assets/img/MV_GOLD.png" alt="">
+    </div>
+    <div class="text">
+      <img src="/assets/img/videoID.png" alt="">
+      <h2>Face to Machine Customer Identification</h2>
+      <button><span>Try it!</span></button>
+    </div>
+  </article>
+
+  <article id="subSection" [ngClass]="{'active' : section > 0}" #videoIdSubSection >
+      
+
+<!--    <div class="nav {{classNav}}">   
+   <h2>Universal
+     <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
+   </h2>   
+ 
+   <div class="nav-container" >
+
+     <div class="nav-item {{item1}}" >
+       <div class="nav-item-overflow">
+         <div class="nav-item-label"><span>Any</span><br>device</div>
+       </div>
+       <div class="nav-item-line"></div>
+       <div class="nav-item-line-label"><span>We Are</span> Black Rainbow</div>
+       <div class="nav-item-hit"></div>
+     </div>
+
+     <div class="nav-item {{item2}}">
+       <div class="nav-item-overflow">
+         <div class="nav-item-label"><span>Any</span><br>country</div>
+       </div>
+       <div class="nav-item-line"></div>
+       <div class="nav-item-line-label"><span>What</span> We Do</div>
+       <div class="nav-item-hit"></div>
+     </div>
+
+     <div class="nav-item {{item3}}">
+       <div class="nav-item-overflow">
+         <div class="nav-item-label"><span>Any</span><br>channel</div>
+       </div>
+       <div class="nav-item-line"></div>
+       <div class="nav-item-line-label"><span>What</span> We Create</div>
+       <div class="nav-item-hit"></div>
+     </div>
+
+   </div>
+ </div> -->
+<div class="nav"> 
+  <h2>Universal
+    <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
+  </h2>   
+
+  <div class="nav-container"> 
+    <div class="items top" #items>
+
+      <div class="item three {{item3}}">
+        <div class="label">Any<br>channel</div>
+      </div>
+
+      <div class="item two {{item2}}">
+        <div class="label">Any<br>country</div>
+      </div>
+
+      <div class="item one {{item1}}">
+        <div class="label">Any<br>device</div>
+      </div>
+
+    </div>
+
+    <div class="lines  {{lines}}"> 
+        <div class="line {{line1}}">  </div>
+        <div class="line {{line2}}">  </div>
+        <div class="line {{line3}}">  </div>
+    </div>
+  </div>
+</div>
+
+
+    <article class="subarticle one">
+      <div class="flex row">
+        <app-circle-img-vi *ngFor="let circle of circles"  [data]="circle"></app-circle-img-vi>
+      </div>
+    </article>
+
+    <article class="subarticle two">
+      <img src="/assets/img/mapa.png" alt="">
+      <div class="ripple countries">194 <span>countries</span></div>
+      <div class="ripple documents">570 <span>documents</span></div>
+    </article>
+
+    <article class="subarticle three"><p>3333333333333</p></article>
+
+  </article>
+
+  <article id="experience" [ngClass]="{'active' : section > 0}">
+    <h2>Best Customer Experience</h2>
+    <div class="flex row" *ngIf="section == 2">   
+          <div class="lottie one" >  
+              <lottie-animation-view
+                [options]="createLottie('icone_security_videoid')"
+                (animCreated)="handleAnimation($event, 750)">
+              </lottie-animation-view>
+              <p>Real Time Security</p>
+              <br>
+              <span>More than 21 validations<br>in real time</span>
+          </div>
+
+          <div class="lottie two">  
+              <lottie-animation-view
+                [options]="createLottie('icone_inseconds_videoid')"
+                (animCreated)="handleAnimation($event, 1500)">
+              </lottie-animation-view>
+              <p>In seconds</p>        
+              <br>     
+              <span>VideoID takes<br>only 20 seconds</span>
+          </div>
+
+          <div class="lottie three">  
+              <lottie-animation-view
+                [options]="createLottie('icone_acuracy_videoid')"
+                (animCreated)="handleAnimation($event, 2250)">
+              </lottie-animation-view>
+              <p>Accuracy</p>
+              <br>
+              <span class="big">98%</span>
+          </div>
+        </div>
+  </article>
+  
+  <article id="customer" [ngClass]="{'active' : section > 0}">
+    <h2>Your Customer in the core of your strategy
+      <span>Lorem ipsum dolor sit amet dolor sit amet</span>
+    </h2>
+
+    <div class="flex row" *ngIf="section == 3">
+      ¿?
+    </div> 
+  </article>
+
+
+</section>

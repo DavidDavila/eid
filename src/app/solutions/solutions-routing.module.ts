@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SolutionsComponent } from './solutions.component';
 import { SignatureIdComponent } from './signature-id/signature-id.component';
 import { SmileIdComponent } from './smile-id/smile-id.component';
+import { VideoIdComponent } from './video-id/video-id.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +21,10 @@ const routes: Routes = [
       {        
         path: 'signatureId',
         component: SignatureIdComponent
+      },      
+      {        
+        path: 'videoId',
+        component: VideoIdComponent
       },
       {
         path: '**',
