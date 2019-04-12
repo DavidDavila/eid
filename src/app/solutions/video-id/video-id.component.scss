@@ -50,17 +50,80 @@
 
             &.countries{
               top: 40vh;
+              left: 39vw;
             }
 
             &.documents{
               top: 60vh;
+              left: 70vw;
             }
           }
 
         }
 
         &.subarticle.three{
-          //background: purple;
+          flex-direction: row;
+          padding-top: 25vh;
+          
+          div.containerVideo{
+            &.offline{
+              margin-right: 6.5vw; 
+            }
+
+            div.video{ 
+              height: auto;
+              width: 25vw;
+              position: relative;
+
+              >video{
+                width: 100%;
+                height: 100%;
+                background-color: $white;
+              }
+              &:after{
+                pointer-events: none;
+                content: '';
+                position: absolute;
+                border: 1px solid $green;
+                left: -20px;
+                top: -20px;
+                height: calc(100% - 30px);
+                width: 25vw;
+              }
+
+              span{
+                text-align: center;
+                font-size: getVw(24px);
+                font-weight: 300;
+                display: block;
+                transform: translateY(getVh(50px));
+              }
+      
+            }
+          }
+          div.video{ 
+            height: auto;
+            width: 25vw;
+            position: relative;
+
+
+            >video{
+              width: 100%;
+              height: 100%;
+              background-color: $white;
+            }
+            &:after{
+              pointer-events: none;
+              content: '';
+              position: absolute;
+              left: 30px;
+              top: -20px;
+              height: 100%;
+              width: calc(25vh% - 100px);
+              border: 1px solid $green;
+            }
+    
+          }
         }
 
         div.flex{
@@ -71,7 +134,7 @@
 
       h2{        
         position: absolute;
-        top: -50vh;
+        top: -55vh;
         width: 100vw;
         height: 190px;
         margin-left: -70px;
@@ -188,7 +251,7 @@
 
             font-size: getVw(34px);
 
-            background: -webkit-ease-in-out-gradient(left, #b5bf03 0%, #5aeaf3 100%);
+            background: -webkit-linear-gradient(left, #b5bf03 0%, #5aeaf3 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             width: -webkit-max-content;
@@ -230,17 +293,16 @@
 
 /*Nav Subsections*/
 .nav {
-  z-index: 1;
+  z-index: 99;
   position: sticky;
   //top: 50%;
-  top: 60vh;
+  top: 65vh;
   left: 70px;
   width: 110px;
   height: 190px;
   margin-top: -190px;
   //margin-top: -75px;
   opacity: 1;
-  pointer-events: none; 
 
   .nav-container {
     position: relative;
@@ -249,7 +311,7 @@
   }
 
   .lines{          
-    transition: transform 500ms ease-in-out 500ms;
+    transition: transform 500ms linear 500ms;
 
     &.line1{
       transform: translateY(-120px);          
@@ -260,16 +322,19 @@
     &.line3{
       transform: translateY(-160px);          
     }
+
     .line{
-      display: block;
+      //display: block;
       margin-bottom: 20px;
       height: 2px;
       width: 32px;
       background: rgba(195, 223, 247, 1);
-      border: 1px solid rgba(181, 191, 3, 1);
-    
-      transition: transform 500ms ease-in-out 500ms, width 300ms ease-in-out 0ms, background 300ms ease-in-out 0ms, border 300ms ease-in-out 0ms;
-    
+      border: 1px solid rgba(181, 191, 3, 1);  
+      display: flex;
+      //overflow-y: hidden;
+
+      transition: transform 500ms linear 500ms, width 300ms linear 0ms, background 300ms linear 0ms, border 300ms linear 0ms;  
+
       &.bottom{          
         width: 11px;
         background: rgba(195, 223, 247, 1);
@@ -277,14 +342,56 @@
     
         transform: translateY(125px);
       }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 20px;
+        position: absolute;
+        z-index: 99;
+        transform: translateX(-10px) translateY(-10px);
+      }
+            
+
+      span{        
+      	display: none;
+        width: 0%;
+        display: block;
+        opacity: 1;
+        overflow: hidden; 
+        display: block;
+        position: absolute;
+        white-space: nowrap;
+        top: -10px;
+        left: 50px;
+
+        transition:  width 250ms ease-in-out 00ms, opacity 250ms ease-in-out 00ms;
+      }
+      &:hover{
+
+      	width: 32px;
+      	background: rgba(195, 223, 247, 1);
+      	border: 1px solid rgba(181, 191, 3, 1);  
+      	//transition: width 300ms linear 0ms, background 300ms linear 0ms, border 300ms linear 0ms;  
+
+        span{
+      		display: none;
+          transition:  width 500ms ease-in-out 300ms, opacity 500ms ease-in-out 300ms;
+
+          opacity: 1;
+          width: 200px;
+        }
+      }
+
     } 
 
   }
 
-
   .items{
+    top: 1vh;
     position:   relative;
-    height: 114px;
+    height: 120px;
     width: 240px;
     .item{
       height: 120px;
@@ -298,70 +405,53 @@
       left:0;
       overflow: hidden; 
 
-      transition: max-height 1500ms ease-in-out 0ms;
+      transition: max-height 500ms linear 500ms, top 500ms linear 500ms, bottom 500ms linear 500ms;
       &.hidden{
         //background: yellow;
         bottom:0;
         top:auto;
         max-height: 0px;
-        overflow: hidden;
-        transition: max-height 1500ms ease-in-out 0ms;
+        transition: max-height 500ms linear 500ms, top 500ms linear 500ms, bottom 500ms linear 500ms;
         .label{
-         
+          height: 120px;
          bottom: 0;
          top: auto;
         }
       }
 
       .label{
+        height: 120px;
         font-size: 48px;
         font-weight: 600;
         position: absolute;        
         top: 0;
+        transition: top 500ms linear 500ms, bottom 500ms linear 500ms;
         bottom: auto;
 
       }
 
     }
 
-  }
-  .items.top{
-    position:   relative;
-    height: 114px;
-    width: 240px;
-    .item{
-      height: 120px;
-      width: 240px;
-     //background: red;
-      max-height: 120px;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      top:auto;
-      left:0;
-      overflow: hidden; 
-
-      transition: max-height 1500ms ease-in-out 0ms;
-      &.hidden{
-        //background: yellow;
-        top:0;
-        bottom:auto;
-        max-height: 0px;
-        overflow: hidden;
-        transition: max-height 1500ms ease-in-out 0ms;
-        .label{
-         
-         top: 0;
-         bottom: auto;
-        }
-      }
-
-      .label{
-        font-size: 48px;
-        font-weight: 600;
-        position: absolute;        
+    &.top{
+      .item{
         bottom: 0;
-        top: auto;
+        top:auto;
+
+        &.hidden{
+          //background: yellow;
+          top:0;
+          bottom:auto;
+
+          .label{
+           top: 0;
+           bottom: auto;
+          }
+        }
+
+        .label{      
+          bottom: 0;
+          top: auto;
+        }
 
       }
 

@@ -86,7 +86,7 @@ export class VideoIdComponent implements OnInit {
 			this.goToSection(this.section);
       	}else{
       		this.items.nativeElement.classList.remove('top')
-			this.subSection-- ;
+			    this.subSection-- ;
       	}
       }
 
@@ -103,6 +103,18 @@ export class VideoIdComponent implements OnInit {
       this.goToSection(this.section);
     }
     
+  }
+
+  goTo(subSection){
+
+    if(subSection > this.subSection){      
+      this.items.nativeElement.classList.add('top')
+    }else{
+      this.items.nativeElement.classList.remove('top')
+    }
+
+    this.subSection = subSection;
+    this.animNav(this.subSection);
   }
 
   animNav(numSection){

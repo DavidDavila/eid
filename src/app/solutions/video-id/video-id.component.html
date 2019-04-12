@@ -2,13 +2,9 @@
   
   <article id="presentation">
 
-<!--     <div class="img">
-      <img class="gold" src="/assets/img/MV_GOLD.png" alt="">
-    </div> -->
-
     <div class="img">
       <video #video muted="muted"  class="introsignatureid" autoplay webkit-playsinline="true" playsinline="true">
-          <source src='/assets/videoid/video_videoid770x455.mp4' type="video/mp4">
+          <source src='/assets/videoid/no_holograma_video_videoid770x455.mp4' type="video/mp4">
       </video>
     </div>
 
@@ -22,72 +18,43 @@
 
   <article id="subSection" [ngClass]="{'active' : section > 0}" #videoIdSubSection >
       
+    <div class="nav"> 
+      <h2>Universal
+        <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
+      </h2>   
 
-<!--    <div class="nav {{classNav}}">   
-   <h2>Universal
-     <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
-   </h2>   
- 
-   <div class="nav-container" >
+      <div class="nav-container"> 
+        <div class="items top" #items>
 
-     <div class="nav-item {{item1}}" >
-       <div class="nav-item-overflow">
-         <div class="nav-item-label"><span>Any</span><br>device</div>
-       </div>
-       <div class="nav-item-line"></div>
-       <div class="nav-item-line-label"><span>We Are</span> Black Rainbow</div>
-       <div class="nav-item-hit"></div>
-     </div>
+          <div class="item three {{item3}}">
+            <div class="label">Any<br>channel</div>
+          </div>
 
-     <div class="nav-item {{item2}}">
-       <div class="nav-item-overflow">
-         <div class="nav-item-label"><span>Any</span><br>country</div>
-       </div>
-       <div class="nav-item-line"></div>
-       <div class="nav-item-line-label"><span>What</span> We Do</div>
-       <div class="nav-item-hit"></div>
-     </div>
+          <div class="item two {{item2}}">
+            <div class="label">Any<br>country</div>
+          </div>
 
-     <div class="nav-item {{item3}}">
-       <div class="nav-item-overflow">
-         <div class="nav-item-label"><span>Any</span><br>channel</div>
-       </div>
-       <div class="nav-item-line"></div>
-       <div class="nav-item-line-label"><span>What</span> We Create</div>
-       <div class="nav-item-hit"></div>
-     </div>
+          <div class="item one {{item1}}">
+            <div class="label">Any<br>device</div>
+          </div>
 
-   </div>
- </div> -->
-<div class="nav"> 
-  <h2>Universal
-    <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
-  </h2>   
+        </div>
 
-  <div class="nav-container"> 
-    <div class="items top" #items>
+        <div class="lines  {{lines}}"> 
+            <div class="line {{line1}}" (click)="goTo(1)">
+               <span>Any device</span> 
+            </div>
 
-      <div class="item three {{item3}}">
-        <div class="label">Any<br>channel</div>
+            <div class="line {{line2}}" (click)="goTo(2)">
+               <span>Any country</span> 
+            </div>
+
+            <div class="line {{line3}}" (click)="goTo(3)">
+               <span>Any channel</span> 
+            </div>
+        </div>
       </div>
-
-      <div class="item two {{item2}}">
-        <div class="label">Any<br>country</div>
-      </div>
-
-      <div class="item one {{item1}}">
-        <div class="label">Any<br>device</div>
-      </div>
-
     </div>
-
-    <div class="lines  {{lines}}"> 
-        <div class="line {{line1}}">  </div>
-        <div class="line {{line2}}">  </div>
-        <div class="line {{line3}}">  </div>
-    </div>
-  </div>
-</div>
 
 
     <article class="subarticle one">
@@ -102,7 +69,37 @@
       <div class="ripple documents">570 <span>documents</span></div>
     </article>
 
-    <article class="subarticle three"><p>3333333333333</p></article>
+
+<style>
+
+  /*#presentation,
+  .subarticle.one,
+  .subarticle.two{
+    display: none !important;
+  } */
+</style>
+
+    <article class="subarticle three">      
+      <div class="offline containerVideo">
+        <div class="video">
+          <video muted="muted" controls="true" autobuffer="true" poster="./assets/videoid/offline_poster_02.jpg">
+            <source src="/assets/videoid/offline.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <span>Offline</span>
+        </div>
+      </div>
+
+      <div class="online containerVideo">
+        <div class="video">
+          <video muted="muted" controls="true" autobuffer="true" poster="./assets/videoid/online_poster.jpg">
+            <source src="/assets/videoid/online.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <span>Online</span>
+        </div>
+      </div>
+    </article>
 
   </article>
 

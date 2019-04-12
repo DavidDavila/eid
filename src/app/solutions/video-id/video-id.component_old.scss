@@ -1,0 +1,46 @@
+
+  .items.top{
+      position:   relative;
+      height: 120px;
+      width: 240px;
+      .item{
+        height: 120px;
+        width: 240px;
+       //background: red;
+        max-height: 120px;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        top:auto;
+        left:0;
+        overflow: hidden; 
+
+        transition: max-height 500ms linear 500ms,  top 500ms linear 500ms, bottom 500ms linear 500ms;
+        &.hidden{
+          //background: yellow;
+          top:0;
+          bottom:auto;
+          max-height: 0px;
+          overflow: hidden;
+          transition: max-height 500ms linear 500ms,  top 500ms linear 500ms, bottom 500ms linear 500ms;
+          .label{
+            height: 120px;
+           transition:  top 500ms linear 500ms, bottom 500ms linear 500ms;
+           top: 0;
+           bottom: auto;
+          }
+        }
+
+        .label{
+          height: 120px;
+          font-size: 48px;
+          font-weight: 600;
+          position: absolute;        
+          bottom: 0;
+          top: auto;
+          transition:  top 500ms linear 500ms, bottom 500ms linear 500ms;
+        }
+
+      }
+
+    }
