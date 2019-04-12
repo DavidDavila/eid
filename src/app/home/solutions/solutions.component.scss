@@ -1,24 +1,28 @@
-#solutions{
-  border-top:1px solid transparent;
+#solutions {
+  border-top: 1px solid transparent;
   position: relative;
-  h2{
+
+  h2 {
     margin-top: 81px;
     text-align: center;
     margin-bottom: 4vh;
-    &:after,&:before{
+
+    &:after,
+    &:before {
       top: 2.7vh;
       left: calc(50% - -13.6vw);
     }
   }
 
-  ul{
+  ul {
     margin: 0 60px;
     text-align: center;
     height: 68vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    li{
+
+    li {
       height: 86%;
       width: 21%;
       display: inline-block;
@@ -31,17 +35,29 @@
       margin: 0.5vw;
       background-position: top;
       overflow: hidden;
-      &:after{
+      background-image: none;
+
+      video {
+        height: 100%;
+        width: auto;
+
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
-        left:-10px;
-        content: '';
-        bottom: -10px;
-        right: -10px;
-        top: -10px;
-        background: linear-gradient(180deg, transparent 5%, #121311 100%);
-        z-index: 0;
       }
-      >div{
+
+      // &:after{
+      //   position: absolute;
+      //   left:-10px;
+      //   content: '';
+      //   bottom: -10px;
+      //   right: -10px;
+      //   top: -10px;
+      //   background: linear-gradient(180deg, transparent 5%, #121311 100%);
+      //   z-index: 0;
+      // }
+      >div {
+        display: none;
         z-index: 1;
         height: 60%;
         position: absolute;
@@ -49,85 +65,99 @@
         width: 110%;
         left: -5%;
         transition: height 600ms;
-        padding:0 94px;
-        >div{
+        padding: 0 94px;
+
+        >div {
           position: absolute;
           left: 0;
           width: 100%;
           bottom: 43px;
-          h3{
-            font-size: 30px;  font-weight: 600; text-align: center;margin-bottom: 19px;
-            opacity:0;
-            transition: transform 200ms cubic-bezier(1,.4,.4,1) 50ms, opacity 200ms linear 50ms;
-            transform:translateY(4vh);
+
+          h3 {
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 19px;
+            opacity: 0;
+            transition: transform 200ms cubic-bezier(1, .4, .4, 1) 50ms, opacity 200ms linear 50ms;
+            transform: translateY(4vh);
           }
-          p{
+
+          p {
             font-size: 21px;
             text-align: center;
-            width:320px;
-            margin:0 auto;
+            width: 320px;
+            margin: 0 auto;
             margin-bottom: 38px;
             opacity: 0;
-            transition: transform 200ms cubic-bezier(1,.4,.4,1) 25ms, opacity 200ms linear 25ms;
-            transform:translateY(4vh);
+            transition: transform 200ms cubic-bezier(1, .4, .4, 1) 25ms, opacity 200ms linear 25ms;
+            transform: translateY(4vh);
           }
-          button{
-            opacity:0;
-            transition: transform 200ms cubic-bezier(1,.4,.4,1) 0ms, opacity 200ms linear 0ms;
-            transform:translateY(4vh);
+
+          button {
+            opacity: 0;
+            transition: transform 200ms cubic-bezier(1, .4, .4, 1) 0ms, opacity 200ms linear 0ms;
+            transform: translateY(4vh);
             padding: 1vh 3vw;
             min-width: 8vw;
-            span{
+
+            span {
               color: #fff;
             }
           }
-          &.no-hover{
+
+          &.no-hover {
             bottom: auto;
             top: 66%;
-            img{              
+
+            img {
               width: 50%;
               opacity: 1;
-              transition: transform 300ms cubic-bezier(1,.4,.4,1) 300ms, opacity 300ms linear 300ms;
-              transform:translateY(0vh);
+              transition: transform 300ms cubic-bezier(1, .4, .4, 1) 300ms, opacity 300ms linear 300ms;
+              transform: translateY(0vh);
             }
           }
-          &.hover{
 
-          }
+          &.hover {}
         }
       }
-       &:hover{
+
+      &:hover {
         width: 27%;
         height: 100%;
         background-size: auto 100%;
-        >div{
-          div{
-            &.no-hover{
-            img{
-              opacity: 0;
-              transition: transform 300ms cubic-bezier(1,.4,.4,1) 0ms, opacity 300ms linear 0ms;
-              transform:translateY(-4vh);
-            }
+
+        >div {
+          div {
+            &.no-hover {
+              img {
+                opacity: 0;
+                transition: transform 300ms cubic-bezier(1, .4, .4, 1) 0ms, opacity 300ms linear 0ms;
+                transform: translateY(-4vh);
+              }
 
             }
-            &.hover{
-             h3{
 
-              opacity:1;
-              transition: transform 300ms cubic-bezier(1,.4,.4,1) 300ms, opacity 300ms linear 400ms;
-              transform:translateY(0vh);
-            }
-            p{
+            &.hover {
+              h3 {
 
-              opacity: 1;
-              transition: transform 350ms cubic-bezier(1,.4,.4,1) 350ms, opacity 350ms linear 450ms;
-              transform:translateY(0vh);
-            }
-            button{
-              opacity:1;
-              transition: transform 400ms cubic-bezier(1,.4,.4,1) 400ms, opacity 400ms linear 500ms;
-              transform:translateY(0vh);
-            }
+                opacity: 1;
+                transition: transform 300ms cubic-bezier(1, .4, .4, 1) 300ms, opacity 300ms linear 400ms;
+                transform: translateY(0vh);
+              }
+
+              p {
+
+                opacity: 1;
+                transition: transform 350ms cubic-bezier(1, .4, .4, 1) 350ms, opacity 350ms linear 450ms;
+                transform: translateY(0vh);
+              }
+
+              button {
+                opacity: 1;
+                transition: transform 400ms cubic-bezier(1, .4, .4, 1) 400ms, opacity 400ms linear 500ms;
+                transform: translateY(0vh);
+              }
             }
           }
         }
