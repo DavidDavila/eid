@@ -25,6 +25,7 @@ export class SliderComponent implements OnInit {
     console.log(this.scroll)
 
     let liLength = this.useCases.nativeElement.getElementsByTagName('li');
+
     if ( this.scroll === 0) {
       this.useCases.nativeElement.style.transform = 'translateX(7.4vw)';
     } else if (this.scroll === -1) {
@@ -40,11 +41,13 @@ export class SliderComponent implements OnInit {
 
        }
     }
+
     for (let i = 0; i < liLength.length; i++) {
-     liLength[i].classList.add('moving');
-     setTimeout(()=>{
-       liLength[i].classList.remove('moving');
-     },liLength.length*300)
+      liLength[i].classList.add('moving');
+      setTimeout(()=>{
+        liLength[i].classList.remove('moving');
+      },liLength.length*300)
+    }
   }
 
 }
