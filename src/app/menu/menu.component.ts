@@ -13,7 +13,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this._scrollService.section$.subscribe( val=>{
       this.scrollZero = val;
-      this.scrollZero && (this.wasClicked = false)
+      this.wasClicked = false
+      // this.scrollZero && (this.wasClicked = false)
     })
   }
 
