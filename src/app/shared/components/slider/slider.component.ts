@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+=======
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+>>>>>>> david
 
 @Component({
   selector: 'app-slider',
@@ -14,7 +18,7 @@ export class SliderComponent implements OnInit {
   ngOnInit() {
   }
 
-  mouseFinish($event, reverse) {
+  mouseFinish($event, reverse){
     $event.preventDefault();
     $event.stopPropagation();
     if($event.deltaY > 0) {
@@ -22,9 +26,8 @@ export class SliderComponent implements OnInit {
     } else {
        this.scroll--;
     }
-    console.log(this.scroll);
 
-    let liLength = this.useCases.nativeElement.getElementsByTagName('li');
+    const liLength = this.useCases.nativeElement.getElementsByTagName('li');
 
     if ( this.scroll === 0) {
       this.useCases.nativeElement.style.transform = 'translateX(7.4vw)';
@@ -32,11 +35,11 @@ export class SliderComponent implements OnInit {
       this.useCases.nativeElement.style.transform = 'translateX(30vw)';
     } else if (this.scroll === 1) {
       this.useCases.nativeElement.style.transform = 'translateX(-18.5vw)';
-    } else  if (this.scroll > 1){
-      let value = Number(this.useCases.nativeElement.style.transform.match(/\d+.\d+/)[0])
+    } else  if (this.scroll > 1) {
+      const value = Number(this.useCases.nativeElement.style.transform.match(/\d+.\d+/)[0]);
        if($event.deltaY > 0) {
         this.useCases.nativeElement.style.transform = 'translateX(' + Number(-value - 26) + 'vw)';
-       }else{
+       } else {
         this.useCases.nativeElement.style.transform = 'translateX(' + Number(-value + 26) + 'vw)';
 
        }
@@ -44,9 +47,9 @@ export class SliderComponent implements OnInit {
 
     for (let i = 0; i < liLength.length; i++) {
       liLength[i].classList.add('moving');
-      setTimeout(()=>{
+      setTimeout(() => {
         liLength[i].classList.remove('moving');
-      },liLength.length*300)
+      }, liLength.length * 300);
     }
   }
 

@@ -22,7 +22,6 @@ export class MouseWheelTimingDirective {
       setTimeout((()=> {
          this.isMoving = false;
       }).bind(this), this.timeToBlock || 1200);
-
     });
 
     this.scrollEvent$ = fromEvent(this.el.nativeElement,
@@ -36,7 +35,6 @@ export class MouseWheelTimingDirective {
       setTimeout((()=> {
          this.isMoving = false;
       }).bind(this), this.timeToBlock || 1200);
-
     });
   }
 
