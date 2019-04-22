@@ -186,4 +186,20 @@ export class VideoIdComponent implements OnInit {
     };
   }
 
+  play(ev){  
+    var playPromise = ev.currentTarget.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(function() {
+        console.log('play');
+      }).catch(function(error) {
+        console.log('play Error');
+      });
+    }
+  }
+
+  pause(ev){
+    ev.currentTarget.pause();
+  }
+
 }
