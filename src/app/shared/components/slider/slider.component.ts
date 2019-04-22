@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-=======
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
->>>>>>> david
 
 @Component({
   selector: 'app-slider',
