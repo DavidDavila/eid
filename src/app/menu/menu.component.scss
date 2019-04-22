@@ -199,4 +199,22 @@
       &:nth-child(9){animation-delay:400ms;}
     }
   }
+
+  &.opened{
+    div span{
+
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(6),
+      &:nth-child(8){
+        animation-name: appear;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
+        background-color: $green;
+      }
+
+    }
+  }
 }

@@ -53,7 +53,7 @@
     <app-language></app-language>
   </li>
 </ul>
-<div id="bullets" *ngIf="!scrollZero" (click)="onClick()">
+<div id="bullets" *ngIf="!scrollZero" (click)="onClick()" [ngClass]="{'opened': !scrollZero &&  wasClicked}" >
   <div>
     <span></span>
     <span></span>
