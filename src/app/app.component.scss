@@ -6,12 +6,40 @@ header{
   top: 0;
   left: 0;
   padding: 32px 43px 0;
+  display: flex;
 
-  #logo{
-    height: 49px;
+  >a{
     width: 250px;
-    display: inline-block;
+    display: block;
+    position: relative;
   }
+  #logo{
+    //width: 250px;
+    height: 49px;
+    width: auto;
+    display: inline-block;
+    //opacity: 1;
+  }
+  #logomenu{
+    height: 49px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //opacity: 0;
+  }
+  #logomenu,
+  #logo{
+    transition:  opacity 300ms linear;
+    &.show{
+      opacity: 1;
+    }
+    &.hide{
+      opacity: 0;
+    }
+  }
+
+
   >div{
     display: inline-block;
     width: calc(100% - 250px);

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core'
 import { ScrollService } from './shared/services/scroll.service';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,10 +20,24 @@ export class AppComponent implements OnInit {
   'INPUT',
   'TEXTAREA'
   ]
+  public logoClass: string = 'show';
+  public logoImgClass: string = 'hide';
+
   @ViewChild('cursor') cursor: ElementRef;
   @ViewChild('main') main: ElementRef;
 
-  constructor(private _scrollService:ScrollService, @Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(
+    private _scrollService:ScrollService, 
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this._scrollService.section$.subscribe( val=>{
+     this.logoClass = val ? 'show' : 'hide' ;
+     this.logoImgClass = val ? 'hide' : 'false' ;
+
+     console.log('val--> ' + val);
+    })
+  }
+
   ngOnInit() {
     if (this.showCanvas = isPlatformBrowser(this.platformId)) {
       this.makeCursor()

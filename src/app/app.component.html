@@ -1,7 +1,10 @@
 <div class="cursor" #cursor></div>
 <main #main>
   <header>
-    <a [routerLink]="['/']"><img class="custom-cursor" id="logo" src="/assets/img/logo.png"></a>
+    <a [routerLink]="['/']">
+    	<img class="custom-cursor" id="logo" src="/assets/img/logo.png" class="{{logoClass}}">
+    	<img class="custom-cursor" id="logomenu" src="/assets/img/logo_img.png" class="{{logoImgClass}}">
+    </a>
     <div app-menu></div>
   </header>
 	<router-outlet (activate)="onActivate($event)"></router-outlet>
