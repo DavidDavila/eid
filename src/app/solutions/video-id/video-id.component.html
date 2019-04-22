@@ -1,10 +1,10 @@
 <section id="video-id" mouseWheelTiming #videoId (mouseFinish)="mouseFinish($event,false)">
-  
+
   <article id="presentation">
 
     <div class="img">
       <video #video muted="muted"  class="introsignatureid" autoplay webkit-playsinline="true" playsinline="true">
-          <source src='/assets/videoid/no_holograma_video_videoid770x455.mp4' type="video/mp4">
+          <source src='/assets/videoid/no_holograma_video_videoid.mp4' type="video/mp4">
       </video>
     </div>
 
@@ -17,13 +17,13 @@
   </article>
 
   <article id="subSection" [ngClass]="{'active' : section > 0}" #videoIdSubSection >
-      
-    <div class="nav"> 
+
+    <div class="nav">
       <h2>Universal
         <span>Única tecnología capaz de alcanzar 6 billones<br>de usuarios en segundos</span>
-      </h2>   
+      </h2>
 
-      <div class="nav-container"> 
+      <div class="nav-container">
         <div class="items top" #items>
 
           <div class="item three {{item3}}">
@@ -40,17 +40,17 @@
 
         </div>
 
-        <div class="lines  {{lines}}"> 
+        <div class="lines  {{lines}}">
             <div class="line {{line1}}" (click)="goTo(1)">
-               <span>Any device</span> 
+               <span>Any device</span>
             </div>
 
             <div class="line {{line2}}" (click)="goTo(2)">
-               <span>Any country</span> 
+               <span>Any country</span>
             </div>
 
             <div class="line {{line3}}" (click)="goTo(3)">
-               <span>Any channel</span> 
+               <span>Any channel</span>
             </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
   } */
 </style>
 
-    <article class="subarticle three">      
+    <article class="subarticle three">
       <div class="offline containerVideo">
         <div class="video">
           <video muted="muted" controls="true" autobuffer="true" poster="./assets/videoid/offline_poster_02.jpg">
@@ -105,8 +105,8 @@
 
   <article id="experience" [ngClass]="{'active' : section > 0}">
     <h2>Best Customer Experience</h2>
-    <div class="flex row" *ngIf="section == 2">   
-          <div class="lottie one" >  
+    <div class="flex row" *ngIf="section == 2">
+          <div class="lottie one" >
               <lottie-animation-view
                 [options]="createLottie('icone_security_videoid')"
                 (animCreated)="handleAnimation($event, 750)">
@@ -116,17 +116,17 @@
               <span>More than 21 validations<br>in real time</span>
           </div>
 
-          <div class="lottie two">  
+          <div class="lottie two">
               <lottie-animation-view
                 [options]="createLottie('icone_inseconds_videoid')"
                 (animCreated)="handleAnimation($event, 1500)">
               </lottie-animation-view>
-              <p>In seconds</p>        
-              <br>     
+              <p>In seconds</p>
+              <br>
               <span>VideoID takes<br>only 20 seconds</span>
           </div>
 
-          <div class="lottie three">  
+          <div class="lottie three">
               <lottie-animation-view
                 [options]="createLottie('icone_acuracy_videoid')"
                 (animCreated)="handleAnimation($event, 2250)">
@@ -137,7 +137,7 @@
           </div>
         </div>
   </article>
-  
+
   <article id="customer" [ngClass]="{'active' : section > 0}">
     <h2>Your Customer in the core of your strategy
       <span>Lorem ipsum dolor sit amet dolor sit amet</span>
@@ -145,7 +145,7 @@
 
     <div class="flex row" *ngIf="section == 3">
       ¿?
-    </div> 
+    </div>
   </article>
 
 

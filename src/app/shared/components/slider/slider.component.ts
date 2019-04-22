@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -8,13 +8,13 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class SliderComponent implements OnInit {
   public scroll = -1;
   @ViewChild('useCases') useCases: ElementRef;
-
+  @Input() data: any;
   constructor() { }
 
   ngOnInit() {
   }
 
-  mouseFinish($event, reverse){
+  mouseFinish($event, reverse) {
     $event.preventDefault();
     $event.stopPropagation();
     if($event.deltaY > 0) {
@@ -22,7 +22,7 @@ export class SliderComponent implements OnInit {
     } else {
        this.scroll--;
     }
-    console.log(this.scroll)
+    console.log(this.scroll);
 
     let liLength = this.useCases.nativeElement.getElementsByTagName('li');
 

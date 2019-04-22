@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
-
+import { VIDEOS } from '../../../conf';
 @Component({
   selector: 'app-signature-id',
   templateUrl: './signature-id.component.html',
@@ -8,7 +8,7 @@ import { SolutionsService } from './../../shared/services/solutions.service';
 })
 export class SignatureIdComponent implements OnInit {
   public lottieConfig: Object = {};
-
+  public usesCases: any;
   public section: number = 0;
   @ViewChild('signatureId') signatureId: ElementRef;
 
@@ -17,11 +17,11 @@ export class SignatureIdComponent implements OnInit {
   constructor(
     private _solutionsService: SolutionsService
   ) {
+    this.usesCases = VIDEOS.signatureid;
     this._solutionsService.setsection(this.section);
   }
 
   ngOnInit() {
-
   }
   createLottie(name: string) {
     return this.lottieConfig = {

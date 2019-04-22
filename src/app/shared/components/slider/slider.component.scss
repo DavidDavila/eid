@@ -65,6 +65,12 @@ section.slider {
 
       animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(1,.4,.4,1);
+      video {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+
+      }
       &:nth-child(even){
         background-color: pink;
       }

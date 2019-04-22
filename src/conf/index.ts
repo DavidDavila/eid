@@ -19,7 +19,130 @@ function setEnvironment(){
 }
 
 export const numberOfStepsOnPresentation:number = 2;
-
+export const VIDEOS:any = {
+  signatureid:[
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_01.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_01.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_02.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_03.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconGRAFOenKIOSK/signaturecongrafoenkiosk_01.mp4',
+      poster: '/assets/signatureid/SignatureconGRAFOenKIOSK/signaturecongrafoenkiosk_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconGRAFOenKIOSK/signaturecongrafoenkiosk_02.mp4',
+      poster: '/assets/signatureid/SignatureconGRAFOenKIOSK/signaturecongrafoenkiosk_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconGRAFOenKIOSK/signaturecongrafoenkiosk_03.mp4',
+      poster: '/assets/signatureid/SignatureconGRAFOenKIOSK/signaturecongrafoenkiosk_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconGRAFOonline/signaturecongrafoonline_01.mp4',
+      poster: '/assets/signatureid/SignatureconGRAFOonline/signaturecongrafoonline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconGRAFOonline/signaturecongrafoonline_02.mp4',
+      poster: '/assets/signatureid/SignatureconGRAFOonline/signaturecongrafoonline_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconGRAFOonline/signaturecongrafoonline_03.mp4',
+      poster: '/assets/signatureid/SignatureconGRAFOonline/signaturecongrafoonline_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPenoficina/signatureconotpenoficina_01.mp4',
+      poster: '/assets/signatureid/SignatureconOTPenoficina/signatureconotpenoficina_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPenoficina/signatureconotpenoficina_02.mp4',
+      poster: '/assets/signatureid/SignatureconOTPenoficina/signatureconotpenoficina_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPenoficina/signatureconotpenoficina_03.mp4',
+      poster: '/assets/signatureid/SignatureconOTPenoficina/signatureconotpenoficina_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconSimileIDENkiosk/signatureconsimileidenkiosk_01.mp4',
+      poster: '/assets/signatureid/SignatureconSimileIDENkiosk/signatureconsimileidenkiosk_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconSimileIDENkiosk/signatureconsimileidenkiosk_02.mp4',
+      poster: '/assets/signatureid/SignatureconSimileIDENkiosk/signatureconsimileidenkiosk_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconSimileIDENkiosk/signatureconsimileidenkiosk_03.mp4',
+      poster: '/assets/signatureid/SignatureconSimileIDENkiosk/signatureconsimileidenkiosk_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconSmileIDenOFICINA/signatureconsmileidenoficina_01.mp4',
+      poster: '/assets/signatureid/SignatureconSmileIDenOFICINA/signatureconsmileidenoficina_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconSmileIDenOFICINA/signatureconsmileidenoficina_02.mp4',
+      poster: '/assets/signatureid/SignatureconSmileIDenOFICINA/signatureconsmileidenoficina_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconSmileIDenOFICINA/signatureconsmileidenoficina_03.mp4',
+      poster: '/assets/signatureid/SignatureconSmileIDenOFICINA/signatureconsmileidenoficina_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDconOTPenKIOSK/signatureidconotpenkiosk_01.mp4',
+      poster: '/assets/signatureid/SignatureIDconOTPenKIOSK/signatureidconotpenkiosk_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDconOTPenKIOSK/signatureidconotpenkiosk_02.mp4',
+      poster: '/assets/signatureid/SignatureIDconOTPenKIOSK/signatureidconotpenkiosk_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDconOTPenKIOSK/signatureidconotpenkiosk_03.mp4',
+      poster: '/assets/signatureid/SignatureIDconOTPenKIOSK/signatureidconotpenkiosk_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDeconSmileIDONLINE/signatureidconsmileidonline_01.mp4',
+      poster: '/assets/signatureid/SignatureIDeconSmileIDONLINE/signatureidconsmileidonline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDeconSmileIDONLINE/signatureidconsmileidonline_02.mp4',
+      poster: '/assets/signatureid/SignatureIDeconSmileIDONLINE/signatureidconsmileidonline_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDeconSmileIDONLINE/signatureidconsmileidonline_03.mp4',
+      poster: '/assets/signatureid/SignatureIDeconSmileIDONLINE/signatureidconsmileidonline_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_01.mp4',
+      poster: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_02.mp4',
+      poster: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_02.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_03.mp4',
+      poster: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_03.jpg',
+    }
+  ]
+}
 export const VIDEO_TIMMINGS:any =  {
    all: [110,1275],
    standBy:[36,108],

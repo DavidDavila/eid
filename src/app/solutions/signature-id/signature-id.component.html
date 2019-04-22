@@ -1,8 +1,5 @@
 <section id="signature-id" mouseWheelTiming #signatureId (mouseFinish)="mouseFinish($event,false)">
-  <article>
 
-    <app-slider></app-slider>
-  </article>
   <article id="presentation">
     <div class="img">
         <video  muted="muted" src="/assets/signatureid/movil_signatureid.mp4" autoplay >
@@ -85,11 +82,14 @@
     <h2> Easy to integrate
         <span>SignatureID only takes a few minutes to be integrated in your web or mobile apps </span>
     </h2>
-    <lottie-animation-view *ngIf="section===3"
+    <lottie-animation-view *ngIf="section>=3"
            [options]="createLottie('sublime_02')"
            [width]="100"
            [height]="100"
            (animCreated)="handleAnimation($event, 1000)">
      </lottie-animation-view>
+  </article>
+  <article>
+    <app-slider [data]="usesCases"></app-slider>
   </article>
 </section>
