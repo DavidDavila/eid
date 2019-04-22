@@ -82,7 +82,7 @@
     <article class="subarticle three">      
       <div class="offline containerVideo">
         <div class="video">
-          <video muted="muted" controls="true" autobuffer="true" poster="./assets/videoid/offline_poster_02.jpg">
+          <video muted="muted" autobuffer="true" poster="./assets/videoid/offline_poster_02.jpg"  (mouseover)="play($event)" (mouseleave)="pause($event)">
             <source src="/assets/videoid/offline.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -92,7 +92,7 @@
 
       <div class="online containerVideo">
         <div class="video">
-          <video muted="muted" controls="true" autobuffer="true" poster="./assets/videoid/online_poster.jpg">
+          <video muted="muted" autobuffer="true" poster="./assets/videoid/online_poster.jpg"  (mouseover)="play($event)" (mouseleave)="pause($event)">
             <source src="/assets/videoid/online.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
