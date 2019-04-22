@@ -1,4 +1,4 @@
-<ul id="menu" [ngClass]="{'short': !scrollZero}">
+<ul id="menu" [ngClass]="{'short': !scrollZero, 'opened': !scrollZero &&  wasClicked}" >
 
   <li>
     <a>
@@ -53,7 +53,7 @@
     <app-language></app-language>
   </li>
 </ul>
-<div id="bullets" *ngIf="!scrollZero">
+<div id="bullets" *ngIf="!scrollZero" (click)="onClick()">
   <div>
     <span></span>
     <span></span>
