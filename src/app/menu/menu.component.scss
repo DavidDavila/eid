@@ -10,6 +10,7 @@
   50% {transform:scale(3);}
   100% {transform:scale(1);}
 }
+
 #menu{
   max-width: 100%;
   display: flex;
@@ -17,11 +18,49 @@
   color: $white;
   font-size: getVw(17px);
   font-weight: 300;
-  transition: max-width 600ms, opacity 600ms linear;
+  transition: max-width 600ms, opacity 600ms linear, padding-right 600ms linear, padding-left 600ms linear, justify-content 600ms linear;
 
   justify-content: flex-end;
-
   padding-top: 16px;
+  
+  // section.onlyOpened{
+  //   display: none;
+  //   padding: getVw(43px);
+  //   padding-top: getVw(30px);
+  //   z-index: -1;
+  //   position: fixed;
+  //   top:0;
+  //   left: 0;
+  //   height: 13vw;
+  //   width: 100%;
+  //   background: rgba(48, 48, 48, 0.95);
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   transform: translateY(-100%);
+  //   opacity: 0;
+  //   transition: 300ms all cubic-bezier(1,.4,.4,1);
+  //   &:after{
+  //     content: '';
+  //     position: fixed;
+  //     top: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     z-index: -1;
+  //     height: 200vh;
+  //     background: rgba(0, 0, 0, 0.55);
+  //     opacity: 0;
+  //     pointer-events: none;
+  //     filter: blur(10px);
+  //     transition: 300ms all cubic-bezier(1,.4,.4,1) 0ms;
+  //   }
+  //   ::ng-deep app-footer footer{
+  //     bottom: 1.4vh;
+  //     background-color: transparent;
+  //   }
+  // }
 
   li{
     margin-left: getVw(60px);
@@ -120,16 +159,20 @@
         }
       }
       &:hover{
-        color: $green;
+        color: $green;       
+      }
+      &.isOpen:hover {
         section{
           transform: translateY(0%);
           opacity: 1;
           transition: 600ms all cubic-bezier(1,.4,.4,1);
-           &:after{
+          &:after{
             opacity: 1;
             transition: 300ms all cubic-bezier(1,.4,.4,1) 100ms;
-           }
-
+          }
+        }
+        .onlyOpened.lang{
+          display: none;
         }
       }
     }
@@ -144,24 +187,62 @@
       margin-left:0;
     }
   }
+
   &.short{
     max-width: 0%;
     opacity: 0;
-    
-
-    li.lang {
-        opacity: 0;
-        pointer-events: none;
-    }
 
     &.opened{
+      padding-left: 13vw;
+      padding-right: 13vw;
+      justify-content: space-around;
       max-width: 100vw;
+      width: calc(101vw - 86px);
       opacity: 1;
-     // padding-top: 16px;
+
+      li a.isOpen {
+        span:hover + section{  
+          height: getVw( 399px);
+          ul{
+            opacity: 1;
+          }
+        }
+        section{
+          transform: translateY(0%);
+          opacity: 1;
+          transition: 600ms all cubic-bezier(1,.4,.4,1);
+          height: 13vw;
+
+          ul{
+            transition: 600ms opacity cubic-bezier(1,.4,.4,1);
+            opacity: 0;
+          }
+          &:after{
+            opacity: 1;
+            transition: 300ms all cubic-bezier(1,.4,.4,1) 00ms;
+          }
+        }
+      }
+
+      li{
+        margin: 0;
+        &.lang {
+          display:none;
+        }
+      }
+
+      // li.lang.onlyOpened{
+      //   display: block;
+      //   position: absolute;
+      //   bottom: 1.4vh;
+      //   top: calc(100% - 6vh);
+      //   left: 43px;
+      // }   
 
     }
   }
 }
+
 #bullets{
   div{
     position: absolute;
@@ -182,7 +263,7 @@
       animation-fill-mode: forwards;
       background-color: $green;
       border-radius: 50%;
-      transition: transform 300ms;
+      transition: transform 300ms, opacity 300ms linear 300ms;
       &:nth-child(3n+2){
         margin-left: 7px;
         margin-right: 7px;
@@ -198,23 +279,49 @@
       &:nth-child(8){animation-delay:350ms;}
       &:nth-child(9){animation-delay:400ms;}
     }
+    i.text{
+      font-size: 14px;
+      font-weight: 300;
+      color: $green;
+      transform: translateY(-20px);
+      opacity: 0;
+      display: block;
+
+      transition: transform 300ms linear, opacity 450ms linear;
+    }
   }
 
+  
   &.opened{
+
+    div i.text{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
     div span{
 
       &:nth-child(2),
       &:nth-child(4),
       &:nth-child(6),
       &:nth-child(8){
-        animation-name: appear;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-        animation-direction: reverse;
-        background-color: $green;
+        opacity: 0;
+      }
+
+      &:nth-child(2){
+        transition: opacity 200ms linear 0ms;
+      }
+      &:nth-child(4){
+        transition: opacity 200ms linear 100ms;
+      }
+      &:nth-child(6){
+        transition: opacity 200ms linear 200ms;
+      }
+      &:nth-child(8){
+        transition: opacity 200ms linear 300ms;
       }
 
     }
   }
+
 }

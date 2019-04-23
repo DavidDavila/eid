@@ -29,7 +29,8 @@ header{
     //opacity: 0;
   }
   #logomenu,
-  #logo{
+  #logo{    
+    z-index: 99;
     transition:  opacity 300ms linear;
     &.show{
       opacity: 1;

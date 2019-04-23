@@ -1,8 +1,8 @@
 <ul id="menu" [ngClass]="{'short': !scrollZero, 'opened': !scrollZero &&  wasClicked}" >
 
   <li>
-    <a>
-      Solutions
+    <a  class="isOpen">
+      <span>Solutions</span>
       <section>
         <ul>
         <li>
@@ -24,6 +24,10 @@
           </a>
         </li>
         </ul>
+
+        <span class="lang onlyOpened">
+          <app-language></app-language>
+        </span>
         <app-footer></app-footer>
 
       </section>
@@ -52,6 +56,7 @@
   <li class="lang">
     <app-language></app-language>
   </li>
+
 </ul>
 <div id="bullets" *ngIf="!scrollZero" (click)="onClick()" [ngClass]="{'opened': !scrollZero &&  wasClicked}" >
   <div>
@@ -64,5 +69,7 @@
     <span></span>
     <span></span>
     <span></span>
+    
+    <i class="text">close</i>
   </div>
 </div>
