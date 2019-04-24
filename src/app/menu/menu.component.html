@@ -1,7 +1,7 @@
 <ul id="menu" [ngClass]="{'short': !scrollZero, 'opened': !scrollZero &&  wasClicked}" >
 
   <li>
-    <a  class="isOpen">
+    <a  class="isOpen withLine withArrow" >
       <span class="show" (mouseenter)="mouseOver($event)" >Solutions</span>
       <section  [ngClass]="{'showMe': showSubmenu}" >
         <ul>
@@ -34,22 +34,22 @@
     </a>
   </li>
   <li>
-    <a [routerLink]="['/Developers']" (mouseenter)="mouseOver($event)">
+    <a [routerLink]="['/Developers']" (mouseenter)="mouseOver($event)" class="withLine">
       Developers
     </a>
   </li>
   <li>
-    <a [routerLink]="['/use-cases']" (mouseenter)="mouseOver($event)">
+    <a [routerLink]="['/use-cases']" (mouseenter)="mouseOver($event)" class="withLine">
       Use cases
     </a>
   </li>
   <li>
-    <a [routerLink]="['/Resources']" (mouseenter)="mouseOver($event)">
+    <a [routerLink]="['/Resources']" (mouseenter)="mouseOver($event)" class="withLine">
       Resources
     </a>
   </li>
   <li>
-    <a [routerLink]="['/About']" (mouseenter)="mouseOver($event)">
+    <a [routerLink]="['/About']" (mouseenter)="mouseOver($event)" class="withLine">
       About
     </a>
   </li>

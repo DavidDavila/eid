@@ -76,6 +76,65 @@
       transition: all 300ms;
       height: 100%;
       white-space: nowrap;
+
+      &.withLine{
+        position: relative;
+        margin-right: 15px;
+
+        &:before{
+          transition: max-width 600ms cubic-bezier(1,.4,.4,1);
+          content: '';
+          max-width: 0;
+          width: 100%;
+          display: block;
+          bottom: 8px;
+          position: absolute;
+          height: 2px;
+          background-image: -webkit-linear-gradient(90deg, rgba(181, 191, 3, 1) 0%, rgba(90, 234, 243, 1) 99%, rgba(3, 3, 3, 1) 100%);
+          background-image: -moz-linear-gradient(90deg, rgba(181, 191, 3, 1) 0%, rgba(90, 234, 243, 1) 99%, rgba(3, 3, 3, 1) 100%);
+          background-image: -o-linear-gradient(90deg, rgba(181, 191, 3, 1) 0%, rgba(90, 234, 243, 1) 99%, rgba(3, 3, 3, 1) 100%);
+          background-image: linear-gradient(90deg, rgba(181, 191, 3, 1) 0%, rgba(90, 234, 243, 1) 99%, rgba(3, 3, 3, 1) 100%);
+        }
+        
+
+        &.withArrow{
+          margin-right: 0px;
+          padding-right: 15px;
+          overflow: hidden;
+
+          &:after{    
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: url('../../assets/img/flecha_2.png') no-repeat;
+            top: 9px;
+            display: block;
+            position: absolute;            
+            background-size: contain;
+            right: 0px;
+
+            transform: rotate(90deg) translateX(-10px);
+            opacity: 0;
+
+            transition: transform 600ms cubic-bezier(1,.4,.4,1), opacity 600ms cubic-bezier(1,.4,.4,1);
+          }
+        }
+        
+
+        &:hover{
+          color: #fff;     
+          &:before{
+            max-width: 100%;
+          }
+          &.withArrow{
+            &:after{ 
+              opacity: 1;
+              transform: rotate(90deg) translateX(0px);
+            }
+          }
+        }
+      }
+
       section{
         padding: getVw(43px);
         padding-top: getVw(30px);
