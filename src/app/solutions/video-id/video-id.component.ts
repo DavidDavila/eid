@@ -106,7 +106,6 @@ export class VideoIdComponent implements OnInit {
   }
 
   goTo(subSection){
-
     if(subSection > this.subSection){      
       this.items.nativeElement.classList.add('top')
     }else{
@@ -114,6 +113,7 @@ export class VideoIdComponent implements OnInit {
     }
 
     this.subSection = subSection;
+    this.goToSubSection(subSection)
     this.animNav(this.subSection);
   }
 
@@ -173,7 +173,8 @@ export class VideoIdComponent implements OnInit {
     console.log('subSection: ', this.subSection)
 
     let currentElement = this.videoIdSubSection.nativeElement.children[this.subSection];
-    this.videoIdSubSection.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+    console.log('currentElement.offsetLeft -- ', currentElement.offsetLeft)
+    this.videoIdSubSection.nativeElement.scroll({ left: currentElement.offsetLeft, behavior: 'smooth' })
   }
 
 
