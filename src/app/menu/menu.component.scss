@@ -121,7 +121,7 @@
         }
         
 
-        &:hover{
+        &.showLine:hover{
           color: #fff;     
           &:before{
             max-width: 100%;
