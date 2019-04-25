@@ -36,7 +36,7 @@
         overflow:hidden;
 
         padding: 0 .5vw;
-        transition: flex 300ms;
+        transition: flex 150ms linear;
         vertical-align: middle;
         >div{
           position: relative;
@@ -58,7 +58,9 @@
             object-fit: cover;
           }
           div{
-            max-width: 22vw;
+            //max-width: 22vw;
+                max-width: 20.5vw;
+
             padding:0 4vh;
             white-space: normal;
             flex-wrap: wrap;
@@ -74,7 +76,7 @@
             z-index: 1;
             display: flex;
             flex-direction: column;
-            transition: transform 300ms;
+            transition: transform 150ms linear;
             p{
               font-weight: 100;
               color:$white;
@@ -102,7 +104,7 @@
           flex: 0 0 25%;
           div{
             div{
-              transform:scale(1.2) translateX(4%);
+              transform:scale(1.2) translateX(5%);
             }
           }
           &:last-child{
