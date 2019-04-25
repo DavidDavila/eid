@@ -54,6 +54,7 @@ section.slider {
     white-space: nowrap;
     transform: translateX(30vw);
     transition: 300ms cubic-bezier(1,.4,.4,1) 0ms;
+    width: fit-content;
 
     li{
       position: relative;
