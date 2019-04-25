@@ -29,7 +29,7 @@ export const VIDEOS:any = {
       video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.mp4',
       poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.jpg',
     },
-    {
+    { 
       video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.mp4',
       poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.jpg',
     },
@@ -140,6 +140,50 @@ export const VIDEOS:any = {
     {
       video: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_03.mp4',
       poster: '/assets/signatureid/SignatureIDeMailOTP/signatureidemailotp_03.jpg',
+    }
+  ],
+  smileid:[
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_01.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.jpg',
+    },
+    { 
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_01.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_02.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_02.jpg',
+    }
+  ],
+  videoid:[
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_01.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_02.jpg',
+    },
+    { 
+      video: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.mp4',
+      poster: '/assets/signatureid/SignatureconOTPonline/signatureconotponline_03.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_01.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_01.jpg',
+    },
+    {
+      video: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_02.mp4',
+      poster: '/assets/signatureid/SignatureconCertIDonline/signatureconcertidonline_02.jpg',
     }
   ]
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
-
+ 
 import { CircleImgComponent } from './circle-img/circle-img.component';
-
+import { VIDEOS } from '../../../conf';
+ 
 @Component({
   selector: 'app-smile-id',
   templateUrl: './smile-id.component.html',
@@ -10,6 +11,7 @@ import { CircleImgComponent } from './circle-img/circle-img.component';
 })
 export class SmileIdComponent implements OnInit {
   public section:number = 0;
+  public usesCases: any;
   public circles: any[] = [
         {
           "img": "access.png",
@@ -49,6 +51,7 @@ export class SmileIdComponent implements OnInit {
   constructor(
     private _solutionsService: SolutionsService
     ) {    
+    this.usesCases = VIDEOS.smileid;
     this._solutionsService.setsection(this.section);
   }
 

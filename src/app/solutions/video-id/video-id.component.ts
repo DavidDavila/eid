@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
 
 import { CircleImgViComponent } from './circle-img-vi/circle-img-vi.component';
+import { VIDEOS } from '../../../conf';
 
 @Component({
   selector: 'app-video-id',
@@ -13,6 +14,7 @@ export class VideoIdComponent implements OnInit {
   public subSection:number = 1;
 
   public lottieConfig: Object = {};
+  public usesCases: any;
 
   public circles: any[] = [
         {
@@ -57,7 +59,8 @@ export class VideoIdComponent implements OnInit {
   constructor(
     private _solutionsService: SolutionsService
     ) { 
-	this._solutionsService.setsection(this.section);
+    this.usesCases = VIDEOS.videoid;
+	  this._solutionsService.setsection(this.section);
   }
 
   ngOnInit() {

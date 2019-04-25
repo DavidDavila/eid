@@ -1,7 +1,7 @@
 <section id="video-id" mouseWheelTiming #videoId (mouseFinish)="mouseFinish($event,false)">
 
   <article id="presentation">
-
+ 
     <div class="img">
       <video #video muted="muted"  class="introsignatureid" autoplay webkit-playsinline="true" playsinline="true">
           <source src='/assets/videoid/no_holograma_video_videoid.mp4' type="video/mp4">
@@ -146,6 +146,10 @@
     <div class="flex row" *ngIf="section == 3">
       ¿?
     </div>
+  </article>
+
+  <article>
+    <app-slider [data]="usesCases"></app-slider>
   </article>
 
 
