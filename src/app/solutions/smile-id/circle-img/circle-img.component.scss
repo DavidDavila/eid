@@ -1,25 +1,40 @@
-
 @import 'vars';
 @import 'mixins';
-app-circle-img{
+
+
+::ng-deep app-circle-img{
 
 }
+
+@keyframes cahngeBG {
+  0% {background: transparent;}
+  100% {background: $jungleGreen;}
+}
+@-webkit-keyframes cahngeBG {
+  0% {background: transparent;}
+  100% {background: $jungleGreen;}
+}
+
 div.circle{
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	width: getVw(247px);
 	height: getVw(247px);
-	background: $jungleGreen;
+	background: transparent;
 	border-radius: 50%;
 	align-items: center;
 	justify-content: center;
+	background: $jungleGreen;
+
 
 	&.withMargin{
     	margin-right: getVw(94.56px);
 	}
 
 	img {
+		opacity: 1;
+
 		&.one{
 			width: getVw(106px);
 		}
@@ -27,7 +42,7 @@ div.circle{
 			width: getVw(297px);
 		}
 		&.three{
-			width: getVw(283px);			
+			width: getVw(283px);		
 			transform: translateY(3.3vh);
 		}
 		&.four{
@@ -44,6 +59,10 @@ div.circle{
 		color: rgba(255, 255, 255, 1);
 		text-align: center;
 		position: absolute;
-		bottom: getVh(-65px);
+		//bottom: getVh(-65px);
+		bottom: 0;
+		opacity: 0;
+
+		transition: bottom 200ms linear 100ms, opacity 200ms linear 100ms; 
 	}
 }

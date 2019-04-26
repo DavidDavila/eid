@@ -1,4 +1,4 @@
-<div class="circle {{data.class}}">
+<div class="circle {{data.class}}"  [ngClass]="{'showMe' : show}" >
 	<img src="/assets/img/{{data.img}}" alt="" class="{{data.classImg}}">
 
 	<p class="txt">{{data.text}}</p>

@@ -40,7 +40,7 @@
             and in any channel, respecting the privacy of the clients</span>
     </h2>
 
-    <div class="flex row">
+    <div class="flex row" *ngIf="section === 2">
       <app-circle-img *ngFor="let circle of circles"  [data]="circle"></app-circle-img>
     </div>
   </article>

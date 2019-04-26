@@ -17,30 +17,35 @@ export class SmileIdComponent implements OnInit {
           "img": "access.png",
           "text": "Access buildings",
           "class": "withMargin",
-          "classImg": "one"
+          "classImg": "one",
+          "timing": 1
         },
         {
           "img": "web.png",
           "text": "Web",
           "class": "withMargin",
-          "classImg": "two"
+          "classImg": "two",
+          "timing": 2
         },
         {
           "img": "mobile.png",
           "text": "Native mobile",
           "class": "withMargin",
-          "classImg": "three"
+          "classImg": "three",
+          "timing": 3
         },
         {
           "img": "atm.png",
           "text": "ATM",          
           "class": "withMargin",
-          "classImg": "four"
+          "classImg": "four",
+          "timing": 4
         },
         {
           "img": "cctv.png",
           "text": "CCTV",
-          "classImg": "five"
+          "classImg": "five",
+          "timing":5
         }
       ];
 
