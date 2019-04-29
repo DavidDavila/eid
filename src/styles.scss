@@ -143,9 +143,12 @@ h2{
     position: absolute;
     z-index: 0;
     top: 0;
-    left: 0;
-    width: calc(100% + 1px);
-    height: 100%;
+    // left: 0;
+    // width: calc(100% + 1px);
+    // height: 100%;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 1px);
     background: linear-gradient(45deg, $green 0%, #35b9c2 100%);
     opacity: 0;
 
