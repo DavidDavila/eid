@@ -79,16 +79,28 @@ export class SmileIdComponent implements OnInit {
   }
 
   mouseFinish(event, reverse){
+    let totalSections =  this.smileId.nativeElement.childElementCount - 1;
+    let sectionChanged = false; 
+
     if(event.deltaY > 0) {
-      this.section++;
+      if( this.section < totalSections ){
+        this.section++;
+        sectionChanged = true;
+      }
     } else {
-      this.section-- ;
+      if( this.section > 0 ){
+        this.section-- ;
+        sectionChanged = true;
+      }
     }
 
-    this._solutionsService.setsection(this.section);
+    if(sectionChanged){
+      this._solutionsService.setsection(this.section);
 
-    console.log('section: ', this.section)
-    let currentElement = this.smileId.nativeElement.children[this.section];
-    this.smileId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+      console.log('section: ', this.section)
+      let currentElement = this.smileId.nativeElement.children[this.section];
+      this.smileId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+    }
+
   }
 }

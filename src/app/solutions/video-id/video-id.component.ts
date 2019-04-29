@@ -73,20 +73,26 @@ export class VideoIdComponent implements OnInit {
   }
 
   mouseFinish(event, reverse){
+    let totalSections =  this.videoId.nativeElement.childElementCount - 1;
+    let sectionChanged = false; 
 
     if(this.section == 1){
       if(event.deltaY > 0) {
       	if(this.subSection == 3){
-			this.section++;
-			this.goToSection(this.section);
+          if( this.section < totalSections ){
+			      this.section++;
+			      this.goToSection(this.section);
+          }
       	}else{
       		this.items.nativeElement.classList.add('top')
         	this.subSection++;
       	}
       } else {
-      	if(this.subSection == 1){
-			this.section--;
-			this.goToSection(this.section);
+      	if(this.subSection == 1){          
+          if( this.section > 0 ){
+  		      this.section--;
+  			    this.goToSection(this.section);
+          }
       	}else{
       		this.items.nativeElement.classList.remove('top')
 			    this.subSection-- ;
@@ -98,12 +104,19 @@ export class VideoIdComponent implements OnInit {
 
     }else{
       if(event.deltaY > 0) {
-        this.section++;
+        if( this.section < totalSections ){
+          this.section++;
+          sectionChanged = true;
+        }
       } else {
-        this.section-- ;
+        if( this.section > 0 ){
+          this.section-- ;
+          sectionChanged = true;
+        }
       }
 
-      this.goToSection(this.section);
+      if(sectionChanged)
+        this.goToSection(this.section);
     }
     
   }
