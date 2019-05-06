@@ -4,10 +4,23 @@ import { SolutionsService } from './../../shared/services/solutions.service';
 import { CircleImgViComponent } from './circle-img-vi/circle-img-vi.component';
 import { VIDEOS } from '../../../conf';
 
+import {trigger, state, style, animate, transition} from '@angular/animations';
+
 @Component({
   selector: 'app-video-id',
   templateUrl: './video-id.component.html',
-  styleUrls: ['./video-id.component.scss']
+  styleUrls: ['./video-id.component.scss'],
+  animations: [
+    trigger('showHide', [
+      transition(':enter', [
+        style({ opacity: 1 }),
+        animate(500)
+      ]),
+      transition(':leave', [
+        animate(500, style({ opacity: 0 }))
+      ]),
+    ])
+  ]
 })
 export class VideoIdComponent implements OnInit {
   public section:number = 0;

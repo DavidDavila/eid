@@ -3,12 +3,26 @@ import { SolutionsService } from './../../shared/services/solutions.service';
  
 import { CircleImgComponent } from './circle-img/circle-img.component';
 import { VIDEOS } from '../../../conf';
- 
+
+import {trigger, state, style, animate, transition} from '@angular/animations';
+
 @Component({
   selector: 'app-smile-id',
   templateUrl: './smile-id.component.html',
-  styleUrls: ['./smile-id.component.scss']
+  styleUrls: ['./smile-id.component.scss'],
+  animations: [
+      trigger('showHide', [
+        transition(':enter', [
+          style({ opacity: 1 }),
+          animate(500)
+        ]),
+        transition(':leave', [
+          animate(500, style({ opacity: 0 }))
+        ]),
+      ])
+    ],
 })
+
 export class SmileIdComponent implements OnInit {
   public section:number = 0;
   public usesCases: any;
