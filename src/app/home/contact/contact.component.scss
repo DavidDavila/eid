@@ -73,11 +73,25 @@ select:-webkit-autofill:focus {
     margin-bottom: 3vh;
     font-size: 5.2vw;
     span{
-      font-size: 1.2vw;  font-weight: 300;text-align: center;
-      background: -webkit-linear-gradient(left,#c3ce00 , #fcffbd  );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      margin:0;
+      // font-size: 1.2vw;  font-weight: 300;text-align: center;
+      // background: -webkit-linear-gradient(left,#c3ce00 , #fcffbd  );
+      //   -webkit-background-clip: text;
+      //   -webkit-text-fill-color: transparent;
+      // margin:0;
+
+      color: #b5bf03;
+      margin: 0 auto;
+      margin-top: 0.3vh;
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+      font-size: getVw(42px);
+      display: block;
+      font-weight: 400;
+      text-align: center;
+      background: -webkit-linear-gradient(left, #b5bf03 0%, #5aeaf3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
   form{
@@ -158,6 +172,12 @@ select:-webkit-autofill:focus {
         display: block;
         img{
           height: 2.5vh;
+        }
+
+        &.center{          
+          text-align: center;
+          text-decoration: none;
+          color: white;
         }
       }
       .line{

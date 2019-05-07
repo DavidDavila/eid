@@ -12,9 +12,13 @@
     <button><span>Send message</span></button>
     <ul>
       <li >
-        <a class="custom-cursor"><img src="/assets/img/linkedIn_logo.png" alt=""></a>
+        <a class="custom-cursor" target="_blank" href="https://www.linkedin.com/company/software-eid/"><img src="/assets/img/linkedIn_logo.png" alt=""></a>
       </li>
-      <li ><span class="line custom-cursor">TRY VIDEO ID </span></li>
+      <li >
+        <a class="custom-cursor center" target="_blank" href="https://etrust-sandbox.electronicid.eu/demo2/">
+          <span class="line custom-cursor">TRY VIDEO ID </span>
+        </a>
+      </li>
       <li>
         <p class="custom-cursor sigup" (click)="showNewsletter = !showNewsletter">Sign up newsletter!</p>
         <div [ngClass]="{'visible' : showNewsletter}"  class="newsletter">

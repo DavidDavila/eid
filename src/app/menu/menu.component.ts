@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
       this.scrollZero = val;
       this.wasClicked = false;
       this.showSubmenu = false;
+ 
       // this.scrollZero && (this.wasClicked = false)
     })
   }
@@ -28,6 +29,10 @@ export class MenuComponent implements OnInit {
   mouseOver(event){
     this.showSubmenu = (event.target.className == 'show') ? true : false;
     console.log('mouseOver -- ', this.showSubmenu );
+  }
+
+  closeSubmenu(){
+    this.showSubmenu = false;
   }
 
 }
