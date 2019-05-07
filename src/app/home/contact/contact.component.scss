@@ -173,6 +173,12 @@ select:-webkit-autofill:focus {
         img{
           height: 2.5vh;
         }
+
+        &.center{          
+          text-align: center;
+          text-decoration: none;
+          color: white;
+        }
       }
       .line{
         &:before{
