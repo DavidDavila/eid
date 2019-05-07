@@ -1,7 +1,7 @@
 <ul id="menu" [ngClass]="{'short': !scrollZero, 'opened': !scrollZero &&  wasClicked}" >
 
   <li>
-    <a  class="isOpen withLine withArrow" [ngClass]="{'showLine': showSubmenu}" >
+    <a  class="isOpen withLine withArrow" [ngClass]="{'showLine': showSubmenu}"  (mouseleave)="closeSubmenu()"  >
       <span class="show" (mouseenter)="mouseOver($event)" >Solutions</span>
       <section  [ngClass]="{'showMe': showSubmenu}" >
         <ul>
