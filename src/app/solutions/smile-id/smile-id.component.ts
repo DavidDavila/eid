@@ -1,44 +1,65 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
-
+ 
 import { CircleImgComponent } from './circle-img/circle-img.component';
+import { VIDEOS } from '../../../conf';
+
+import {trigger, state, style, animate, transition} from '@angular/animations';
 
 @Component({
   selector: 'app-smile-id',
   templateUrl: './smile-id.component.html',
-  styleUrls: ['./smile-id.component.scss']
+  styleUrls: ['./smile-id.component.scss'],
+  animations: [
+      trigger('showHide', [
+        transition(':enter', [
+          style({ opacity: 1 }),
+          animate(500)
+        ]),
+        transition(':leave', [
+          animate(500, style({ opacity: 0 }))
+        ]),
+      ])
+    ],
 })
+
 export class SmileIdComponent implements OnInit {
   public section:number = 0;
+  public usesCases: any;
   public circles: any[] = [
         {
           "img": "access.png",
           "text": "Access buildings",
           "class": "withMargin",
-          "classImg": "one"
+          "classImg": "one",
+          "timing": 1
         },
         {
           "img": "web.png",
           "text": "Web",
           "class": "withMargin",
-          "classImg": "two"
+          "classImg": "two",
+          "timing": 2
         },
         {
           "img": "mobile.png",
           "text": "Native mobile",
           "class": "withMargin",
-          "classImg": "three"
+          "classImg": "three",
+          "timing": 3
         },
         {
           "img": "atm.png",
           "text": "ATM",          
           "class": "withMargin",
-          "classImg": "four"
+          "classImg": "four",
+          "timing": 4
         },
         {
           "img": "cctv.png",
           "text": "CCTV",
-          "classImg": "five"
+          "classImg": "five",
+          "timing":5
         }
       ];
 
@@ -49,6 +70,7 @@ export class SmileIdComponent implements OnInit {
   constructor(
     private _solutionsService: SolutionsService
     ) {    
+    this.usesCases = VIDEOS.smileid;
     this._solutionsService.setsection(this.section);
   }
 
@@ -71,16 +93,28 @@ export class SmileIdComponent implements OnInit {
   }
 
   mouseFinish(event, reverse){
+    let totalSections =  this.smileId.nativeElement.childElementCount - 1;
+    let sectionChanged = false; 
+
     if(event.deltaY > 0) {
-      this.section++;
+      if( this.section < totalSections ){
+        this.section++;
+        sectionChanged = true;
+      }
     } else {
-      this.section-- ;
+      if( this.section > 0 ){
+        this.section-- ;
+        sectionChanged = true;
+      }
     }
 
-    this._solutionsService.setsection(this.section);
+    if(sectionChanged){
+      this._solutionsService.setsection(this.section);
 
-    console.log('section: ', this.section)
-    let currentElement = this.smileId.nativeElement.children[this.section];
-    this.smileId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+      console.log('section: ', this.section)
+      let currentElement = this.smileId.nativeElement.children[this.section];
+      this.smileId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+    }
+
   }
 }

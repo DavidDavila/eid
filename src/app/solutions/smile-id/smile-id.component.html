@@ -6,12 +6,12 @@
       <img class="blue" src="/assets/img/MV_BLUE.png" alt=""> -->
 
       <video #video muted="muted"  class="introsmileid" autoplay webkit-playsinline="true" playsinline="true">
-          <source src='/assets/video/moviles_smileid.mp4' type="video/mp4">
+          <source src='/assets/SmileID/moviles_smileid.mp4' type="video/mp4">
       </video>
 
     </div>
     <div class="text">
-      <img src="/assets/img/smileid.png" alt="">
+      <img src="/assets/SmileID/smileid.png" alt="">
       <h2>The New Standard for Face Biometrics</h2>
       <button><span>Try it!</span></button>
     </div>
@@ -21,7 +21,7 @@
     <h2>Unique in market
       <span>Reliable identity registration</span>
     </h2>
-    <div *ngIf="section === 1">
+    <div [@showHide]=section  *ngIf="section === 1" >
       <div class="video">
         <video muted="muted"  controls="false" autoplay loop width="320" height="240" controls>
         <source src="httpxs://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
@@ -34,13 +34,13 @@
     </div>
   </article>
 
-  <article id="omnichanel">
+  <article id="omnichanel" >
     <h2>Omnichannel experience
       <span>The only market solution that can be consumed from any device <br>
             and in any channel, respecting the privacy of the clients</span>
     </h2>
 
-    <div class="flex row">
+    <div class="flex row" *ngIf="section === 2" [@showHide]=section>
       <app-circle-img *ngFor="let circle of circles"  [data]="circle"></app-circle-img>
     </div>
   </article>
@@ -50,7 +50,7 @@
       <span>Lorem ipsum dolor sit amet dolor sit amet</span>
     </h2>
 
-    <div class="flex row" *ngIf="section == 3">   
+    <div class="flex row" *ngIf="section == 3" [@showHide]=section >   
       <div class="lottie one" >  
           <lottie-animation-view
             [options]="createLottie('icone_livenessdetection_smileid')"
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div class="flex row" *ngIf="section == 3">
+    <div class="flex row" *ngIf="section == 3" [@showHide]=section >
       <div class="lottie four">  
           <lottie-animation-view
             [options]="createLottie('icone_100accurate_smileid')"
@@ -93,6 +93,10 @@
           <p>Dynamic captcha embedded</p>      
       </div>
     </div>
+  </article>
+
+  <article>    
+    <app-slider [data]="usesCases"></app-slider>
   </article>
 
 </section>

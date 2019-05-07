@@ -2,17 +2,32 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
 
 import { CircleImgViComponent } from './circle-img-vi/circle-img-vi.component';
+import { VIDEOS } from '../../../conf';
+
+import {trigger, state, style, animate, transition} from '@angular/animations';
 
 @Component({
   selector: 'app-video-id',
   templateUrl: './video-id.component.html',
-  styleUrls: ['./video-id.component.scss']
+  styleUrls: ['./video-id.component.scss'],
+  animations: [
+    trigger('showHide', [
+      transition(':enter', [
+        style({ opacity: 1 }),
+        animate(500)
+      ]),
+      transition(':leave', [
+        animate(500, style({ opacity: 0 }))
+      ]),
+    ])
+  ]
 })
 export class VideoIdComponent implements OnInit {
   public section:number = 0;
   public subSection:number = 1;
 
   public lottieConfig: Object = {};
+  public usesCases: any;
 
   public circles: any[] = [
         {
@@ -57,7 +72,8 @@ export class VideoIdComponent implements OnInit {
   constructor(
     private _solutionsService: SolutionsService
     ) { 
-	this._solutionsService.setsection(this.section);
+    this.usesCases = VIDEOS.videoid;
+	  this._solutionsService.setsection(this.section);
   }
 
   ngOnInit() {
@@ -70,20 +86,26 @@ export class VideoIdComponent implements OnInit {
   }
 
   mouseFinish(event, reverse){
+    let totalSections =  this.videoId.nativeElement.childElementCount - 1;
+    let sectionChanged = false; 
 
     if(this.section == 1){
       if(event.deltaY > 0) {
       	if(this.subSection == 3){
-			this.section++;
-			this.goToSection(this.section);
+          if( this.section < totalSections ){
+			      this.section++;
+			      this.goToSection(this.section);
+          }
       	}else{
       		this.items.nativeElement.classList.add('top')
         	this.subSection++;
       	}
       } else {
-      	if(this.subSection == 1){
-			this.section--;
-			this.goToSection(this.section);
+      	if(this.subSection == 1){          
+          if( this.section > 0 ){
+  		      this.section--;
+  			    this.goToSection(this.section);
+          }
       	}else{
       		this.items.nativeElement.classList.remove('top')
 			    this.subSection-- ;
@@ -95,18 +117,24 @@ export class VideoIdComponent implements OnInit {
 
     }else{
       if(event.deltaY > 0) {
-        this.section++;
+        if( this.section < totalSections ){
+          this.section++;
+          sectionChanged = true;
+        }
       } else {
-        this.section-- ;
+        if( this.section > 0 ){
+          this.section-- ;
+          sectionChanged = true;
+        }
       }
 
-      this.goToSection(this.section);
+      if(sectionChanged)
+        this.goToSection(this.section);
     }
     
   }
 
   goTo(subSection){
-
     if(subSection > this.subSection){      
       this.items.nativeElement.classList.add('top')
     }else{
@@ -114,6 +142,7 @@ export class VideoIdComponent implements OnInit {
     }
 
     this.subSection = subSection;
+    this.goToSubSection(subSection)
     this.animNav(this.subSection);
   }
 
@@ -173,7 +202,8 @@ export class VideoIdComponent implements OnInit {
     console.log('subSection: ', this.subSection)
 
     let currentElement = this.videoIdSubSection.nativeElement.children[this.subSection];
-    this.videoIdSubSection.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
+    console.log('currentElement.offsetLeft -- ', currentElement.offsetLeft)
+    this.videoIdSubSection.nativeElement.scroll({ left: currentElement.offsetLeft, behavior: 'smooth' })
   }
 
 

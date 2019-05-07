@@ -54,7 +54,7 @@
       //   bottom: -10px;
       //   right: -10px;
       //   top: -10px;
-      //   background: linear-gradient(180deg, transparent 5%, #121311 100%);
+      //   background: ease-in-out-gradient(180deg, transparent 5%, #121311 100%);
       //   z-index: 0;
       // }
       >div {
@@ -79,7 +79,7 @@
             text-align: center;
             margin-bottom: 19px;
             opacity: 0;
-            transition: transform 200ms cubic-bezier(1, .4, .4, 1) 50ms, opacity 200ms linear 50ms;
+            transition: transform 200ms ease-in-out 50ms, opacity 200ms ease-in-out 50ms;
             transform: translateY(4vh);
           }
 
@@ -90,13 +90,13 @@
             margin: 0 auto;
             margin-bottom: 38px;
             opacity: 0;
-            transition: transform 200ms cubic-bezier(1, .4, .4, 1) 25ms, opacity 200ms linear 25ms;
+            transition: transform 200ms ease-in-out 25ms, opacity 200ms ease-in-out 25ms;
             transform: translateY(4vh);
           }
 
           button {
             opacity: 0;
-            transition: transform 200ms cubic-bezier(1, .4, .4, 1) 0ms, opacity 200ms linear 0ms;
+            transition: transform 200ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms;
             transform: translateY(4vh);
             padding: 1vh 3vw;
             min-width: 8vw;
@@ -113,7 +113,7 @@
             img {
               width: 50%;
               opacity: 1;
-              transition: transform 300ms cubic-bezier(1, .4, .4, 1) 300ms, opacity 300ms linear 300ms;
+              transition: transform 300ms ease-in-out 300ms, opacity 300ms ease-in-out 300ms;
               transform: translateY(0vh);
             }
           }
@@ -132,7 +132,7 @@
             &.no-hover {
               img {
                 opacity: 0;
-                transition: transform 300ms cubic-bezier(1, .4, .4, 1) 0ms, opacity 300ms linear 0ms;
+                transition: transform 300ms ease-in-out 0ms, opacity 300ms ease-in-out 0ms;
                 transform: translateY(-4vh);
               }
 
@@ -142,20 +142,20 @@
               h3 {
 
                 opacity: 1;
-                transition: transform 300ms cubic-bezier(1, .4, .4, 1) 300ms, opacity 300ms linear 400ms;
+                transition: transform 300ms ease-in-out 300ms, opacity 300ms ease-in-out 400ms;
                 transform: translateY(0vh);
               }
 
               p {
 
                 opacity: 1;
-                transition: transform 350ms cubic-bezier(1, .4, .4, 1) 350ms, opacity 350ms linear 450ms;
+                transition: transform 350ms ease-in-out 350ms, opacity 350ms ease-in-out 450ms;
                 transform: translateY(0vh);
               }
 
               button {
                 opacity: 1;
-                transition: transform 400ms cubic-bezier(1, .4, .4, 1) 400ms, opacity 400ms linear 500ms;
+                transition: transform 400ms ease-in-out 400ms, opacity 400ms ease-in-out 500ms;
                 transform: translateY(0vh);
               }
             }

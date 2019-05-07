@@ -1,7 +1,7 @@
 <section id="video-id" mouseWheelTiming #videoId (mouseFinish)="mouseFinish($event,false)">
 
   <article id="presentation">
-
+ 
     <div class="img">
       <video #video muted="muted"  class="introsignatureid" autoplay webkit-playsinline="true" playsinline="true">
           <source src='/assets/videoid/no_holograma_video_videoid.mp4' type="video/mp4">
@@ -10,7 +10,7 @@
 
 
     <div class="text">
-      <img src="/assets/img/videoID.png" alt="">
+      <img src="/assets/videoid/videoID.png" alt="">
       <h2>Face to Machine Customer Identification</h2>
       <button><span>Try it!</span></button>
     </div>
@@ -64,7 +64,7 @@
     </article>
 
     <article class="subarticle two">
-      <img src="/assets/img/mapa.png" alt="">
+      <img src="/assets/videoid/mapa.png" alt="">
       <div class="ripple countries">194 <span>countries</span></div>
       <div class="ripple documents">570 <span>documents</span></div>
     </article>
@@ -105,7 +105,7 @@
 
   <article id="experience" [ngClass]="{'active' : section > 0}">
     <h2>Best Customer Experience</h2>
-    <div class="flex row" *ngIf="section == 2">
+    <div class="flex row" *ngIf="section == 2"  [@showHide]=section>
           <div class="lottie one" >
               <lottie-animation-view
                 [options]="createLottie('icone_security_videoid')"
@@ -143,9 +143,13 @@
       <span>Lorem ipsum dolor sit amet dolor sit amet</span>
     </h2>
 
-    <div class="flex row" *ngIf="section == 3">
+    <div class="flex row" *ngIf="section == 3"  [@showHide]=section>
       ¿?
     </div>
+  </article>
+
+  <article>
+    <app-slider [data]="usesCases"></app-slider>
   </article>
 
 

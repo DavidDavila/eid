@@ -9,7 +9,7 @@
         <button><span>Explore all use cases</span></button>
       </div>
   </article>
-  <ul [ngClass]="{'open': scroll > -1}" *ngIf="data" #useCases>
+  <ul [ngClass]="{'open': scroll > -1}" id="sliderList" *ngIf="data" #useCases>
     <li *ngFor="let item of data">
       <video [src]="item.video" [poster]="item.poster"></video>
     </li>

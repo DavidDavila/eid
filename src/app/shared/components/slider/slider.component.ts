@@ -15,39 +15,59 @@ export class SliderComponent implements OnInit {
   ngOnInit() {
   }
 
+  canScrollIt(event){
+    return (
+      (document.body.offsetWidth < document.getElementById('sliderList').getBoundingClientRect().right
+      && event.deltaY > 0)
+      ||
+      (document.body.offsetWidth < document.getElementById('sliderList').getBoundingClientRect().right
+      && event.deltaY < 0)
+      ||
+      (document.body.offsetWidth > document.getElementById('sliderList').getBoundingClientRect().right
+      && event.deltaY < 0)
+    )   
+  }
+
   mouseFinish($event, reverse){
     $event.preventDefault();
     $event.stopPropagation();
-    if($event.deltaY > 0) {
-      this.scroll++;
-    } else {
-       this.scroll--;
-    }
 
-    const liLength = this.useCases.nativeElement.getElementsByTagName('li');
+    if(this.canScrollIt($event)){
 
-    if ( this.scroll === 0) {
-      this.useCases.nativeElement.style.transform = 'translateX(7.4vw)';
-    } else if (this.scroll === -1) {
-      this.useCases.nativeElement.style.transform = 'translateX(30vw)';
-    } else if (this.scroll === 1) {
-      this.useCases.nativeElement.style.transform = 'translateX(-18.5vw)';
-    } else  if (this.scroll > 1) {
-      const value = Number(this.useCases.nativeElement.style.transform.match(/\d+.\d+/)[0]);
-       if($event.deltaY > 0) {
-        this.useCases.nativeElement.style.transform = 'translateX(' + Number(-value - 26) + 'vw)';
-       } else {
-        this.useCases.nativeElement.style.transform = 'translateX(' + Number(-value + 26) + 'vw)';
+      if($event.deltaY > 0) {
+        this.scroll++;
+      } else {
+         this.scroll--;
+      }
 
-       }
-    }
+      const liLength = this.useCases.nativeElement.getElementsByTagName('li');
 
-    for (let i = 0; i < liLength.length; i++) {
-      liLength[i].classList.add('moving');
-      setTimeout(() => {
-        liLength[i].classList.remove('moving');
-      }, liLength.length * 300);
-    }
+      if ( this.scroll === 0) {
+        this.useCases.nativeElement.style.transform = 'translateX(7.4vw)';
+      } else if (this.scroll === -1) {
+        this.useCases.nativeElement.style.transform = 'translateX(30vw)';
+      } else if (this.scroll === 1) {
+        this.useCases.nativeElement.style.transform = 'translateX(-18.5vw)';
+      } else  if (this.scroll > 1) {
+        const value = Number(this.useCases.nativeElement.style.transform.match(/\d+.\d+/)[0]);
+
+
+
+        if($event.deltaY > 0 ) {
+          this.useCases.nativeElement.style.transform = 'translateX(' + Number(-value - 26) + 'vw)';
+        } else {
+          this.useCases.nativeElement.style.transform = 'translateX(' + Number(-value + 26) + 'vw)';
+        }      
+      }
+
+      for (let i = 0; i < liLength.length; i++) {
+        liLength[i].classList.add('moving');
+        setTimeout(() => {
+          liLength[i].classList.remove('moving');
+        }, liLength.length * 300);
+      }
+    }    
+      
   }
 
 }

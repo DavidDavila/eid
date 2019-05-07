@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScrollService } from '../shared/services/scroll.service'
 
 @Component({
   selector: 'app-use-cases',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UseCasesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private _scrollService: ScrollService
+  ) { }
 
   ngOnInit() {
+  	this._scrollService.changesection(true);
   }
 
 }
