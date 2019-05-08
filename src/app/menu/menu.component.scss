@@ -218,7 +218,7 @@
         color: $green;       
       }
       &.isOpen:hover {
-        section{
+        section.showMe{
           transform: translateY(0%);
           opacity: 1;
           transition: 600ms all cubic-bezier(1,.4,.4,1);
