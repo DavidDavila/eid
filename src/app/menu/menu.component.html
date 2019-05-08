@@ -1,24 +1,24 @@
 <ul id="menu" [ngClass]="{'short': !scrollZero, 'opened': !scrollZero &&  wasClicked}" >
 
   <li>
-    <a  class="isOpen withLine withArrow" [ngClass]="{'showLine': showSubmenu}"  (mouseleave)="closeSubmenu()"  >
+    <a  class="isOpen withLine withArrow" [ngClass]="{'showLine': showSubmenu}" >
       <span class="show" (mouseenter)="mouseOver($event)" >Solutions</span>
-      <section  [ngClass]="{'showMe': showSubmenu}" >
+      <section  [ngClass]="{'showMe': showSubmenu}" (mouseleave)="closeSubmenu()">
         <ul>
         <li>
-          <a [routerLink]="['/solutions/videoId']">
+          <a (click)="closeAndGo($event)" [routerLink]="['/solutions/videoId']">
               <img src="/assets/videoid/videoID.png" alt="">
               <p>Face-to-machine customer identification:Digital identification by video</p>
           </a>
         </li>
         <li>
-          <a [routerLink]="['/solutions/smileId']">
+          <a (click)="closeAndGo($event)" [routerLink]="['/solutions/smileId']">
               <img src="/assets/SmileID/smileid.png" alt="">
               <p>The Omni-channel experience Face Biometrics Authentication</p>
           </a>
         </li>
         <li>
-          <a [routerLink]="['/solutions/signatureId']">
+          <a (click)="closeAndGo($event)" [routerLink]="['/solutions/signatureId']">
               <img src="/assets/signatureid/signatureid.png" alt="">
               <p>The most advanced electronic signature, based on PKI in just one click</p>
           </a>
