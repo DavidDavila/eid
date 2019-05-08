@@ -19,6 +19,23 @@
   100% { transform: translate(2px, 0); }
 }
 
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 100%;}
+}
+
 *{
 	font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
@@ -120,7 +137,7 @@ h2{
   }
 
 }
- button{
+button{
   color:$green;
 
   text-shadow: 0 0 11px rgba(0, 0, 0, 0.28);
@@ -177,3 +194,4 @@ h2{
     animation-timing-function: linear;   
   }
 }
+
