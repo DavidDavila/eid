@@ -1,10 +1,24 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SolutionsService } from './../../shared/services/solutions.service';
 import { VIDEOS } from '../../../conf';
+
+import {trigger, state, style, animate, transition} from '@angular/animations';
+
 @Component({
   selector: 'app-signature-id',
   templateUrl: './signature-id.component.html',
-  styleUrls: ['./signature-id.component.scss']
+  styleUrls: ['./signature-id.component.scss'],
+  animations: [
+    trigger('showHide', [
+      transition(':enter', [
+        style({ opacity: 1 }),
+        animate(500)
+      ]),
+      transition(':leave', [
+        animate(500, style({ opacity: 0 }))
+      ]),
+    ])
+  ],
 })
 export class SignatureIdComponent implements OnInit {
   public lottieConfig: Object = {};
