@@ -57,6 +57,7 @@
         }
       }
       >div{
+        transition: opacity 600ms cubic-bezier(1,.4,.4,1) 0ms, transform 700ms cubic-bezier(1,.4,.4,1) 0ms;
         transform: translateX(3vw);
         display: flex;
         position: absolute;
@@ -82,8 +83,13 @@
             left: 30px;
             top: -20px;
             height: 100%;
-            width: calc(100% - 100px);
-            border: 1px solid $green;
+            width: calc(100% - 100px);            
+            z-index: -1;
+            border-width: 1px;
+            border-style: solid;
+            -o-border-image: linear-gradient(to right top, #b5bf03 0%, #35b9c2 100%);
+            border-image: linear-gradient(to right top, #b5bf03 0%, #35b9c2 100%);
+            border-image-slice: 1;
           }
 
         }
