@@ -1,4 +1,4 @@
-<div id="presentation" #presentation [ngClass]="{'intro' : slide === 0}" (swipe)="mouseFinish($event, true)"  mouseWheelTiming [disableScroll]="disableScroll" (mouseFinish)="mouseFinish($event, false)">
+<div id="presentation" #presentation [ngClass]="{'intro' : slide === 0}" (swipe)="mouseFinish($event, true)" [propagation]="true"  mouseWheelTiming [disableScroll]="disableScroll" (mouseFinish)="mouseFinish($event, false)">
   <h2 [ngClass]="{'hide':slide !== 0}">
     <img  src="/assets/videoid/videoIDbig.png" alt="">
     <span>Face to machine customer identification</span>

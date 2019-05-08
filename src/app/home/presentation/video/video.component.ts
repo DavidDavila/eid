@@ -30,11 +30,11 @@ export class VideoComponent implements OnInit, AfterViewInit {
     this.video.nativeElement.muted = 'muted'
     this._presentationService.step$.subscribe(val =>{
       this.reverse = this.step > val;
-      this.controlTiming(val, this.reverse)
+      //this.controlTiming(val, this.reverse)
       this.step = val;
     })
   }
-  controlTiming(val, reverse) {
+  /* controlTiming(val, reverse) {
     let startTime;
     this.firstTime = true;
     switch (val) {
@@ -79,7 +79,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     isPlatformBrowser(this.platformId) && this.video.nativeElement && this.video.nativeElement.paused && this.video.nativeElement.play();
 
-  }
+  } */
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.video.nativeElement.muted = "muted";
@@ -99,7 +99,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
         frameRate: FrameRates.PAL_HD,
         callback : ((response)=> {
 
-          this.timeUpdate(response)
+          //this.timeUpdate(response)
         }).bind(this)
       });
       this.videoController.seekTo({ frame: VIDEO_TIMMINGS.standBy[0] })
@@ -107,7 +107,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
     }
   }
-  timeUpdate(frame) {
+ /*  timeUpdate(frame) {
     if(!this.reverse) {
       switch (this.step) {
         case 0:
@@ -180,5 +180,5 @@ export class VideoComponent implements OnInit, AfterViewInit {
           break;
       }
     }
-  }
+  } */
 }

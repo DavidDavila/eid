@@ -13,44 +13,45 @@ import {isPlatformServer, isPlatformBrowser} from '@angular/common';
   styleUrls: ['./presentation.component.scss']
 })
 export class PresentationComponent implements OnInit {
-  public slide:number = 0;
-  public isMoving:boolean;
-  public disableScroll: boolean = false;
+  public slide = 0;
+  public isMoving: boolean;
+  public disableScroll = false;
   @ViewChild('presentation') presentation: ElementRef;
-  constructor( private _presentationService: PresentationService, @Inject(PLATFORM_ID) private _platformId: Object,) {
-    this._presentationService.step$.subscribe( val =>{
+  constructor( private _presentationService: PresentationService, @Inject(PLATFORM_ID) private _platformId: Object, ) {
+    this._presentationService.step$.subscribe( val => {
       this.slide = val;
-    })
+    });
 
   }
   ngOnInit() {
-    if(isPlatformBrowser(this._platformId)){
-      let mc = new Hammer(this.presentation.nativeElement);
+    if (isPlatformBrowser(this._platformId)) {
+      const mc = new Hammer(this.presentation.nativeElement);
        mc.get('swipe').set({
         direction: Hammer.DIRECTION_ALL,
         threshold: 1,
-        velocity:0.1
+        velocity: 0.1
       });
-      mc.on("swipeup swipedown", ((ev)=> {
-        this.mouseFinish(ev, true)
+      mc.on('swipeup swipedown', ((ev) => {
+        this.mouseFinish(ev, true);
       }).bind(this));
     }
   }
   mouseFinish(event, reverse) {
     if (isPlatformBrowser(this._platformId)) {
-      if(reverse ) {
-        if(event.direction === 8 || event.direction === 16) {
+      if (reverse ) {
+        if (event.direction === 8 || event.direction === 16) {
           event.deltaY  = event.deltaY * -1;
-        } else{
+        } else {
           return false;
         }
       }
-      if(event.deltaY > 0 && this.slide < numberOfStepsOnPresentation + 1){
+      if (event.deltaY > 0 && this.slide < numberOfStepsOnPresentation + 1) {
         this.slide++;
-      } else if(event.deltaY < 0){
+      } else if (event.deltaY < 0) {
+// tslint:disable-next-line: no-unused-expression
         this.slide > 0 && this.slide--;
       }
-      this._presentationService.setStep(this.slide)
+      this._presentationService.setStep(this.slide);
       return false;
     }
   }
