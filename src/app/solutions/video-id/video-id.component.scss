@@ -97,7 +97,7 @@
                 -o-border-image: linear-gradient(to right, #b5bf03 0%, #35b9c2 100%);
                 border-image: linear-gradient(to right, #b5bf03 0%, #35b9c2 100%);
                 border-image-slice: 1;
-                
+
                 left: -20px;
                 top: -20px;
                 height: calc(100% - 30px);
@@ -325,7 +325,7 @@
   }
 
   .lines{          
-    transition: transform 500ms linear 500ms;
+    transition: transform 300ms linear 300ms;
 
     &.line1{
       transform: translateY(-120px);          
@@ -347,7 +347,7 @@
       display: flex;
       //overflow-y: hidden;
 
-      transition: transform 500ms linear 500ms, width 300ms linear 0ms, background 300ms linear 0ms, border 300ms linear 0ms;  
+      transition: transform 300ms linear 300ms, width 150ms linear 0ms, background 150ms linear 0ms, border 150ms linear 0ms;  
 
       &.bottom{          
         width: 11px;
@@ -387,11 +387,11 @@
       	width: 32px;
       	background: rgba(195, 223, 247, 1);
       	border: 1px solid rgba(181, 191, 3, 1);  
-      	//transition: width 300ms linear 0ms, background 300ms linear 0ms, border 300ms linear 0ms;  
+      	//transition: width 150ms linear 0ms, background 150ms linear 0ms, border 150ms linear 0ms;  
 
         span{
       		display: none;
-          transition:  width 500ms ease-in-out 300ms, opacity 500ms ease-in-out 300ms;
+          transition:  width 300ms ease-in-out 150ms, opacity 300ms ease-in-out 150ms;
 
           opacity: 1;
           width: 200px;
@@ -419,13 +419,13 @@
       left:0;
       overflow: hidden; 
 
-      transition: max-height 500ms linear 500ms, top 500ms linear 500ms, bottom 500ms linear 500ms;
+      transition: max-height 300ms linear 300ms, top 300ms linear 300ms, bottom 300ms linear 300ms;
       &.hidden{
         //background: yellow;
         bottom:0;
         top:auto;
         max-height: 0px;
-        transition: max-height 500ms linear 500ms, top 500ms linear 500ms, bottom 500ms linear 500ms;
+        transition: max-height 300ms linear 300ms, top 300ms linear 300ms, bottom 300ms linear 300ms;
         .label{
           height: 120px;
          bottom: 0;
@@ -439,7 +439,7 @@
         font-weight: 600;
         position: absolute;        
         top: 0;
-        transition: top 500ms linear 500ms, bottom 500ms linear 500ms;
+        transition: top 300ms linear 300ms, bottom 300ms linear 300ms;
         bottom: auto;
 
       }
