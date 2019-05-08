@@ -6,10 +6,8 @@
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
-input:-webkit-autofill:focus
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
@@ -39,40 +37,40 @@ select:-webkit-autofill:focus {
 }
 
 @include placeholder {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-#contact{
+#contact {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 
   position: relative;
-  >div{
-    width:100%;
+  > div {
+    width: 100%;
     text-align: center;
-    >button{
-      color:#fff;
-      margin-bottom: 14.5vh;;
+    > button {
+      color: #fff;
+      margin-bottom: 14.5vh;
     }
-    >span{
-     font-size: 13px;
-     position: absolute;
-     font-weight: 100;
-     bottom: 30px;
-     width: 100%;
-     left: 0;
+    > span {
+      font-size: 13px;
+      position: absolute;
+      font-weight: 100;
+      bottom: 30px;
+      width: 100%;
+      left: 0;
     }
   }
-  h2{
+  h2 {
     margin-bottom: 28px;
     margin-bottom: 3vh;
     font-size: 5.2vw;
-    span{
+    span {
       // font-size: 1.2vw;  font-weight: 300;text-align: center;
       // background: -webkit-linear-gradient(left,#c3ce00 , #fcffbd  );
       //   -webkit-background-clip: text;
@@ -94,10 +92,10 @@ select:-webkit-autofill:focus {
       -webkit-text-fill-color: transparent;
     }
   }
-  form{
+  form {
     width: 50%;
-    margin:0 auto;
-    input{
+    margin: 0 auto;
+    input {
       border: 1px solid transparent;
       transition: all 300ms;
       color: #fff;
@@ -109,79 +107,79 @@ select:-webkit-autofill:focus {
       font-size: 0.9vw;
       font-weight: 100;
       @include placeholder {
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items:center;
-          text-align: center;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
-      &:nth-child(even){
+      &:nth-child(even) {
         margin-left: 2.5vh;
       }
-      &:focus{
-        border-color:rgba(255, 255, 255, 0.43);
+      &:focus {
+        border-color: rgba(255, 255, 255, 0.43);
         @include placeholder {
-           color: transparent;
+          color: transparent;
         }
       }
     }
-    textarea{
-      border:1px solid transparent;
+    textarea {
+      border: 1px solid transparent;
 
       transition: all 300ms;
       resize: none;
-      color:#fff;
+      color: #fff;
       padding: 1.6vh;
       background-color: $darkGrey;
 
       height: 12.5vh;
       width: 100%;
-      font-size: 0.9vw;  font-weight: 100;
+      font-size: 0.9vw;
+      font-weight: 100;
       margin-bottom: 5.1vh;
       @include placeholder {
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items:center;
-          text-align: center;
-          padding: 3.5vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 3.5vh;
       }
-      &:focus{
-        border-color:rgba(255, 255, 255, 0.43);
+      &:focus {
+        border-color: rgba(255, 255, 255, 0.43);
         @include placeholder {
-           color: transparent;
+          color: transparent;
         }
       }
     }
-
   }
 
-  ul{
+  ul {
     margin: 0 auto;
     width: 50%;
     align-items: flex-start;
     display: flex;
     justify-content: flex-start;
-    margin-bottom:4.9vh;
-    li{
+    margin-bottom: 4.9vh;
+    li {
       position: relative;
       flex: 1;
       font-size: 0.9vw;
-      a{
+      a {
         text-align: right;
         display: block;
-        img{
+        img {
           height: 2.5vh;
         }
 
-        &.center{          
+        &.center {
           text-align: center;
           text-decoration: none;
           color: white;
         }
       }
-      .line{
-        &:before{
+      .line {
+        &:before {
           content: '';
           display: inline-block;
           height: 1px;
@@ -190,54 +188,53 @@ select:-webkit-autofill:focus {
           margin-right: 27px;
           position: relative;
           top: -4px;
-          transition: width 300ms cubic-bezier(1,.4,.4,1) 0ms;
+          transition: width 300ms cubic-bezier(1, .4, .4, 1) 0ms;
         }
-        &:hover :before{
+        &:hover :before {
           width: 60px;
         }
-
       }
-      p{
+      p {
         text-align: left;
         margin-bottom: 2vh;
         font-size: 19px;
         font-weight: 100;
       }
-      div{
+      div {
         position: absolute;
         top: 42px;
         width: 100%;
-        input{
-
-          border:1px solid transparent;
+        input {
+          border: 1px solid transparent;
 
           transition: all 300ms;
-          color:#fff;
+          color: #fff;
           padding: 13px;
           background-color: $darkGrey;
 
           display: inline-block;
           width: 100%;
           margin-bottom: 1.3vh;
-          font-size: 12px;  font-weight: 100;
+          font-size: 12px;
+          font-weight: 100;
           @include placeholder {
-              color: white;
-              display: flex;
-              justify-content: center;
-              align-items:center;
-              text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
           }
-          &:nth-child(even){
+          &:nth-child(even) {
             margin-left: 2.5vh;
           }
-          &:focus{
-            border-color:rgba(255, 255, 255, 0.43);
+          &:focus {
+            border-color: rgba(255, 255, 255, 0.43);
             @include placeholder {
-               color: transparent;
+              color: transparent;
             }
           }
         }
-        button{
+        button {
           color: $white;
           font-size: 12px;
           padding: 12px 23px;
@@ -245,52 +242,54 @@ select:-webkit-autofill:focus {
           right: -130px;
           top: 0;
         }
-        a{
-          font-size: 11px;  font-weight: 100;
+        a {
+          font-size: 11px;
+          font-weight: 100;
           text-align: left;
           display: block;
         }
       }
 
-      p.sigup{
+      p.sigup {
         position: relative;
         z-index: 2;
       }
-      div.newsletter{
-        
-        input{
-          transform: translateY(-6vh);
-          opacity:0;
-          transition: transform 500ms ease-in 0ms, opacity 500ms ease-in 0ms;
+      div.newsletter {
+        input {
+          transform: translateY(-3vh);
+          opacity: 0;
+          transition: transform 300ms ease-in 0ms, opacity 300ms ease-in 0ms;
         }
-        a{
-          transform: translateY(-6vh);
-          opacity:0;
-          transition: transform 500ms ease-in 150ms, opacity 500ms ease-in 150ms;
+        a {
+          transform: translateY(-3vh);
+          opacity: 0;
+          transition: transform 300ms ease-in 50ms, opacity 300ms ease-in 50ms;
         }
-        button{
-          transform: translateY(-6vh);
-          opacity:0;
-          transition: transform 500ms ease-in 300ms,  opacity 500ms ease-in 300ms;
+        button {
+          transform: translateY(-3vh);
+          opacity: 0;
+          transition: transform 300ms ease-in 100ms, opacity 300ms ease-in 100ms;
         }
-        
-        &.visible{
-          input, a, button{            
+
+        &.visible {
+          input,
+          a,
+          button {
             transform: translateY(0);
-            opacity:1;
+            opacity: 1;
           }
-          input{
-            transition: transform 500ms ease-in 150ms, opacity 500ms ease-in 150ms;
+          input {
+            transition: transform 100ms ease-in 50ms, opacity 100ms ease-in 50ms;
           }
-          a{
-            transition: transform 500ms ease-in 0ms, opacity 500ms ease-in 0ms;
+          a {
+            transition: transform 100ms ease-in 0ms, opacity 100ms ease-in 0ms;
           }
-          button{
-            transition: transform 500ms ease-in 300ms,  opacity 500ms ease-in 300ms;
+          button {
+            transition: transform 100ms ease-in 100ms,
+              opacity 100ms ease-in 100ms;
           }
         }
       }
-
     }
   }
 }
