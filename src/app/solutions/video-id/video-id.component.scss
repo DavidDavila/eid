@@ -90,7 +90,14 @@
                 pointer-events: none;
                 content: '';
                 position: absolute;
-                border: 1px solid $green;
+                //border: 1px solid $green;
+
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                -o-border-image: linear-gradient(to right, #b5bf03 0%, #35b9c2 100%);
+                border-image: linear-gradient(to right, #b5bf03 0%, #35b9c2 100%);
+                border-image-slice: 1;
+                
                 left: -20px;
                 top: -20px;
                 height: calc(100% - 30px);
