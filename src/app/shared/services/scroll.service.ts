@@ -14,9 +14,9 @@ export class ScrollService {
     this.sectionNumber = 0;
     this.section.next(true);
   }
-  changesection(add: boolean) {
-    this.sectionNumber;
-    add ? this.sectionNumber++ : --this.sectionNumber< 0 ? this.sectionNumber = 0 : '';
+  changesection(number) {
+    this.sectionNumber = number;
     this.section.next(this.sectionNumber <= 0);
+    console.log(this.sectionNumber)
   }
 }

@@ -25,9 +25,10 @@ export class AppComponent implements OnInit {
 
   @ViewChild('cursor') cursor: ElementRef;
   @ViewChild('main') main: ElementRef;
+  @ViewChild('video') video: ElementRef;
 
   constructor(
-    private _scrollService:ScrollService, 
+    private _scrollService:ScrollService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this._scrollService.section$.subscribe( val=>{
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.video.nativeElement.muted = 'muted'
     if (this.showCanvas = isPlatformBrowser(this.platformId)) {
       this.makeCursor()
       //this.makeParticles();

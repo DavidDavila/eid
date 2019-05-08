@@ -50,7 +50,7 @@ export class VideoIdComponent implements OnInit {
         },
         {
           "img": "kiosk.png",
-          "text": "Kiosks",      
+          "text": "Kiosks",
           "classImg": "fourImg"
         }
       ];
@@ -62,16 +62,16 @@ export class VideoIdComponent implements OnInit {
 	public	item1: string = '';
   	public	item2: string = 'hidden';
   	public	item3: string = 'hidden';
-  
-	  public line1:string = ''; 
-	  public line2:string = 'bottom'; 
-	  public line3:string = 'bottom'; 
 
-	  public lines:string = 'line1'; 
+	  public line1:string = '';
+	  public line2:string = 'bottom';
+	  public line3:string = 'bottom';
+
+	  public lines:string = 'line1';
 
   constructor(
     private _solutionsService: SolutionsService
-    ) { 
+    ) {
     this.usesCases = VIDEOS.videoid;
 	  this._solutionsService.setsection(this.section);
   }
@@ -87,7 +87,7 @@ export class VideoIdComponent implements OnInit {
 
   mouseFinish(event, reverse){
     let totalSections =  this.videoId.nativeElement.childElementCount - 1;
-    let sectionChanged = false; 
+    let sectionChanged = false;
 
     if(this.section == 1){
       if(event.deltaY > 0) {
@@ -101,7 +101,7 @@ export class VideoIdComponent implements OnInit {
         	this.subSection++;
       	}
       } else {
-      	if(this.subSection == 1){          
+      	if(this.subSection == 1){
           if( this.section > 0 ){
   		      this.section--;
   			    this.goToSection(this.section);
@@ -131,11 +131,11 @@ export class VideoIdComponent implements OnInit {
       if(sectionChanged)
         this.goToSection(this.section);
     }
-    
+
   }
 
   goTo(subSection){
-    if(subSection > this.subSection){      
+    if(subSection > this.subSection){
       this.items.nativeElement.classList.add('top')
     }else{
       this.items.nativeElement.classList.remove('top')
@@ -183,14 +183,14 @@ export class VideoIdComponent implements OnInit {
 
 		  	this.lines = 'line3';
   			break;
-  		
+
   		default:
   			// code...
   			break;
   	}
   }
 
-  goToSection(numSection){ 
+  goToSection(numSection){
     this._solutionsService.setsection(this.section);
 
     console.log('section: ', this.section)
@@ -198,7 +198,7 @@ export class VideoIdComponent implements OnInit {
     this.videoId.nativeElement.scroll({ top: currentElement.offsetTop, behavior: 'smooth' })
   }
 
-  goToSubSection(numSubSection){ 
+  goToSubSection(numSubSection){
     console.log('subSection: ', this.subSection)
 
     let currentElement = this.videoIdSubSection.nativeElement.children[this.subSection];
@@ -216,7 +216,7 @@ export class VideoIdComponent implements OnInit {
     };
   }
 
-  play(ev){  
+  play(ev){
     var playPromise = ev.currentTarget.play();
 
     if (playPromise !== undefined) {

@@ -27,6 +27,7 @@ export class VideoComponent implements OnInit, AfterViewInit {
 
   }
   ngOnInit() {
+    this.video.nativeElement.muted = 'muted'
     this._presentationService.step$.subscribe(val =>{
       this.reverse = this.step > val;
       this.controlTiming(val, this.reverse)
