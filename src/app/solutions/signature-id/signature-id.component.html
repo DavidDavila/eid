@@ -87,7 +87,7 @@
            [options]="createLottie('sublime_02')"
            [width]="100"
            [height]="100"
-           (animCreated)="handleAnimation($event, 1000)">
+           (animCreated)="handleAnimation($event, 1000)" [@showHide]=section>
      </lottie-animation-view>
   </article>
   <article>
