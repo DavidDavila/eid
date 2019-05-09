@@ -224,6 +224,13 @@
   button{
     margin-top: 7vh;
     margin-bottom: 11.6vh;
+
+    &.nomore{
+      border: 0;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      pointer-events: none;
+    }
   }
   #popular {
     .bottom-60{

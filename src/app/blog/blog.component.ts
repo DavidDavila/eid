@@ -60,6 +60,7 @@ export class BlogComponent implements OnInit {
        this.sections.push(post.splice(0, counter));
        console.log(counter, this.sections)
      }
+
      return this.sections;
   }
   setPost(sectionIndex:number, postIndex: number) {
@@ -69,6 +70,17 @@ export class BlogComponent implements OnInit {
       next: this.sections[sectionIndex][postIndex+1]
     }
     this._blogService.currentPost.next([data])
-
   }
+  goToTop(){
+    console.log('goToTop**********')
+    var x = document.getElementsByClassName("postsList");  
+    var i = document.getElementsByClassName("postsList").length;
+
+    var myElem = x[i-1];
+    
+    if(myElem){
+      myElem.scrollIntoView(true);
+    }
+  }
+
 }

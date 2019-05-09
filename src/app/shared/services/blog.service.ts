@@ -10,15 +10,23 @@ export class BlogService {
   private page:number = 1;
   private url: string = 'https://electronicid.eu/wp-json/wp/v2/'
   private oldPost;
+  public canLoadMorePost : boolean = true;
   public posts: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
   public posts$ = this.posts.asObservable();
   public currentPost: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
   public currentPost$ = this.currentPost.asObservable();
   constructor(private http: HttpClient) {}
   nextPosts(){
-    this.page++;
-    this.getPosts()
+    if(this.canLoadMorePost){
+      this.page++;
+      this.getPosts()
+    }
   }
+
+  canLoadMore(){
+    return this.canLoadMorePost;
+  }
+
   getPosts() {
     return this.http.get(this.url + 'posts' + '?status=publish&per_page=' + (this.page === 1? '7' : '8') + '&page=' + this.page)
     .toPromise()
@@ -31,6 +39,11 @@ export class BlogService {
       this.posts.next(this.oldPost);
       return this.oldPost;
 
+    }).catch(err => {
+      console.log('err get post -- ', err) ;
+      this.page--;
+      this.canLoadMorePost = false;
+      console.log('this.page -- ', this.page) ;
     });
   }
   getCategories() {

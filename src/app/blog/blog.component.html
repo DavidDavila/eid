@@ -25,20 +25,12 @@
         </a>
       </div>
 
-    <!--   <div >
-        <a [routerLink]="[post.id]" (click)="setPost(sectionIndex, postIndex)" [ngStyle]="{'background': 'pink'}">
-          <div  class="custom-cursor">
-            <h3 class="custom-cursor">{{post?.title?.rendered}}</h3>
-            <span class="custom-cursor"></span>
-            <p class="custom-cursor">{{post?.date_gmt | date:'d/M/yy'}}</p>
-          </div>
-        </a>
-      </div> -->
-
-
     </ng-container>
   </article>
-  <button (click)="_blogService.nextPosts()"><span class="custom-cursor"> LOAD MORE POSTS </span></button>
+  <button *ngIf="_blogService.canLoadMore()" (click)="_blogService.nextPosts()"><span class="custom-cursor"> LOAD MORE POSTS </span></button>
+
+  <button class="nomore" *ngIf="!_blogService.canLoadMore()"><span class="custom-cursor"> END OF POSTS  </span></button>
+
   <section id="popular">
     <h2 class="bottom-60">Most popular</h2>
     <ul>
