@@ -26,6 +26,26 @@
         color: #FFFFFF;
         text-align: center;
         height: 100%;
+        position: relative;
+        //background-color: #b5bf03; 
+        
+
+        &:after{          
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute; 
+          top: 0;
+          left: 0;
+          background: rgba(200,200,200,0.5);
+          transition: opacity 0.5s ease;
+        }
+
+        &.loaded:after{
+          opacity: 0
+        }
+        
+
         h3{
           font-weight: 500;
           padding:0 2.4vw;

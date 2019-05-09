@@ -5,7 +5,7 @@
   <router-outlet></router-outlet>
   <article class="postsList" *ngFor="let section of sections, let sectionIndex = index">
     <ng-container *ngFor="let post of section, let postIndex = index" >
-      <div  *ngIf="(post?.media?.media_details?.sizes?.medium?.source_url)" >
+     <!--  <div  *ngIf="(post?.media?.media_details?.sizes?.medium?.source_url)" >
         <a [routerLink]="[post.id]" (click)="setPost(sectionIndex, postIndex)" [ngStyle]="{'backgroundImage': 'url(' + (post?.media?.media_details?.sizes?.medium?.source_url) + ')'}">
           <div  class="custom-cursor">
             <h3 class="custom-cursor">{{post?.title?.rendered}}</h3>
@@ -13,7 +13,29 @@
             <p class="custom-cursor">{{post?.date_gmt | date:'d/M/yy'}}</p>
           </div>
         </a>
+      </div> -->
+
+      <div>
+        <a [routerLink]="[post.id]" (click)="setPost(sectionIndex, postIndex)" [ngStyle]="{'backgroundImage': 'url(' + (post?.media?.media_details?.sizes?.medium?.source_url) + ')'}" [ngClass]="{loaded: post.media}">
+          <div  class="custom-cursor">
+            <h3 class="custom-cursor">{{post?.title?.rendered}}</h3>
+            <span class="custom-cursor"></span>
+            <p class="custom-cursor">{{post?.date_gmt | date:'d/M/yy'}}</p>
+          </div>
+        </a>
       </div>
+
+    <!--   <div >
+        <a [routerLink]="[post.id]" (click)="setPost(sectionIndex, postIndex)" [ngStyle]="{'background': 'pink'}">
+          <div  class="custom-cursor">
+            <h3 class="custom-cursor">{{post?.title?.rendered}}</h3>
+            <span class="custom-cursor"></span>
+            <p class="custom-cursor">{{post?.date_gmt | date:'d/M/yy'}}</p>
+          </div>
+        </a>
+      </div> -->
+
+
     </ng-container>
   </article>
   <button (click)="_blogService.nextPosts()"><span class="custom-cursor"> LOAD MORE POSTS </span></button>
