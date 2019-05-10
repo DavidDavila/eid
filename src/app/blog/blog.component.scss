@@ -219,6 +219,7 @@
 
         }
       }
+
     }
   }
   button{
@@ -239,6 +240,8 @@
     ul{
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
+
       >li{
         flex:0 33%;
         >div{
@@ -274,8 +277,10 @@
             }
             ul{
               text-align: center;
+                justify-content: center;
               li{
                 margin: 0 0.6vw;
+                margin-bottom: 0.6vw;
                 display: inline-block;
                 a{
                   border: 1px solid #FFFFFF;
@@ -283,6 +288,7 @@
                   padding: 0.2vw 1vw;
                   font-size: 0.65vw;
                   text-transform: uppercase;
+                  white-space: nowrap;
                 }
               }
             }
