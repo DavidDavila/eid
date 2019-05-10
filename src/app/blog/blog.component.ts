@@ -19,8 +19,10 @@ export class BlogComponent implements OnInit {
   public posts:Array<any> = [];
   public sticky:Array<any> = [];
   public sections: Array<any> = [];
-  constructor(public _blogService: BlogService, private state: TransferState, @Inject(PLATFORM_ID) private _platformId: Object) {
+  public canGoTop: boolean= false;
+  public countTimes: number = 0;
 
+  constructor(public _blogService: BlogService, private state: TransferState, @Inject(PLATFORM_ID) private _platformId: Object) {
 
       this.posts = this.state.get<any>(POSTS_KEY, null);
       !this.posts && this._blogService.getPosts().then( posts => {
@@ -31,6 +33,8 @@ export class BlogComponent implements OnInit {
       });
       this._blogService.posts$.subscribe( posts => {
         if(posts.length !== 0 ) {
+          this.countTimes++;
+          this.canGoTop = true;
           this.posts = posts;
           this.setNumberOfSections()
         }
@@ -79,7 +83,21 @@ export class BlogComponent implements OnInit {
     var myElem = x[i-1];
     
     if(myElem){
-      myElem.scrollIntoView(true);
+      myElem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      })
+    }
+  }
+
+  onDomChange($event: Event): void {
+    console.log('$event');
+    console.log($event);
+    console.log('canGoTop -- ', this.canGoTop);
+    
+    if(this.canGoTop && this.countTimes > 1){
+      this.goToTop();
+      this.canGoTop = false;
     }
   }
 

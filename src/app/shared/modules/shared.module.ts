@@ -5,6 +5,7 @@ import { FooterComponent } from './../components/footer/footer.component';
 import { LanguageComponent } from './../components/language/language.component';
 import { SliderComponent } from './../components/slider/slider.component';
 import { LottieAnimationViewModule } from 'ng-lottie';
+import { DomChangeDirective } from '../directives/dom-change.directive';
 
 @NgModule({
   imports: [
@@ -17,8 +18,9 @@ import { LottieAnimationViewModule } from 'ng-lottie';
     LottieAnimationViewModule,
     FooterComponent,
     LanguageComponent,
-    SliderComponent
+    SliderComponent,
+    DomChangeDirective
   ],
-  declarations: [MouseWheelTimingDirective, FooterComponent, LanguageComponent, SliderComponent]
+  declarations: [MouseWheelTimingDirective, FooterComponent, LanguageComponent, SliderComponent, DomChangeDirective]
 })
 export class SharedModule { }
