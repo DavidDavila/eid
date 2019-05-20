@@ -205,3 +205,20 @@
     }
   }
 }
+
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
+  section#signature-id {
+    > article#integrate,
+    > article#legal{
+      h2 {
+        font-size: 4vw;
+        
+        span {
+          font-size: 2.5vw;
+        }
+      }
+    }
+  }
+}
